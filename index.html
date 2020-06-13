@@ -17,17 +17,23 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"heronwang.gitee.io","root":"/mynotes/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"heronwang.gitee.io","root":"/mynotes/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="这是我的笔记簿记录我的生活与学习还有工作上的点滴滴滴">
+  <meta name="description" content="这是我的笔记簿记录我的工作与学习还有生活上的点滴滴滴">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Heron&#39;s NoteBook">
 <meta property="og:url" content="https://heronwang.gitee.io/mynotes/index.html">
 <meta property="og:site_name" content="Heron&#39;s NoteBook">
-<meta property="og:description" content="这是我的笔记簿记录我的生活与学习还有工作上的点滴滴滴">
+<meta property="og:description" content="这是我的笔记簿记录我的工作与学习还有生活上的点滴滴滴">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Heronwang">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="html5">
+<meta property="article:tag" content="css3">
+<meta property="article:tag" content="deep learning">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="opencv">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://heronwang.gitee.io/mynotes/">
@@ -102,6 +108,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -136,20 +143,48 @@
     <a href="/mynotes/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/mynotes/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
 
 
     <main class="main">
@@ -166,9 +201,9 @@
     <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/readme/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/mynotes/images/avatar.gif">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
       <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -177,7 +212,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/mynotes/2020/06/13/readme/" class="post-title-link" itemprop="url">readme</a>
+            <a href="/mynotes/2020/06/13/readme/" class="post-title-link" itemprop="url">README</a>
         </h2>
 
         <div class="post-meta">
@@ -186,10 +221,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-06-13 17:00:39 / 修改时间：17:16:34" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:39+08:00">2020-06-13</time>
+              <time title="创建时间：2020-06-13 17:00:39" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:39+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 04:16:32" itemprop="dateModified" datetime="2020-06-14T04:16:32+08:00">2020-06-14</time>
+              </span>
 
           
 
@@ -202,56 +243,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="readme"><a class="markdownIt-Anchor" href="#readme"></a> readme</h1>
-<!-- TOC -->
-<ul>
-<li><a href="#readme">readme</a>
-<ul>
-<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
-<li><a href="#qa%E7%AC%94%E8%AE%B0">Q&amp;A笔记</a></li>
-<li><a href="#python%E7%9A%84%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%BA%93%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">python的框架与库的学习笔记</a></li>
-<li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0">深度学习论文阅读笔记</a></li>
-<li><a href="#%E8%A7%84%E8%8C%83">规范</a></li>
-<li><a href="#todos%E8%AE%A1%E5%88%92">todos计划</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
-<p>这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能</p>
+          <a id="more"></a>
+<!-- ![我的图片](/mynotes/images/pic001.png) -->
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能</p>
 <p>这里记录自己遇到的相关问题，并解决问题方案，以备后用</p>
 <p>同时也记录自己系统学习新知识而敲出来的代码和笔记</p>
 <p>贪多嚼不烂，可以慢一点，但必须要扎实</p>
 <p>不要复制粘贴别人的答案，一定要自己实践一遍后，经过自己的探索，着实解决了自己问题，然后在逐一记录下来。</p>
-<h2 id="qa笔记"><a class="markdownIt-Anchor" href="#qa笔记"></a> Q&amp;A笔记</h2>
+<h2 id="Q-amp-A笔记"><a href="#Q-amp-A笔记" class="headerlink" title="Q&amp;A笔记"></a>Q&amp;A笔记</h2><!-- hexo中点击可以跳转 -->
 <ol>
-<li><a href="notes/linux%E5%91%BD%E4%BB%A4.md">1.linux系统相关操作</a></li>
-<li><a href="notes/vscode%E7%AC%94%E8%AE%B0.md">2.vscode相关问题</a></li>
-</ol>
-<!-- 3. [3.markdown常见问题](notes/markdown.md) -->
-<ol start="4">
-<li><a href="notes/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md">4.git笔记</a></li>
-</ol>
-<h2 id="python的框架与库的学习笔记"><a class="markdownIt-Anchor" href="#python的框架与库的学习笔记"></a> python的框架与库的学习笔记</h2>
-<ol>
-<li><a href="python/opencv.md">opencv学习笔记</a></li>
-<li><a href="#">pytorch学习笔记</a></li>
-</ol>
-<h2 id="深度学习论文阅读笔记"><a class="markdownIt-Anchor" href="#深度学习论文阅读笔记"></a> 深度学习论文阅读笔记</h2>
-<ol>
-<li>
-<p>VGGNet</p>
+<li><a href="/mynotes/2020/06/13/hexo/hello-world/" title="Hello World">Hello World</a>
 </li>
-<li></li>
+<li><a href="/mynotes/2020/06/13/vscode/vscode%E7%AC%94%E8%AE%B0/" title="vscode&#x2F;vscode笔记">vscode&#x2F;vscode笔记</a>
+</li>
+<li><a href="/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/" title="markdown&#x2F;markdown笔记">markdown&#x2F;markdown笔记</a>
+</li>
+<li><a href="/mynotes/2020/06/13/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="git&#x2F;git常见问题">git&#x2F;git常见问题</a>
+</li>
+<li><a href="/mynotes/2020/06/13/linux/linux%E5%91%BD%E4%BB%A4/" title="linux&#x2F;linux命令">linux&#x2F;linux命令</a>
+</li>
 </ol>
-<h2 id="规范"><a class="markdownIt-Anchor" href="#规范"></a> 规范</h2>
-<h2 id="todos计划"><a class="markdownIt-Anchor" href="#todos计划"></a> todos计划</h2>
-<ol>
-<li>Ubuntu系统下疑难杂症与解决方案；</li>
-<li>掌握git基本语法，创建仓库，保持远程和本地的同步与更新；</li>
-<li>markdown语法，维护笔记排版；</li>
-<li>搭建博客，实现本地和远程仓库，以及博客页面三者同步与更新，分享链接可远程访问；</li>
-<li>记录图像识别与深度学习笔记；</li>
+<!-- 1. [1.linux系统相关操作](  notes/linux命令.)
+2. [2.vscode相关问题](notes/vscode笔记.md)
+<!-- 3. [3.markdown常见问题](notes/markdown.md) -->
+<!-- 4. [4.git笔记](notes/git常见问题.md) --> 
+<h2 id="python的框架与库的学习笔记"><a href="#python的框架与库的学习笔记" class="headerlink" title="python的框架与库的学习笔记"></a>python的框架与库的学习笔记</h2><ol>
+<li><a href="/mynotes/2020/06/13/ML/opencv/" title="ML&#x2F;opencv">ML&#x2F;opencv</a>
+</li>
+<li><p>[pytorch学习笔记]</p>
+</li>
+</ol>
+<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><h2 id="todos计划"><a href="#todos计划" class="headerlink" title="todos计划"></a>todos计划</h2><ol>
+<li><strong>Ubuntu系统下疑难杂症与解决方案；</strong></li>
+<li><del>掌握git基本语法，创建仓库，保持远程和本地的同步与更新；</del></li>
+<li><del>markdown语法，维护笔记排版</del></li>
+<li><del>搭建博客，实现本地和远程仓库，以及博客页面三者同步与更新，分享链接可远程访问；</del></li>
+<li>opencv-python系统学习笔记</li>
+<li>pytorch深度学习框架学习笔记</li>
 </ol>
 
       
@@ -272,12 +300,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/python/opencv/">
+    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/ML/opencv/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/mynotes/images/avatar.gif">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
       <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -286,7 +314,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/mynotes/2020/06/13/python/opencv/" class="post-title-link" itemprop="url">python/opencv</a>
+            <a href="/mynotes/2020/06/13/ML/opencv/" class="post-title-link" itemprop="url">ML/opencv</a>
         </h2>
 
         <div class="post-meta">
@@ -298,6 +326,13 @@
 
               <time title="创建时间：2020-06-13 17:00:04" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:04+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 03:52:58" itemprop="dateModified" datetime="2020-06-14T03:52:58+08:00">2020-06-14</time>
+              </span>
 
           
 
@@ -317,173 +352,14 @@
 <p>二值图像：仅仅包含黑色和白色两种颜色的图像，黑色表示为0，白色表示为1。</p>
 <p>灰度图像：包含256个灰度级，数值区间[0,255]，其中 0 表示纯黑色， 255表示纯白色，中间数值表示纯白和纯黑之间的不同极度的灰度。</p>
 <p>彩色图像： 有红绿蓝三个颜色的通道，能表现更丰富的细节信息，图像的通道顺序是RGB；特别注意，opencv中通道的顺序是 BGR，和图片通道顺序相反</p>
-<h3 id="像素处理"><a class="markdownIt-Anchor" href="#像素处理"></a> 像素处理</h3>
-<p><a href="opencv/%E5%83%8F%E7%B4%A0%E5%A4%84%E7%90%86.py">像素处理代码实现</a></p>
-<h3 id="使用numpyarray访问元素"><a class="markdownIt-Anchor" href="#使用numpyarray访问元素"></a> 使用numpy.array访问元素</h3>
-<p><a href="opencv/numpy.array%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0.py">代码实现</a></p>
-<p>函数 item(行，列) 能高效访问图像的像素点<br />
-itemset(索引值，新值) 用来修改像素值</p>
-<h3 id="感兴趣区域roi-和-通道操作"><a class="markdownIt-Anchor" href="#感兴趣区域roi-和-通道操作"></a> 感兴趣区域ROI 和 通道操作</h3>
-<p><a href="opencv/ROI.py">代码实现</a></p>
-<p>设定ROI后，就可以对该区域进行整体操作，比如将一个ROI区域A复制给变量b，然后将该变量复制给另一个区域C</p>
-<p>通道拆分 cv.split(img)</p>
-<p>通道合并 cv.merge([b,g,r])</p>
-<h3 id="获取图像属性"><a class="markdownIt-Anchor" href="#获取图像属性"></a> 获取图像属性</h3>
-<p>img.shape 返回包含行数，列数，通道数的数组</p>
-<p>img.size  返回图像的像素数目</p>
-<p>img.dtype 返回图像的数据类型</p>
-<h2 id="图像运算"><a class="markdownIt-Anchor" href="#图像运算"></a> 图像运算</h2>
-<h3 id="加法"><a class="markdownIt-Anchor" href="#加法"></a> 加法</h3>
-<p>img1 + img2 ,遵循规则：<br />
-a+b = (a+b) % 256,即结果对256取膜</p>
-<p>cv2.add(img1,img2) ,遵循规则：<br />
-a+b = min(a+b,255), 即和大于255时结果取255</p>
-<h3 id="图像加权和"><a class="markdownIt-Anchor" href="#图像加权和"></a> 图像加权和</h3>
-<p>dst = cv2.addWeighted(src1,alpha,src2,beta,gamma) 参数不能省略<br />
-结果就是 dst = src * alpha +src2 *beta +gamma</p>
-<p>加权和超过255，结果同样取255</p>
-<h3 id="按位逻辑运算"><a class="markdownIt-Anchor" href="#按位逻辑运算"></a> 按位逻辑运算</h3>
-<p>cv2.bitwise_and() 与<br />
-cv2.bitwise_or()  或<br />
-cv2.bitwise_xor() 异或<br />
-cv2.bitwise_not() 非</p>
-<p>跟 0 位与结果为 0 ，变成黑色<br />
-跟255位与结果是本身 ，颜色不变</p>
-<h3 id="掩膜"><a class="markdownIt-Anchor" href="#掩膜"></a> 掩膜</h3>
-<p>使用掩膜参数时，操作只会在掩膜值为非空的像素点上执行，并将其他像素点的值设置为0</p>
-<h3 id="图像与数值运算"><a class="markdownIt-Anchor" href="#图像与数值运算"></a> 图像与数值运算</h3>
-<p>cv2.add(img,6) 参与运算的既可以是图片也可以是数值</p>
-<h3 id="位平面分解"><a class="markdownIt-Anchor" href="#位平面分解"></a> 位平面分解</h3>
-<p>将同一比特位上的二进制像素值进行组合，得到一副二进制值图像，该图像被称为灰度图像的一个位平面，这个过程被称为位平面分解。<br />
-在8位灰度图中，可以组成8个二进制图像<br />
-<a href="opencv/%E4%BD%8D%E5%B9%B3%E9%9D%A2.py">代码</a></p>
-<h3 id="图像加密和解密"><a class="markdownIt-Anchor" href="#图像加密和解密"></a> 图像加密和解密</h3>
-<p>通过按位异或运算可以实现图像的加密和解密</p>
-<p>通过对原始图像与秘钥图像进行按位异或就可以进行加密，将加密后的图像与秘钥图像再次进行按位异或就可以进行解密</p>
-<p><a href="opencv/%E5%9B%BE%E5%83%8F%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86.py">代码实现</a></p>
-<h3 id="数字水印"><a class="markdownIt-Anchor" href="#数字水印"></a> 数字水印</h3>
-<p>最低有效位指一个二进制中的第0位，由于二进制图像处于载体图像的最低有效位上面，所以对于载体图像的影响非常不明显，具有较高的隐蔽性。</p>
-<p>在必要时，我们可以直接将载体图像中的最低有效位提取出来，即可得到嵌入该位上的二值图像，达到提取秘密信息的目的。<br />
-这种信息隐藏也被称为数字水印，通过该方式可以实现信息影藏，版权认证，身份认证等功能</p>
-<p>分两步：</p>
-<pre><code>嵌入过程
-  用数字水印信息将图像的最低有效位替换掉
-
-提取过程
-  提取出最低有效位的水印信息即可
-</code></pre>
-<p><a href="opencv/%E6%95%B0%E5%AD%97%E6%B0%B4%E5%8D%B0.py">demo</a></p>
-<h3 id="脸部打码以及解码"><a class="markdownIt-Anchor" href="#脸部打码以及解码"></a> 脸部打码以及解码</h3>
-<p>使用掩码和按位运算方式实现对脸部打码和解码实例<br />
-<a href="opencv/%E8%84%B8%E9%83%A8%E6%89%93%E7%A0%81%E4%BB%A5%E5%8F%8A%E8%A7%A3%E7%A0%81.py">demo</a></p>
-<h2 id="色彩空间类型转换"><a class="markdownIt-Anchor" href="#色彩空间类型转换"></a> 色彩空间类型转换</h2>
-<p>色彩空间类型转换就是将图像的一个色彩空间转换到另一个色彩空间，比如opencv处理图像是，可能会在RGB色彩空间和HSV色彩空间之间进行转换。在进行特征提取计算距离时，，往往会将图像RGB色彩空间转换成灰度色彩空间，也可能要将色彩空间的图像转换成二值图像</p>
-<h3 id="色彩空间基础"><a class="markdownIt-Anchor" href="#色彩空间基础"></a> 色彩空间基础</h3>
-<p>比较常见的色彩空间：</p>
-<ul>
-<li>GRAY色彩空间，也叫灰度空间 ，与RGB色彩空间的转换关系式 ： <code>GRAY =0.299×R +0.587*G +0.114*B</code></li>
-<li>XYZ色彩空间，一中便于计算的色彩空间</li>
-<li>YCrCb色彩空间</li>
-<li>HSV色彩空间：一种面向视觉感知的颜色模型；从心理学和视觉感知的角度出发，指出人眼的色彩和知觉主要包括三要素：色调Hue，饱和度Saturation,亮度Value</li>
-<li>HLS色彩空间： 包括三要素，色调Hue,光亮度lightness,饱和度Saturation</li>
-</ul>
-<h3 id="类型转换函数-hsv色彩空间讨论-alpha通道"><a class="markdownIt-Anchor" href="#类型转换函数-hsv色彩空间讨论-alpha通道"></a> 类型转换函数、HSV色彩空间讨论、alpha通道</h3>
-<p><a href="oepncv/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.py">demo</a></p>
-<p>dst = cv2.cvtColor(src,code,[,dstcn])</p>
-<pre><code>code表示色彩空间转换码
-dstCn目标图像的通道数，如果为默认的零，则通道数自动通过原始输入图像和code得到
-</code></pre>
-<p>alpha通道：在BGR色彩空间三个通道的基础上，还可以添加一个A通道，也叫做alpha通道，表示透明度。这四个通道的色彩空间也被称为BGRA色彩空间，png图像是一种典型的4通道图像。A的值范围[0,255]，从透明到不透明，默认值为255，即100%不透明</p>
-<h2 id="几何变换"><a class="markdownIt-Anchor" href="#几何变换"></a> <strong>几何变换</strong></h2>
-<h3 id="缩放"><a class="markdownIt-Anchor" href="#缩放"></a> <strong>缩放</strong></h3>
-  <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.resize(src,dsize , fx,fy,interpolation)</span><br><span class="line">  src:缩放的原始图像</span><br><span class="line">  dsize：输出图像大小</span><br><span class="line">  fx：水平方向的缩放比例</span><br><span class="line">  fy:垂直方向的缩放比例</span><br><span class="line">  interpolation：代表插值方式</span><br><span class="line"><span class="code">    缩放图像时，INTER_AREA能达到最好效果</span></span><br><span class="line"><span class="code">    放大图像时，INTER_CUBIC 和INTER_LINEAR 都能取得较好的效果</span></span><br></pre></td></tr></table></figure>
-<h3 id="旋转"><a class="markdownIt-Anchor" href="#旋转"></a> <strong>旋转</strong></h3>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dst &#x3D; cv2.flip(src,flipCode)</span><br><span class="line">  flipCode 旋转类型：</span><br><span class="line">  0，绕x轴旋转</span><br><span class="line">  正数，绕y轴旋转</span><br><span class="line">  负数，绕x，y同时旋转</span><br></pre></td></tr></table></figure>
-<h3 id="仿射"><a class="markdownIt-Anchor" href="#仿射"></a> <strong>仿射</strong></h3>
-<p>仿射变换是指图像可以通过一系列的几何变换来实现平移、旋转等多种操作</p>
-<p>该变换能够保持图像的平直性和平行性</p>
-<p>仿射 = 平移 + 旋转</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dst = cv2.warpAffine(src, M, dsize, flags, borderMode, borderValue)</span><br><span class="line">M:代表一个2x3的变换矩阵</span><br><span class="line">dsize:代表输出图像的尺寸大小</span><br><span class="line">flags:代表插值方式，默认INTER_LINEAR</span><br><span class="line">borderMode:代表边类型</span><br><span class="line"></span><br><span class="line">borderValue:代表边界值，默认0</span><br></pre></td></tr></table></figure>
-<h3 id="透视"><a class="markdownIt-Anchor" href="#透视"></a> <strong>透视</strong></h3>
-<h3 id="重映射"><a class="markdownIt-Anchor" href="#重映射"></a> <strong>重映射</strong></h3>
-<h2 id="阈值处理"><a class="markdownIt-Anchor" href="#阈值处理"></a> <strong>阈值处理</strong></h2>
-<h3 id="threldhold函数"><a class="markdownIt-Anchor" href="#threldhold函数"></a> <strong>threldhold函数</strong></h3>
-<h3 id="自适应阈值处理"><a class="markdownIt-Anchor" href="#自适应阈值处理"></a> <strong>自适应阈值处理</strong></h3>
-<h3 id="otsu处理"><a class="markdownIt-Anchor" href="#otsu处理"></a> <strong>otsu处理</strong></h3>
-<h2 id="图像平滑处理"><a class="markdownIt-Anchor" href="#图像平滑处理"></a> <strong>图像平滑处理</strong></h2>
-<h3 id="均值滤-波"><a class="markdownIt-Anchor" href="#均值滤-波"></a> <strong>均值滤  波</strong></h3>
-<h3 id="方框滤波"><a class="markdownIt-Anchor" href="#方框滤波"></a> <strong>方框滤波</strong></h3>
-<h3 id="高斯滤波"><a class="markdownIt-Anchor" href="#高斯滤波"></a> <strong>高斯滤波</strong></h3>
-<h3 id="中值滤波"><a class="markdownIt-Anchor" href="#中值滤波"></a> <strong>中值滤波</strong></h3>
-<h3 id="双边滤波"><a class="markdownIt-Anchor" href="#双边滤波"></a> <strong>双边滤波</strong></h3>
-<h3 id="2d-卷积"><a class="markdownIt-Anchor" href="#2d-卷积"></a> <strong>2D 卷积</strong></h3>
-<h2 id="形态学操作"><a class="markdownIt-Anchor" href="#形态学操作"></a> <strong>形态学操作</strong></h2>
-<h3 id="腐蚀"><a class="markdownIt-Anchor" href="#腐蚀"></a> <strong>腐蚀</strong></h3>
-<h3 id="膨胀"><a class="markdownIt-Anchor" href="#膨胀"></a> <strong>膨胀</strong></h3>
-<h3 id="通用形态学函数"><a class="markdownIt-Anchor" href="#通用形态学函数"></a> <strong>通用形态学函数</strong></h3>
-<h3 id="开运算"><a class="markdownIt-Anchor" href="#开运算"></a> <strong>开运算</strong></h3>
-<h3 id="闭运算"><a class="markdownIt-Anchor" href="#闭运算"></a> <strong>闭运算</strong></h3>
-<h3 id="形态学梯度运算"><a class="markdownIt-Anchor" href="#形态学梯度运算"></a> <strong>形态学梯度运算</strong></h3>
-<h3 id="礼貌运算"><a class="markdownIt-Anchor" href="#礼貌运算"></a> <strong>礼貌运算</strong></h3>
-<h3 id="黑帽运算"><a class="markdownIt-Anchor" href="#黑帽运算"></a> <strong>黑帽运算</strong></h3>
-<h3 id="核函数"><a class="markdownIt-Anchor" href="#核函数"></a> <strong>核函数</strong></h3>
-<h2 id="图像梯度"><a class="markdownIt-Anchor" href="#图像梯度"></a> <strong>图像梯度</strong></h2>
-<h3 id="sobel-理论基础"><a class="markdownIt-Anchor" href="#sobel-理论基础"></a> <strong>sobel 理论基础</strong></h3>
-<h3 id="sobel算子及函数使用"><a class="markdownIt-Anchor" href="#sobel算子及函数使用"></a> <strong>sobel算子及函数使用</strong></h3>
-<h3 id="scharr-算子及函数使用"><a class="markdownIt-Anchor" href="#scharr-算子及函数使用"></a> <strong>scharr 算子及函数使用</strong></h3>
-<h3 id="laplacian-算子及函数使用"><a class="markdownIt-Anchor" href="#laplacian-算子及函数使用"></a> <strong>Laplacian 算子及函数使用</strong></h3>
-<h3 id="算子总结"><a class="markdownIt-Anchor" href="#算子总结"></a> <strong>算子总结</strong></h3>
-<h2 id="canny边缘检测"><a class="markdownIt-Anchor" href="#canny边缘检测"></a> <strong>canny边缘检测</strong></h2>
-<h3 id="canny边缘检测理论"><a class="markdownIt-Anchor" href="#canny边缘检测理论"></a> <strong>canny边缘检测理论</strong></h3>
-<h3 id="canny函数及使用"><a class="markdownIt-Anchor" href="#canny函数及使用"></a> <strong>canny函数及使用</strong></h3>
-<h2 id="图像金字塔"><a class="markdownIt-Anchor" href="#图像金字塔"></a> <strong>图像金字塔</strong></h2>
-<h3 id="理论基础"><a class="markdownIt-Anchor" href="#理论基础"></a> <strong>理论基础</strong></h3>
-<h3 id="pyrdown函数及使用"><a class="markdownIt-Anchor" href="#pyrdown函数及使用"></a> <strong>pyrDown函数及使用</strong></h3>
-<h3 id="采样可逆行研究"><a class="markdownIt-Anchor" href="#采样可逆行研究"></a> <strong>采样可逆行研究</strong></h3>
-<h3 id="拉普拉斯金字塔"><a class="markdownIt-Anchor" href="#拉普拉斯金字塔"></a> <strong>拉普拉斯金字塔</strong></h3>
-<h2 id="图像轮廓"><a class="markdownIt-Anchor" href="#图像轮廓"></a> <strong>图像轮廓</strong></h2>
-<h3 id="查找并绘制轮廓"><a class="markdownIt-Anchor" href="#查找并绘制轮廓"></a> <strong>查找并绘制轮廓</strong></h3>
-<h3 id="矩特征"><a class="markdownIt-Anchor" href="#矩特征"></a> <strong>矩特征</strong></h3>
-<h3 id="hu钜"><a class="markdownIt-Anchor" href="#hu钜"></a> <strong>hu钜</strong></h3>
-<h3 id="轮廓拟合"><a class="markdownIt-Anchor" href="#轮廓拟合"></a> <strong>轮廓拟合</strong></h3>
-<h3 id="凸包"><a class="markdownIt-Anchor" href="#凸包"></a> <strong>凸包</strong></h3>
-<h3 id="利用形状场景算法比较轮廓"><a class="markdownIt-Anchor" href="#利用形状场景算法比较轮廓"></a> <strong>利用形状场景算法比较轮廓</strong></h3>
-<h3 id="轮廓的特征值"><a class="markdownIt-Anchor" href="#轮廓的特征值"></a> <strong>轮廓的特征值</strong></h3>
-<h2 id="傅里叶变换"><a class="markdownIt-Anchor" href="#傅里叶变换"></a> <strong>傅里叶变换</strong></h2>
-<h3 id="理论基础-2"><a class="markdownIt-Anchor" href="#理论基础-2"></a> <strong>理论基础</strong></h3>
-<h3 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> <strong>实现</strong></h3>
-<h2 id="模板匹配"><a class="markdownIt-Anchor" href="#模板匹配"></a> <strong>模板匹配</strong></h2>
-<h3 id="模板匹配基础"><a class="markdownIt-Anchor" href="#模板匹配基础"></a> <strong>模板匹配基础</strong></h3>
-<h3 id="多模板匹配"><a class="markdownIt-Anchor" href="#多模板匹配"></a> <strong>多模板匹配</strong></h3>
-<h2 id="霍夫变换"><a class="markdownIt-Anchor" href="#霍夫变换"></a> <strong>霍夫变换</strong></h2>
-<h3 id="霍夫直线变换"><a class="markdownIt-Anchor" href="#霍夫直线变换"></a> 霍夫直线变换</h3>
-<h3 id="霍夫圆形变换"><a class="markdownIt-Anchor" href="#霍夫圆形变换"></a> <strong>霍夫圆形变换</strong></h3>
-<h2 id="图像分割与提取"><a class="markdownIt-Anchor" href="#图像分割与提取"></a> <strong>图像分割与提取</strong></h2>
-<h3 id="用分水岭算法实现图像分割"><a class="markdownIt-Anchor" href="#用分水岭算法实现图像分割"></a> <strong>用分水岭算法实现图像分割</strong></h3>
-<h3 id="交互式前景提取"><a class="markdownIt-Anchor" href="#交互式前景提取"></a> <strong>交互式前景提取</strong></h3>
-<h2 id="视频处理"><a class="markdownIt-Anchor" href="#视频处理"></a> <strong>视频处理</strong></h2>
-<h3 id="videocapture类"><a class="markdownIt-Anchor" href="#videocapture类"></a> <strong>VideoCapture类</strong></h3>
-<h3 id="viedeowriter类"><a class="markdownIt-Anchor" href="#viedeowriter类"></a> <strong>ViedeoWriter类</strong></h3>
-<h3 id="视频操作基础"><a class="markdownIt-Anchor" href="#视频操作基础"></a> <strong>视频操作基础</strong></h3>
-<h2 id="绘图机交互"><a class="markdownIt-Anchor" href="#绘图机交互"></a> <strong>绘图机交互</strong></h2>
-<h3 id="绘图基础"><a class="markdownIt-Anchor" href="#绘图基础"></a> <strong>绘图基础</strong></h3>
-<h3 id="鼠标交互"><a class="markdownIt-Anchor" href="#鼠标交互"></a> <strong>鼠标交互</strong></h3>
-<h3 id="滚动条"><a class="markdownIt-Anchor" href="#滚动条"></a> <strong>滚动条</strong></h3>
-<h2 id="k近邻算法"><a class="markdownIt-Anchor" href="#k近邻算法"></a> <strong>k近邻算法</strong></h2>
-<h3 id="理论基础-3"><a class="markdownIt-Anchor" href="#理论基础-3"></a> <strong>理论基础</strong></h3>
-<h3 id="计算"><a class="markdownIt-Anchor" href="#计算"></a> <strong>计算</strong></h3>
-<h3 id="手写数字识别原理"><a class="markdownIt-Anchor" href="#手写数字识别原理"></a> <strong>手写数字识别原理</strong></h3>
-<h3 id="自定义函数手写数字识别"><a class="markdownIt-Anchor" href="#自定义函数手写数字识别"></a> <strong>自定义函数手写数字识别</strong></h3>
-<h3 id="k近邻模块的基本使用"><a class="markdownIt-Anchor" href="#k近邻模块的基本使用"></a> <strong>k近邻模块的基本使用</strong></h3>
-<h3 id="k-近邻手写板数字的识别"><a class="markdownIt-Anchor" href="#k-近邻手写板数字的识别"></a> <strong>K 近邻手写板数字的识别</strong></h3>
-<p>K<br />
-K**<br />
-K<br />
-K*<br />
-K</p>
-<h3 id="svm案例介绍"><a class="markdownIt-Anchor" href="#svm案例介绍"></a> <strong>svm案例介绍</strong></h3>
-<h2 id="k均值聚类"><a class="markdownIt-Anchor" href="#k均值聚类"></a> <strong>k均值聚类</strong></h2>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/mynotes/2020/06/13/ML/opencv/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -502,12 +378,12 @@ K</p>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/notes/vscode%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/vscode/vscode%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/mynotes/images/avatar.gif">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
       <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -516,7 +392,7 @@ K</p>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/mynotes/2020/06/13/notes/vscode%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">notes/vscode笔记</a>
+            <a href="/mynotes/2020/06/13/vscode/vscode%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">vscode/vscode笔记</a>
         </h2>
 
         <div class="post-meta">
@@ -528,6 +404,13 @@ K</p>
 
               <time title="创建时间：2020-06-13 17:00:03" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:03+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 04:11:14" itemprop="dateModified" datetime="2020-06-14T04:11:14+08:00">2020-06-14</time>
+              </span>
 
           
 
@@ -540,71 +423,17 @@ K</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="vscode常见问题"><a class="markdownIt-Anchor" href="#vscode常见问题"></a> vscode常见问题</h1>
-<p><a href="../readme.md">返回readme</a></p>
-<h2 id="1怎么修改-vscode-主题颜色"><a class="markdownIt-Anchor" href="#1怎么修改-vscode-主题颜色"></a> 1.怎么修改 vscode 主题颜色？</h2>
-<p>😄</p>
+          <h1 id="vscode常见问题"><a href="#vscode常见问题" class="headerlink" title="vscode常见问题"></a>vscode常见问题</h1><h2 id="1-怎么修改-vscode-主题颜色？"><a href="#1-怎么修改-vscode-主题颜色？" class="headerlink" title="1.怎么修改 vscode 主题颜色？"></a>1.怎么修改 vscode 主题颜色？</h2><p>:smile:</p>
 <p>新下载的 vscode 默认的都是黑色的主题，颜色太暗看不清怎么办？ 直接修改 vscoe 颜色颜色即可，步骤如下：</p>
-<p>file -&gt; preference -&gt; color theme -&gt; 选择 light 即可<br />
-也可以快捷键 ctrl + K + ctrl + T 直接打开颜色主题进行设置</p>
-<h2 id="2设置文件过程中自动保存"><a class="markdownIt-Anchor" href="#2设置文件过程中自动保存"></a> 2.设置文件过程中自动保存</h2>
-<p>对文件的修改每次有需要手动保存 ，有没有觉得好麻烦呀？只需按照下面步骤设置轻松实现 vscode 自动编辑保存功能</p>
-<pre><code>点击 vscode 界面右下角 -&gt; settings -&gt; 搜索框中搜索 auto save -&gt;选择 afterDelay,同时设置延迟保存时间为 1000，大功告成
-</code></pre>
-<h2 id="3设置滚轮可调节编辑区字体大小"><a class="markdownIt-Anchor" href="#3设置滚轮可调节编辑区字体大小"></a> 3.设置滚轮可调节编辑区字体大小</h2>
-<pre><code>在settings.json 文件中添加配置`&quot;editor.mouseWheelZoom&quot;: true` 即可
-</code></pre>
-<h2 id="4灵活好用的快捷建"><a class="markdownIt-Anchor" href="#4灵活好用的快捷建"></a> 4.灵活好用的快捷建</h2>
-<pre><code>灵活好用的系统或自定义的常用快捷键，如果系统没有该快捷建可自行配置：
-
-vscode界面及编辑区快捷键
-
-`ctrl + b` 显示/隐藏左侧状态栏
-
-`ctrl + =/-/鼠标滚轮`  调整编辑区的字体大小 ，鼠标滚轮需要进行[问题3](#3设置滚轮可调节编辑区字体大小)所示的设置
-
-`crrl + shift + -/=` 调整整个界面大小
-
-`crrl + tab` 切换到最近打开文本中
-
-
-分屏快捷键
-
-`ctrl + \` 拆分窗口组，（默认新建窗口位置在右侧）
-
-`ctrl + \  ctrl + 方向键` 选择新拆分出的窗口位置（自定义）
-
-`ctrl + j  a` 将所有其他窗口的分屏关闭，并合并当当前窗口中，可实现当前代码窗口的最大化显示（(自定义)）
-
-`ctrl + k  w` 关闭当前分屏及所有打开的文件
-
-`ctrl + k o` 关闭其他分组的窗口，保留当前分组的窗口
-
-markdown快捷键
-
-`alt + m` 激活docs-markdown菜单,实现快捷制表等操作 
-   
-`ctrl + shift + v` 切换 markdown 的编辑和预览模式
-</code></pre>
-<h2 id="5-实用的扩展插件"><a class="markdownIt-Anchor" href="#5-实用的扩展插件"></a> 5. 实用的扩展插件</h2>
-<pre><code>`Markdown All in One` 在vscode中必备的markdown插件，支持预览，基本语法等
-
-`markdownlint` markdown 语法智能提示，改善自己的md书写规范
-
-`Markdown toc` 自动生成markdown目录树，简单实用
-
-`markdown preview Enhancced` 预览增强，可支持显示复杂的公式，流程图，表格等
-
-`vscode-icons` 美化文件浏览器中的文件/文件夹图标
-
-`terminal` 下面状态栏添加终端快捷按钮
-
-`python` python环境必备的插件，识别 .py文件关联到解释器，运行等功能
-</code></pre>
-<h2 id="6-怎么拆分和合并分屏"><a class="markdownIt-Anchor" href="#6-怎么拆分和合并分屏"></a> 6. 怎么拆分和合并分屏</h2>
-<pre><code>见 [4.灵活好用的快捷建](#4灵活好用的快捷建) 中的分屏快捷键
-</code></pre>
-
+<p>file -&gt; preference -&gt; color theme -&gt; 选择 light 即可<br>也可以快捷键 ctrl + K + ctrl + T 直接打开颜色主题进行设置<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/mynotes/2020/06/13/vscode/vscode%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -623,12 +452,12 @@ markdown快捷键
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/notes/linux%E5%91%BD%E4%BB%A4/">
+    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/mynotes/images/avatar.gif">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
       <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -637,7 +466,7 @@ markdown快捷键
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/mynotes/2020/06/13/notes/linux%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">notes/linux命令</a>
+            <a href="/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">markdown/markdown笔记</a>
         </h2>
 
         <div class="post-meta">
@@ -649,6 +478,87 @@ markdown快捷键
 
               <time title="创建时间：2020-06-13 17:00:03" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:03+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 04:11:10" itemprop="dateModified" datetime="2020-06-14T04:11:10+08:00">2020-06-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="markdown疑难杂症"><a href="#markdown疑难杂症" class="headerlink" title="markdown疑难杂症"></a>markdown疑难杂症</h1><h2 id="1-单文件怎么生成目录，并实现点击即可定位"><a href="#1-单文件怎么生成目录，并实现点击即可定位" class="headerlink" title="1. 单文件怎么生成目录，并实现点击即可定位"></a>1. 单文件怎么生成目录，并实现点击即可定位</h2><h3 id="方法1-手动添加"><a href="#方法1-手动添加" class="headerlink" title="方法1:手动添加"></a>方法1:手动添加</h3><p>原始格式如下所示，效果正如当前页面所生成的问题目录格式，原理其实是类似于插入链接的格式。插入链接格式</p>
+<p><a href="https://gitee.com/heronwang/linux_notes" target="_blank" rel="noopener">点击跳转我的linux笔记</a></p>
+<p>这里的链接的原始格式：<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/linux/linux%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/mynotes/2020/06/13/linux/linux%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">linux/linux命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-13 17:00:03" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:03+08:00">2020-06-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 02:32:27" itemprop="dateModified" datetime="2020-06-14T02:32:27+08:00">2020-06-14</time>
+              </span>
 
           
 
@@ -662,47 +572,17 @@ markdown快捷键
 
       
           <h1 id="linux常见问题总结"><a class="markdownIt-Anchor" href="#linux常见问题总结"></a> linux常见问题总结</h1>
-<p><a href="../readme.md">返回readme</a></p>
 <h2 id="1-怎么使用管理员权限打开文件夹"><a class="markdownIt-Anchor" href="#1-怎么使用管理员权限打开文件夹"></a> 1. 怎么使用管理员权限打开文件夹?</h2>
 <pre><code>&gt; sudo natilus
 </code></pre>
-<h2 id="2-浏览器看不了视频"><a class="markdownIt-Anchor" href="#2-浏览器看不了视频"></a> 2. 浏览器看不了视频?</h2>
-<pre><code>安装flash,执行一下命令前先需要设置允许安装未知版权的软件：  system settings -&gt; software&amp;updates -&gt; ubuntu software -&gt; 取消software restricted copyright or legal issues(第四个选项)
-
-&gt;  sudo apt-get install flashplugin-installer
-
-安装html5音视频所支持的依赖
-
-&gt; sudo apt-get update
-&gt;
-&gt; sudo apt-get install ubuntu-restricted-extras
-</code></pre>
-<h2 id="3-多条命令执行区别"><a class="markdownIt-Anchor" href="#3-多条命令执行区别"></a> 3. 多条命令执行区别</h2>
-<pre><code>（1） 每个命令之间用;隔开
-
-说明：各命令的执行给果，不会影响其它命令的执行。换句话说，各个命令都会执行，但不保证每个命令都执行成功。
-
-（2） 每个命令之间用&amp;&amp;隔开
-
-说明：若前面的命令执行成功，才会去执行后面的命令。这样可以保证所有的命令执行完毕后，执行过程都是成功的。
-
-（3）每个命令之间用||隔开
-
-说明：||是或的意思，只有前面的命令执行失败后才去执行下一条命令，直到成功执行一条命令为止。
-
-（4）每个命令之间用&amp;隔开
-说明：&amp;表示and，按顺序执行每条命令，但是前后不影响，也就是无论第一条是否执行失败，后一条总是要执行
-
-（5）每个命令之间用|隔开
-说明：管道符|，前一条执行的结果作为后一条执行语句的输入，依次执行。
-</code></pre>
-<h2 id="4ubuntu安装各种格式软件"><a class="markdownIt-Anchor" href="#4ubuntu安装各种格式软件"></a> 4.Ubuntu安装各种格式软件</h2>
-<pre><code>安装.deb格式的软件
-dpkg -i &lt;package.deb&gt;
-</code></pre>
-<h2 id="5-快速回到桌面快捷键"><a class="markdownIt-Anchor" href="#5-快速回到桌面快捷键"></a> 5. 快速回到桌面快捷键</h2>
-<p><code>ctrl + win + d</code> 快速回到桌面快捷键</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/mynotes/2020/06/13/linux/linux%E5%91%BD%E4%BB%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -721,12 +601,12 @@ dpkg -i &lt;package.deb&gt;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/notes/markdown%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/mynotes/images/avatar.gif">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
       <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -735,156 +615,7 @@ dpkg -i &lt;package.deb&gt;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/mynotes/2020/06/13/notes/markdown%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">notes/markdown笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-13 17:00:03 / 修改时间：21:13:55" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:03+08:00">2020-06-13</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="markdown疑难杂症"><a class="markdownIt-Anchor" href="#markdown疑难杂症"></a> markdown疑难杂症</h1>
-<h2 id="1-单文件怎么生成目录并实现点击即可定位"><a class="markdownIt-Anchor" href="#1-单文件怎么生成目录并实现点击即可定位"></a> 1. 单文件怎么生成目录，并实现点击即可定位</h2>
-<h3 id="方法1手动添加"><a class="markdownIt-Anchor" href="#方法1手动添加"></a> 方法1:手动添加</h3>
-<p>原始格式如下所示，效果正如当前页面所生成的问题目录格式，原理其实是类似于插入链接的格式。插入链接格式</p>
-<p><a href="https://gitee.com/heronwang/linux_notes" target="_blank" rel="noopener">点击跳转我的linux笔记</a></p>
-<p>这里的链接的原始格式：</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">点击跳转我的linux笔记</span>](<span class="link">https://gitee.com/heronwang/linux_notes</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">点击跳转</span>](<span class="link">#id值</span>)</span><br></pre></td></tr></table></figure>
-<p>整个目录模板格式如下：</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># &lt;center&gt; 标题 &lt;/center&gt;</span></span><br><span class="line">----</span><br><span class="line"><span class="section">## 目录</span></span><br><span class="line"><span class="bullet">1. </span>[<span class="string">目录1</span>](<span class="link">#jump1</span>)</span><br><span class="line"><span class="bullet">2. </span>[<span class="string">目录2</span>](<span class="link">#jump2</span>)</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="section">### &lt;a id="jump1"&gt;1. 目录1&lt;/a&gt;</span></span><br><span class="line">---</span><br><span class="line"><span class="section">### &lt;a id="jump2"&gt;2. 目录2&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="方法2使用vscode插件markdown-toc自动生成简单易用"><a class="markdownIt-Anchor" href="#方法2使用vscode插件markdown-toc自动生成简单易用"></a> 方法2:使用vscode插件:Markdown-toc自动生成（简单易用）</h3>
-<ul>
-<li>在vscode扩展中搜索 Markdown-toc,点击安装。</li>
-<li>进入vscode的系统设置settings,搜索eol,将换行设置为/n,这里我是linux系统设置为/n,windows系统设置为 /r/n 。</li>
-<li>然后回到markdown文档中，右键选择 Markdown toc:insert/update，即可根据标题自动生成目录</li>
-</ul>
-<h3 id="方法3使用markdown-all-in-one-支持的toc创建toc"><a class="markdownIt-Anchor" href="#方法3使用markdown-all-in-one-支持的toc创建toc"></a> 方法3:使用markdown all in one 支持的toc创建toc</h3>
-<p>打开相应的文件，ctrl +shift+ p 调出命令行，搜索toc，执行Markdown:create content of table</p>
-<h2 id="2-原始格式输出"><a class="markdownIt-Anchor" href="#2-原始格式输出"></a> 2. 原始格式输出</h2>
-<p>使用 ``` （ ` 位于esc的下面一个按键）将代码块包裹起来即可原始格式输出markdown，如下所示：</p>
-  <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```markdown</span></span><br><span class="line"><span class="code">  # 一级标题</span></span><br><span class="line"><span class="code">  ## 二级标题</span></span><br><span class="line"><span class="code">  ### 三级标题</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
-<h2 id="怎么使用flow流程图"><a class="markdownIt-Anchor" href="#怎么使用flow流程图"></a> 怎么使用flow流程图</h2>
-<p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;flow    </span><br><span class="line">&#x2F;&#x2F;这里定义结构以及节点等</span><br><span class="line">st&#x3D;&gt;start: 开始</span><br><span class="line">e&#x3D;&gt;end: 结束</span><br><span class="line">op&#x3D;&gt;operation: 我的操作</span><br><span class="line">cond&#x3D;&gt;condition: 确认？</span><br><span class="line">op2&#x3D;&gt;operation: 操作2</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这里写流程</span><br><span class="line">st-&gt;op-&gt;cond-&gt;op2</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op2</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
-<p>显示如下所示(vscode需要使用MPE插件预览)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;这里定义结构以及节点等</span><br><span class="line">st&#x3D;&gt;start: 开始</span><br><span class="line">e&#x3D;&gt;end: 结束</span><br><span class="line">op&#x3D;&gt;operation: 我的操作</span><br><span class="line">cond&#x3D;&gt;condition: 确认？</span><br><span class="line">op2&#x3D;&gt;operation: 操作2</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这里写流程</span><br><span class="line">st-&gt;op-&gt;cond-&gt;op2</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op2</span><br></pre></td></tr></table></figure>
-<h2 id="怎么使用math公式"><a class="markdownIt-Anchor" href="#怎么使用math公式"></a> 怎么使用math公式</h2>
-<ol>
-<li>矩阵使用：<br />
-<code>$这里单行公式$</code></li>
-</ol>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">这里添加多行公式</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable width="100%"><mtr><mtd width="50%"></mtd><mtd><mrow><mi mathvariant="normal">平</mi><mi mathvariant="normal">移</mi><mi mathvariant="normal">矩</mi><mi mathvariant="normal">阵</mi><mi mathvariant="normal">：</mi><mi>M</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>100</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>100</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow></mtd><mtd width="50%"></mtd><mtd><mtext>(A)</mtext></mtd></mtr></mtable><annotation encoding="application/x-tex">  平移矩阵：M=
-  \left[\begin{matrix}
-   1 &amp; 0 &amp; 100 \\
-   0 &amp; 1 &amp; 100 \\
-  \end{matrix} \right]\tag{A}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">平</span><span class="mord cjk_fallback">移</span><span class="mord cjk_fallback">矩</span><span class="mord cjk_fallback">阵</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9500000000000004em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.45em;"><span style="top:-3.61em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span><span style="top:-2.4099999999999997em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9500000000000004em;"><span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span><span class="tag"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">A</span></span><span class="mord">)</span></span></span></span></span></span></p>
-<h2 id="怎么使用表格"><a class="markdownIt-Anchor" href="#怎么使用表格"></a> 怎么使用表格</h2>
-<p>实例如下，3列7行的表格：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">| Column1 | Column2 | Column3 |</span><br><span class="line">|---------|---------|---------|</span><br><span class="line">| Row1    |         |         |</span><br><span class="line">| Row2    | dfd     |         |</span><br><span class="line">| Row3    |         |         |</span><br><span class="line">| Row4    |         |         |</span><br><span class="line">| Row5    |         |         |</span><br><span class="line">| Row6    |         |         |</span><br><span class="line">| Row7    |         |         |</span><br></pre></td></tr></table></figure>
-<p>显示如下：</p>
-<table>
-<thead>
-<tr>
-<th>Column1</th>
-<th>Column2</th>
-<th>Column3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Row1</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Row2</td>
-<td>dfd</td>
-<td></td>
-</tr>
-<tr>
-<td>Row3</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Row4</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Row5</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Row6</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Row7</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>相关的快捷键<br />
-<code>alt + m</code> 打开生成markdown结构的的菜单，选择table输入要生成的行列</p>
-<p><code>ctrl + d t</code> 均与分布表格单元格（相当于美化表格）</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/notes/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/mynotes/images/avatar.gif">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/mynotes/2020/06/13/notes/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">notes/git常见问题</a>
+            <a href="/mynotes/2020/06/13/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">git/git常见问题</a>
         </h2>
 
         <div class="post-meta">
@@ -896,6 +627,13 @@ dpkg -i &lt;package.deb&gt;
 
               <time title="创建时间：2020-06-13 17:00:03" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:03+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 04:10:43" itemprop="dateModified" datetime="2020-06-14T04:10:43+08:00">2020-06-14</time>
+              </span>
 
           
 
@@ -908,101 +646,17 @@ dpkg -i &lt;package.deb&gt;
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="git常见问题汇"><a class="markdownIt-Anchor" href="#git常见问题汇"></a> git常见问题汇</h1>
-<p><a href="../readme.md">返回readme</a></p>
-<p>[TOC]</p>
-<h2 id="1-git怎么快捷提交到远程"><a class="markdownIt-Anchor" href="#1-git怎么快捷提交到远程"></a> 1. git怎么快捷提交到远程</h2>
-<p>有时候只是修改了一个简单的地方，但是提交却要好几行才能完成</p>
+          <h1 id="git常见问题汇"><a href="#git常见问题汇" class="headerlink" title="git常见问题汇"></a>git常见问题汇</h1><h2 id="1-git怎么快捷提交到远程"><a href="#1-git怎么快捷提交到远程" class="headerlink" title="1. git怎么快捷提交到远程"></a>1. git怎么快捷提交到远程</h2><p>有时候只是修改了一个简单的地方，但是提交却要好几行才能完成</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -am <span class="string">"change some text"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-<p>能不能把这几句合并成一句，以后再也不用桥一些繁琐的命令，以提高工作效率<br />
-当然可以，如下：</p>
-<blockquote>
-<p>git add . &amp;&amp;  git commit -am “change some text” &amp;&amp; git push</p>
-</blockquote>
-<p>一句搞定！<br />
-但是问题来了，这句命令也太长了吧，做人能不能简单一点，不要搞得那么复杂吗！或者能直接设置快捷键呢？</p>
-<p>好的，满足你，跟着我来一起做，步骤如下：</p>
-<ol>
-<li>
-<p>用vscode打开当前仓库，配置task.json:</p>
-<p>点击vscode界面左下角，打开 command palette… —&gt; 输入task 进行搜索  —&gt;  选择task：configure task -&gt; 选择task 模板 ，新建task.json文件 —&gt; 在task.json文件中修改成以下内容：</p>
- <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">// See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">// for the documentation about the tasks.json format</span><br><span class="line">"version": "2.0.0",</span><br><span class="line">"tasks": [</span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        "label": "push code",</span></span><br><span class="line"><span class="code">        "type": "shell",</span></span><br><span class="line"><span class="code">        "command": "git add . &amp;  git commit -am 'change something' &amp; git push"</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>验证 task是否能运行：</p>
-<p>点击vscode界面左下角，打开 command palette… —&gt; 输入run task 回车 —&gt; 点击 push code看task是否能成功执行</p>
-</li>
-<li>
-<p>配置快捷键：</p>
-<p>file —&gt; preference —&gt; keyboard shortcut —&gt; 打开了快捷键配置文件，点击右上角的 {}，进入文本编辑模式，添加如下内容：</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        // 为git提交代码到远程仓库设置快捷键 </span></span><br><span class="line"><span class="code">        "key": "ctrl+p ctrl+p",</span></span><br><span class="line"><span class="code">        "command": "workbench.action.tasks.runTask",</span></span><br><span class="line"><span class="code">        "args": "push code",</span></span><br><span class="line"><span class="code">        "when": "isLinux"    </span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>使用 快捷键&quot;ctrl+p ctrl+p&quot; 验证是否能成功push代码到远程仓库。</p>
-</li>
-</ol>
-<p>原本按照这个想法，我想到了两个思路：</p>
-<ol>
-<li>
-<p>通过vscode的设置task和快捷键完成操作，步骤如上。</p>
-</li>
-<li>
-<p>将三条命令alias一条简短的快捷命令,在终端上执行。</p>
-<p>2.1 但是这个并没有想象中那么简单，至少在gitvonfig中是难以实现的。因为 alias 中的快捷命令是需要运行时需要在前面添加 git 才能运行的，比如：<code>alias p=push </code>，那么在命令行运行 <code>git p</code> 就相当于 <code>git push </code>。这就限制了无法用 将这三条命令 缩写成一条命令来运行。</p>
-<p>2.2 但是世上无难事，只要有心人，曲线也是能救国的！不要局限在git的配置中怎么去实现，思维要开阔些！我们可以在当前文件夹下面新建一个bash脚本，把上面三条命令直接写进去，直接运行脚本不就可以了嘛!</p>
-<p><a href="http://xn--push-494fr2cb5kmlat54c6rn21ar85cw26m.sh" target="_blank" rel="noopener">当前文件夹下面创建push.sh</a>,写入文本：</p>
- <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">echo 成功添加暂存区</span><br><span class="line">git commit -am "change some text"</span><br><span class="line">echo 成功提交到本地仓库</span><br><span class="line">git push</span><br><span class="line">echo 成功push到远程仓库</span><br></pre></td></tr></table></figure>
-<p>在当前文件夹下面的终端运行：</p>
-<blockquote>
-<p>chmod a+x <a href="http://push.sh" target="_blank" rel="noopener">push.sh</a></p>
-<p>./push.sh</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="2-git提交码云上没有显示贡献度"><a class="markdownIt-Anchor" href="#2-git提交码云上没有显示贡献度"></a> 2. git提交码云上没有显示贡献度</h2>
-<p>结果竟然是因为我设置的全局邮箱有问题:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user.email&#x3D;&quot;1002860620@qq.com&quot;</span><br><span class="line">user.name&#x3D;heronwang</span><br></pre></td></tr></table></figure>
-<p>上面所示，邮箱多了一双引号，去掉引号就可以啦<br />
-<code>git config --global user.email 1002860620@qq.com</code></p>
-<p>然后再输入<code>git config -l</code> 查看配置：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user.email&#x3D;1002860620@qq.com</span><br><span class="line">user.name&#x3D;heronwang</span><br></pre></td></tr></table></figure>
-<p>引号去掉了，然后<code>git push</code>提交，在后台查看终于显示我的贡献度了，</p>
-<p>好气哦，ubuntu用了这么长时间，在码云上提交了那么多贡献全是空的！！</p>
-<h2 id="3怎么给仓库打tag记录历史中重要的节点"><a class="markdownIt-Anchor" href="#3怎么给仓库打tag记录历史中重要的节点"></a> 3.怎么给仓库打tag，记录历史中重要的节点</h2>
-<p>首先<code>git tag -l</code> 查看仓库中所有tag</p>
-<p>Git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）</p>
-<ul>
-<li>
-<p>轻量标签：很像一个不会改变的分支——它只是某个特定提交的引用。</p>
-<p><code>git tag &lt;tagname&gt;</code> 创建轻量标签<br />
-<code>git show &lt;tagname&gt;</code> 显示出提交信息</p>
-</li>
-<li>
-<p>附注标签：是存储在 Git 数据库中的一个完整对象， 它们是可以被校验的，其中包含打标签者的名字、电子邮件地址、日期时间， 此外还有一个标签信息，并且可以使用 GNU Privacy Guard （GPG）签名并验证。<br />
-<code>git tag -a &lt;tagname&gt; -m &quot;标签信息&quot;</code> 创建附注标签</p>
-</li>
-<li>
-<p>后期打标签：你也可以对过去的提交打标签<br />
-<code>git log --pretty=oneline</code> 显示历史提交信息<br />
-<code>git tag -a &lt;tagname&gt; &lt;某个提交的哈希码&gt;</code> 为历史提交打标签</p>
-</li>
-<li>
-<p>共享标签：将标签上传到远程共享<br />
-<code>git push origin --tags</code> 上传所有tags<br />
-<code>git push origin &lt;tagname&gt;</code> 上传某个tag</p>
-</li>
-<li>
-<p>删除标签tag<br />
-<code>git tag -d &lt;tagname&gt;</code> 删除本地tag<br />
-<code>git push origin --delete &lt;tagname&gt;</code>   删除远程tag</p>
-</li>
-<li>
-<p>检出标签：如果你想查看某个标签所指向的文件版本，可以使用 git checkout 命令， 虽然这会使你的仓库处于“分离头指针（detached HEAD）”的状态——这个状态有些不好的副作用，在“分离头指针”状态下，如果你做了某些更改然后提交它们，标签不会发生变化， 但你的新提交将不属于任何分支，并且将无法访问，除非通过确切的提交哈希才能访问。 因此，如果你需要进行更改，比如你要修复旧版本中的错误，那么通常需要创建一个新分支。<br />
-<code>git checkout &lt;tagname&gt;</code> 查看标签具体内容</p>
-<p><code>git checkout -b &lt;branchName&gt; &lt;tagname&gt;</code> 为某个标签创建分支</p>
-</li>
-</ul>
-
+<p>能不能把这几句合并成一句，以后再也不用桥一些繁琐的命令，以提高工作效率<br>当然可以，如下：<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/mynotes/2020/06/13/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1021,12 +675,12 @@ dpkg -i &lt;package.deb&gt;
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/hexo/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/mynotes/images/avatar.gif">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
       <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1035,7 +689,7 @@ dpkg -i &lt;package.deb&gt;
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/mynotes/2020/06/13/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/mynotes/2020/06/13/hexo/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
         </h2>
 
         <div class="post-meta">
@@ -1047,6 +701,13 @@ dpkg -i &lt;package.deb&gt;
 
               <time title="创建时间：2020-06-13 15:15:39" itemprop="dateCreated datePublished" datetime="2020-06-13T15:15:39+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 04:12:18" itemprop="dateModified" datetime="2020-06-14T04:12:18+08:00">2020-06-14</time>
+              </span>
 
           
 
@@ -1060,20 +721,15 @@ dpkg -i &lt;package.deb&gt;
 
       
           <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/mynotes/2020/06/13/hexo/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1146,8 +802,10 @@ dpkg -i &lt;package.deb&gt;
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Heronwang"
+      src="/mynotes/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Heronwang</p>
-  <div class="site-description" itemprop="description">这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴</div>
+  <div class="site-description" itemprop="description">这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -1164,6 +822,12 @@ dpkg -i &lt;package.deb&gt;
         <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/mynotes/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
@@ -1178,6 +842,10 @@ dpkg -i &lt;package.deb&gt;
 
 
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -1202,7 +870,7 @@ dpkg -i &lt;package.deb&gt;
   </span>
   <span class="author" itemprop="copyrightHolder">Heronwang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
 
         
@@ -1239,6 +907,10 @@ dpkg -i &lt;package.deb&gt;
   
 
 
+
+
+  
+<script src="/mynotes/js/local-search.js"></script>
 
 
 

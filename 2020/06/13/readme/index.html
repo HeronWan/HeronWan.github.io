@@ -17,19 +17,21 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"heronwang.gitee.io","root":"/mynotes/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"heronwang.gitee.io","root":"/mynotes/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="readme   readme  前言 Q&amp;A笔记 python的框架与库的学习笔记 深度学习论文阅读笔记 规范 todos计划      前言 这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能 这里记录自己遇到的相关问题，并解决问题方案，以备后用 同时也记录自己系统学习新知识而敲出来的代码和笔记 贪多嚼不烂，可以慢一点">
+  <meta name="description" content="前言这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能 这里记录自己遇到的相关问题，并解决问题方案，以备后用 同时也记录自己系统学习新知识而敲出来的代码和笔记 贪多嚼不烂，可以慢一点，但必须要扎实 不要复制粘贴别人的答案，一定要自己实践一遍后，经过自己的探索，着实解决了自己问题，然后在逐一记录下来。 Q&amp;A笔记  Hel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="readme">
+<meta property="og:title" content="README">
 <meta property="og:url" content="https://heronwang.gitee.io/mynotes/2020/06/13/readme/index.html">
 <meta property="og:site_name" content="Heron&#39;s NoteBook">
-<meta property="og:description" content="readme   readme  前言 Q&amp;A笔记 python的框架与库的学习笔记 深度学习论文阅读笔记 规范 todos计划      前言 这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能 这里记录自己遇到的相关问题，并解决问题方案，以备后用 同时也记录自己系统学习新知识而敲出来的代码和笔记 贪多嚼不烂，可以慢一点">
+<meta property="og:description" content="前言这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能 这里记录自己遇到的相关问题，并解决问题方案，以备后用 同时也记录自己系统学习新知识而敲出来的代码和笔记 贪多嚼不烂，可以慢一点，但必须要扎实 不要复制粘贴别人的答案，一定要自己实践一遍后，经过自己的探索，着实解决了自己问题，然后在逐一记录下来。 Q&amp;A笔记  Hel">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-13T09:00:39.843Z">
-<meta property="article:modified_time" content="2020-06-13T09:16:34.858Z">
+<meta property="article:modified_time" content="2020-06-13T20:16:32.965Z">
 <meta property="article:author" content="Heronwang">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="opencv">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://heronwang.gitee.io/mynotes/2020/06/13/readme/">
@@ -45,7 +47,7 @@
   };
 </script>
 
-  <title>readme | Heron's NoteBook</title>
+  <title>README | Heron's NoteBook</title>
   
 
 
@@ -104,6 +106,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -138,20 +141,48 @@
     <a href="/mynotes/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/mynotes/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
 
 
     <main class="main">
@@ -169,9 +200,9 @@
     <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/readme/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/mynotes/images/avatar.gif">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
       <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -179,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          readme
+          README
         </h1>
 
         <div class="post-meta">
@@ -188,10 +219,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-06-13 17:00:39 / 修改时间：17:16:34" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:39+08:00">2020-06-13</time>
+              <time title="创建时间：2020-06-13 17:00:39" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:39+08:00">2020-06-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 04:16:32" itemprop="dateModified" datetime="2020-06-14T04:16:32+08:00">2020-06-14</time>
+              </span>
 
           
 
@@ -204,56 +241,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="readme"><a class="markdownIt-Anchor" href="#readme"></a> readme</h1>
-<!-- TOC -->
-<ul>
-<li><a href="#readme">readme</a>
-<ul>
-<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
-<li><a href="#qa%E7%AC%94%E8%AE%B0">Q&amp;A笔记</a></li>
-<li><a href="#python%E7%9A%84%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%BA%93%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0">python的框架与库的学习笔记</a></li>
-<li><a href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0">深度学习论文阅读笔记</a></li>
-<li><a href="#%E8%A7%84%E8%8C%83">规范</a></li>
-<li><a href="#todos%E8%AE%A1%E5%88%92">todos计划</a></li>
-</ul>
-</li>
-</ul>
-<!-- /TOC -->
-<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
-<p>这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能</p>
+        <a id="more"></a>
+<!-- ![我的图片](/mynotes/images/pic001.png) -->
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能</p>
 <p>这里记录自己遇到的相关问题，并解决问题方案，以备后用</p>
 <p>同时也记录自己系统学习新知识而敲出来的代码和笔记</p>
 <p>贪多嚼不烂，可以慢一点，但必须要扎实</p>
 <p>不要复制粘贴别人的答案，一定要自己实践一遍后，经过自己的探索，着实解决了自己问题，然后在逐一记录下来。</p>
-<h2 id="qa笔记"><a class="markdownIt-Anchor" href="#qa笔记"></a> Q&amp;A笔记</h2>
+<h2 id="Q-amp-A笔记"><a href="#Q-amp-A笔记" class="headerlink" title="Q&amp;A笔记"></a>Q&amp;A笔记</h2><!-- hexo中点击可以跳转 -->
 <ol>
-<li><a href="notes/linux%E5%91%BD%E4%BB%A4.md">1.linux系统相关操作</a></li>
-<li><a href="notes/vscode%E7%AC%94%E8%AE%B0.md">2.vscode相关问题</a></li>
-</ol>
-<!-- 3. [3.markdown常见问题](notes/markdown.md) -->
-<ol start="4">
-<li><a href="notes/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md">4.git笔记</a></li>
-</ol>
-<h2 id="python的框架与库的学习笔记"><a class="markdownIt-Anchor" href="#python的框架与库的学习笔记"></a> python的框架与库的学习笔记</h2>
-<ol>
-<li><a href="python/opencv.md">opencv学习笔记</a></li>
-<li><a href="#">pytorch学习笔记</a></li>
-</ol>
-<h2 id="深度学习论文阅读笔记"><a class="markdownIt-Anchor" href="#深度学习论文阅读笔记"></a> 深度学习论文阅读笔记</h2>
-<ol>
-<li>
-<p>VGGNet</p>
+<li><a href="/mynotes/2020/06/13/hexo/hello-world/" title="Hello World">Hello World</a>
 </li>
-<li></li>
+<li><a href="/mynotes/2020/06/13/vscode/vscode%E7%AC%94%E8%AE%B0/" title="vscode&#x2F;vscode笔记">vscode&#x2F;vscode笔记</a>
+</li>
+<li><a href="/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/" title="markdown&#x2F;markdown笔记">markdown&#x2F;markdown笔记</a>
+</li>
+<li><a href="/mynotes/2020/06/13/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="git&#x2F;git常见问题">git&#x2F;git常见问题</a>
+</li>
+<li><a href="/mynotes/2020/06/13/linux/linux%E5%91%BD%E4%BB%A4/" title="linux&#x2F;linux命令">linux&#x2F;linux命令</a>
+</li>
 </ol>
-<h2 id="规范"><a class="markdownIt-Anchor" href="#规范"></a> 规范</h2>
-<h2 id="todos计划"><a class="markdownIt-Anchor" href="#todos计划"></a> todos计划</h2>
-<ol>
-<li>Ubuntu系统下疑难杂症与解决方案；</li>
-<li>掌握git基本语法，创建仓库，保持远程和本地的同步与更新；</li>
-<li>markdown语法，维护笔记排版；</li>
-<li>搭建博客，实现本地和远程仓库，以及博客页面三者同步与更新，分享链接可远程访问；</li>
-<li>记录图像识别与深度学习笔记；</li>
+<!-- 1. [1.linux系统相关操作](  notes/linux命令.)
+2. [2.vscode相关问题](notes/vscode笔记.md)
+<!-- 3. [3.markdown常见问题](notes/markdown.md) -->
+<!-- 4. [4.git笔记](notes/git常见问题.md) --> 
+<h2 id="python的框架与库的学习笔记"><a href="#python的框架与库的学习笔记" class="headerlink" title="python的框架与库的学习笔记"></a>python的框架与库的学习笔记</h2><ol>
+<li><a href="/mynotes/2020/06/13/ML/opencv/" title="ML&#x2F;opencv">ML&#x2F;opencv</a>
+</li>
+<li><p>[pytorch学习笔记]</p>
+</li>
+</ol>
+<h2 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h2><h2 id="todos计划"><a href="#todos计划" class="headerlink" title="todos计划"></a>todos计划</h2><ol>
+<li><strong>Ubuntu系统下疑难杂症与解决方案；</strong></li>
+<li><del>掌握git基本语法，创建仓库，保持远程和本地的同步与更新；</del></li>
+<li><del>markdown语法，维护笔记排版</del></li>
+<li><del>搭建博客，实现本地和远程仓库，以及博客页面三者同步与更新，分享链接可远程访问；</del></li>
+<li>opencv-python系统学习笔记</li>
+<li>pytorch深度学习框架学习笔记</li>
 </ol>
 
     </div>
@@ -263,6 +287,11 @@
     
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/mynotes/tags/ubuntu/" rel="tag"><i class="fa fa-tag"></i> ubuntu</a>
+              <a href="/mynotes/tags/opencv/" rel="tag"><i class="fa fa-tag"></i> opencv</a>
+          </div>
 
         
 
@@ -270,8 +299,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/mynotes/2020/06/13/python/opencv/" rel="prev" title="python/opencv">
-      <i class="fa fa-chevron-left"></i> python/opencv
+    <a href="/mynotes/2020/06/13/ML/opencv/" rel="prev" title="ML/opencv">
+      <i class="fa fa-chevron-left"></i> ML/opencv
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -332,14 +361,16 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#readme"><span class="nav-number">1.</span> <span class="nav-text"> readme</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qa笔记"><span class="nav-number">1.2.</span> <span class="nav-text"> Q&amp;A笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python的框架与库的学习笔记"><span class="nav-number">1.3.</span> <span class="nav-text"> python的框架与库的学习笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习论文阅读笔记"><span class="nav-number">1.4.</span> <span class="nav-text"> 深度学习论文阅读笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规范"><span class="nav-number">1.5.</span> <span class="nav-text"> 规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#todos计划"><span class="nav-number">1.6.</span> <span class="nav-text"> todos计划</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A笔记"><span class="nav-number">2.</span> <span class="nav-text">Q&amp;A笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python的框架与库的学习笔记"><span class="nav-number">3.</span> <span class="nav-text">python的框架与库的学习笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规范"><span class="nav-number">4.</span> <span class="nav-text">规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#todos计划"><span class="nav-number">5.</span> <span class="nav-text">todos计划</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Heronwang"
+      src="/mynotes/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Heronwang</p>
-  <div class="site-description" itemprop="description">这是我的笔记簿<br>记录我的生活与学习<br>还有工作上的点滴滴滴</div>
+  <div class="site-description" itemprop="description">这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -356,6 +387,12 @@
         <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/mynotes/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
@@ -370,6 +407,10 @@
 
 
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
@@ -394,7 +435,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Heronwang</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
 
         
@@ -431,6 +472,10 @@
   
 
 
+
+
+  
+<script src="/mynotes/js/local-search.js"></script>
 
 
 

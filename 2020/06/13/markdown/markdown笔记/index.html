@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/mynotes/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/mynotes/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/mynotes/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/mynotes/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/mynotes/css/main.css">
+
+
+<link rel="stylesheet" href="/mynotes/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"heronwang.gitee.io","root":"/mynotes/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="markdown疑难杂症1. 单文件怎么生成目录，并实现点击即可定位方法1:手动添加原始格式如下所示，效果正如当前页面所生成的问题目录格式，原理其实是类似于插入链接的格式。插入链接格式 点击跳转我的linux笔记 这里的链接的原始格式：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="markdown&#x2F;markdown笔记">
+<meta property="og:url" content="https://heronwang.gitee.io/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Heron&#39;s NoteBook">
+<meta property="og:description" content="markdown疑难杂症1. 单文件怎么生成目录，并实现点击即可定位方法1:手动添加原始格式如下所示，效果正如当前页面所生成的问题目录格式，原理其实是类似于插入链接的格式。插入链接格式 点击跳转我的linux笔记 这里的链接的原始格式：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-13T09:00:03.250Z">
+<meta property="article:modified_time" content="2020-06-13T20:11:10.591Z">
+<meta property="article:author" content="Heronwang">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="html5">
+<meta property="article:tag" content="css3">
+<meta property="article:tag" content="deep learning">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="opencv">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://heronwang.gitee.io/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>markdown/markdown笔记 | Heron's NoteBook</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/mynotes/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Heron's NoteBook</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">to my life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/mynotes/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/mynotes/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/mynotes/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/mynotes/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/mynotes/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/mynotes/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwang.gitee.io/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/mynotes/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          markdown/markdown笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-13 17:00:03" itemprop="dateCreated datePublished" datetime="2020-06-13T17:00:03+08:00">2020-06-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-14 04:11:10" itemprop="dateModified" datetime="2020-06-14T04:11:10+08:00">2020-06-14</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="markdown疑难杂症"><a href="#markdown疑难杂症" class="headerlink" title="markdown疑难杂症"></a>markdown疑难杂症</h1><h2 id="1-单文件怎么生成目录，并实现点击即可定位"><a href="#1-单文件怎么生成目录，并实现点击即可定位" class="headerlink" title="1. 单文件怎么生成目录，并实现点击即可定位"></a>1. 单文件怎么生成目录，并实现点击即可定位</h2><h3 id="方法1-手动添加"><a href="#方法1-手动添加" class="headerlink" title="方法1:手动添加"></a>方法1:手动添加</h3><p>原始格式如下所示，效果正如当前页面所生成的问题目录格式，原理其实是类似于插入链接的格式。插入链接格式</p>
+<p><a href="https://gitee.com/heronwang/linux_notes" target="_blank" rel="noopener">点击跳转我的linux笔记</a></p>
+<p>这里的链接的原始格式：<br><a id="more"></a><br><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">点击跳转我的linux笔记</span>](<span class="link">https://gitee.com/heronwang/linux_notes</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">点击跳转</span>](<span class="link">#id值</span>)</span><br></pre></td></tr></table></figure>
+<p>整个目录模板格式如下：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># &lt;center&gt; 标题 &lt;/center&gt;</span></span><br><span class="line">----</span><br><span class="line"><span class="section">## 目录</span></span><br><span class="line"><span class="bullet">1. </span>[<span class="string">目录1</span>](<span class="link">#jump1</span>)</span><br><span class="line"><span class="bullet">2. </span>[<span class="string">目录2</span>](<span class="link">#jump2</span>)</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="section">### &lt;a id="jump1"&gt;1. 目录1&lt;/a&gt;</span></span><br><span class="line">---</span><br><span class="line"><span class="section">### &lt;a id="jump2"&gt;2. 目录2&lt;/a&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="方法2-使用vscode插件-Markdown-toc自动生成（简单易用）"><a href="#方法2-使用vscode插件-Markdown-toc自动生成（简单易用）" class="headerlink" title="方法2:使用vscode插件:Markdown-toc自动生成（简单易用）"></a>方法2:使用vscode插件:Markdown-toc自动生成（简单易用）</h3><ul>
+<li>在vscode扩展中搜索 Markdown-toc,点击安装。</li>
+<li>进入vscode的系统设置settings,搜索eol,将换行设置为/n,这里我是linux系统设置为/n,windows系统设置为 /r/n 。</li>
+<li>然后回到markdown文档中，右键选择 Markdown toc:insert/update，即可根据标题自动生成目录</li>
+</ul>
+<h3 id="方法3-使用markdown-all-in-one-支持的toc创建toc"><a href="#方法3-使用markdown-all-in-one-支持的toc创建toc" class="headerlink" title="方法3:使用markdown all in one 支持的toc创建toc"></a>方法3:使用markdown all in one 支持的toc创建toc</h3><p>  打开相应的文件，ctrl +shift+ p 调出命令行，搜索toc，执行Markdown:create content of table</p>
+<h2 id="2-原始格式输出"><a href="#2-原始格式输出" class="headerlink" title="2. 原始格式输出"></a>2. 原始格式输出</h2><p>使用 <code>`` （</code> 位于esc的下面一个按键）将代码块包裹起来即可原始格式输出markdown，如下所示：</p>
+  <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">```markdown</span></span><br><span class="line"><span class="code">  # 一级标题</span></span><br><span class="line"><span class="code">  ## 二级标题</span></span><br><span class="line"><span class="code">  ### 三级标题</span></span><br><span class="line"><span class="code">```</span></span><br></pre></td></tr></table></figure>
+<h2 id="怎么使用flow流程图"><a href="#怎么使用flow流程图" class="headerlink" title="怎么使用flow流程图"></a>怎么使用flow流程图</h2><p>示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#96;&#96;&#96;flow    </span><br><span class="line">&#x2F;&#x2F;这里定义结构以及节点等</span><br><span class="line">st&#x3D;&gt;start: 开始</span><br><span class="line">e&#x3D;&gt;end: 结束</span><br><span class="line">op&#x3D;&gt;operation: 我的操作</span><br><span class="line">cond&#x3D;&gt;condition: 确认？</span><br><span class="line">op2&#x3D;&gt;operation: 操作2</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这里写流程</span><br><span class="line">st-&gt;op-&gt;cond-&gt;op2</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op2</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure></p>
+<p>显示如下所示(vscode需要使用MPE插件预览)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;这里定义结构以及节点等</span><br><span class="line">st&#x3D;&gt;start: 开始</span><br><span class="line">e&#x3D;&gt;end: 结束</span><br><span class="line">op&#x3D;&gt;operation: 我的操作</span><br><span class="line">cond&#x3D;&gt;condition: 确认？</span><br><span class="line">op2&#x3D;&gt;operation: 操作2</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;这里写流程</span><br><span class="line">st-&gt;op-&gt;cond-&gt;op2</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op2</span><br></pre></td></tr></table></figure>
+<h2 id="怎么使用math公式"><a href="#怎么使用math公式" class="headerlink" title="怎么使用math公式"></a>怎么使用math公式</h2><ol>
+<li><p>矩阵使用：</p>
+<script type="math/tex; mode=display">这里单行公式</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$$</span><br><span class="line">这里添加多行公式</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+  平移矩阵：M=
+  \left[\begin{matrix}
+   1 & 0 & 100 \\
+   0 & 1 & 100 \\
+  \end{matrix} \right]\tag{A}</script><h2 id="怎么使用表格"><a href="#怎么使用表格" class="headerlink" title="怎么使用表格"></a>怎么使用表格</h2><p>实例如下，3列7行的表格：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">| Column1 | Column2 | Column3 |</span><br><span class="line">|---------|---------|---------|</span><br><span class="line">| Row1    |         |         |</span><br><span class="line">| Row2    | dfd     |         |</span><br><span class="line">| Row3    |         |         |</span><br><span class="line">| Row4    |         |         |</span><br><span class="line">| Row5    |         |         |</span><br><span class="line">| Row6    |         |         |</span><br><span class="line">| Row7    |         |         |</span><br></pre></td></tr></table></figure>
+<p>显示如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Column1</th>
+<th>Column2</th>
+<th>Column3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Row1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Row2</td>
+<td>dfd</td>
+<td></td>
+</tr>
+<tr>
+<td>Row3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Row4</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Row5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Row6</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Row7</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>相关的快捷键<br><code>alt + m</code> 打开生成markdown结构的的菜单，选择table输入要生成的行列</p>
+<p><code>ctrl + d  t</code> 均与分布表格单元格（相当于美化表格）</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/mynotes/2020/06/13/linux/linux%E5%91%BD%E4%BB%A4/" rel="prev" title="linux/linux命令">
+      <i class="fa fa-chevron-left"></i> linux/linux命令
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/mynotes/2020/06/13/vscode/vscode%E7%AC%94%E8%AE%B0/" rel="next" title="vscode/vscode笔记">
+      vscode/vscode笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#markdown疑难杂症"><span class="nav-number">1.</span> <span class="nav-text">markdown疑难杂症</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-单文件怎么生成目录，并实现点击即可定位"><span class="nav-number">1.1.</span> <span class="nav-text">1. 单文件怎么生成目录，并实现点击即可定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1-手动添加"><span class="nav-number">1.1.1.</span> <span class="nav-text">方法1:手动添加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2-使用vscode插件-Markdown-toc自动生成（简单易用）"><span class="nav-number">1.1.2.</span> <span class="nav-text">方法2:使用vscode插件:Markdown-toc自动生成（简单易用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法3-使用markdown-all-in-one-支持的toc创建toc"><span class="nav-number">1.1.3.</span> <span class="nav-text">方法3:使用markdown all in one 支持的toc创建toc</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-原始格式输出"><span class="nav-number">1.2.</span> <span class="nav-text">2. 原始格式输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用flow流程图"><span class="nav-number">1.3.</span> <span class="nav-text">怎么使用flow流程图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用math公式"><span class="nav-number">1.4.</span> <span class="nav-text">怎么使用math公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么使用表格"><span class="nav-number">1.5.</span> <span class="nav-text">怎么使用表格</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Heronwang"
+      src="/mynotes/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Heronwang</p>
+  <div class="site-description" itemprop="description">这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/mynotes/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/mynotes/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/mynotes/tags/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HeronWan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HeronWan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1002860620@qq.com" title="E-Mail → mailto:1002860620@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heronwang</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/mynotes/lib/anime.min.js"></script>
+  <script src="/mynotes/lib/velocity/velocity.min.js"></script>
+  <script src="/mynotes/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/mynotes/js/utils.js"></script>
+
+<script src="/mynotes/js/motion.js"></script>
+
+
+<script src="/mynotes/js/schemes/muse.js"></script>
+
+
+<script src="/mynotes/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/mynotes/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/mynotes/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/mynotes/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":200,"height":400},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
