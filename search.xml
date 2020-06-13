@@ -372,6 +372,59 @@ K</p>
       </categories>
   </entry>
   <entry>
+    <title>linux/linux命令</title>
+    <url>/mynotes/2020/06/13/linux/linux%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="linux常见问题总结"><a class="markdownIt-Anchor" href="#linux常见问题总结"></a> linux常见问题总结</h1>
+<h2 id="1-怎么使用管理员权限打开文件夹"><a class="markdownIt-Anchor" href="#1-怎么使用管理员权限打开文件夹"></a> 1. 怎么使用管理员权限打开文件夹?</h2>
+<pre><code>&gt; sudo natilus
+</code></pre>
+<a id="more"></a>
+<h2 id="2-浏览器看不了视频"><a class="markdownIt-Anchor" href="#2-浏览器看不了视频"></a> 2. 浏览器看不了视频?</h2>
+<pre><code>安装flash,执行一下命令前先需要设置允许安装未知版权的软件：  system settings -&gt; software&amp;updates -&gt; ubuntu software -&gt; 取消software restricted copyright or legal issues(第四个选项)
+
+&gt;  sudo apt-get install flashplugin-installer
+
+安装html5音视频所支持的依赖
+
+&gt; sudo apt-get update
+&gt;
+&gt; sudo apt-get install ubuntu-restricted-extras
+</code></pre>
+<h2 id="3-多条命令执行区别"><a class="markdownIt-Anchor" href="#3-多条命令执行区别"></a> 3. 多条命令执行区别</h2>
+<pre><code>（1） 每个命令之间用;隔开
+
+说明：各命令的执行给果，不会影响其它命令的执行。换句话说，各个命令都会执行，但不保证每个命令都执行成功。
+
+（2） 每个命令之间用&amp;&amp;隔开
+
+说明：若前面的命令执行成功，才会去执行后面的命令。这样可以保证所有的命令执行完毕后，执行过程都是成功的。
+
+（3）每个命令之间用||隔开
+
+说明：||是或的意思，只有前面的命令执行失败后才去执行下一条命令，直到成功执行一条命令为止。
+
+（4）每个命令之间用&amp;隔开
+说明：&amp;表示and，按顺序执行每条命令，但是前后不影响，也就是无论第一条是否执行失败，后一条总是要执行
+
+（5）每个命令之间用|隔开
+说明：管道符|，前一条执行的结果作为后一条执行语句的输入，依次执行。
+</code></pre>
+<h2 id="4ubuntu安装各种格式软件"><a class="markdownIt-Anchor" href="#4ubuntu安装各种格式软件"></a> 4.Ubuntu安装各种格式软件</h2>
+<pre><code>安装.deb格式的软件
+dpkg -i &lt;package.deb&gt;
+</code></pre>
+<h2 id="5-快速回到桌面快捷键"><a class="markdownIt-Anchor" href="#5-快速回到桌面快捷键"></a> 5. 快速回到桌面快捷键</h2>
+<p><code>ctrl + win + d</code> 快速回到桌面快捷键</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>html5</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown/markdown笔记</title>
     <url>/mynotes/2020/06/13/markdown/markdown%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="markdown疑难杂症"><a class="markdownIt-Anchor" href="#markdown疑难杂症"></a> markdown疑难杂症</h1>
@@ -470,59 +523,6 @@ K</p>
       <categories>
         <category>markdown</category>
       </categories>
-  </entry>
-  <entry>
-    <title>linux/linux命令</title>
-    <url>/mynotes/2020/06/13/linux/linux%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="linux常见问题总结"><a class="markdownIt-Anchor" href="#linux常见问题总结"></a> linux常见问题总结</h1>
-<h2 id="1-怎么使用管理员权限打开文件夹"><a class="markdownIt-Anchor" href="#1-怎么使用管理员权限打开文件夹"></a> 1. 怎么使用管理员权限打开文件夹?</h2>
-<pre><code>&gt; sudo natilus
-</code></pre>
-<a id="more"></a>
-<h2 id="2-浏览器看不了视频"><a class="markdownIt-Anchor" href="#2-浏览器看不了视频"></a> 2. 浏览器看不了视频?</h2>
-<pre><code>安装flash,执行一下命令前先需要设置允许安装未知版权的软件：  system settings -&gt; software&amp;updates -&gt; ubuntu software -&gt; 取消software restricted copyright or legal issues(第四个选项)
-
-&gt;  sudo apt-get install flashplugin-installer
-
-安装html5音视频所支持的依赖
-
-&gt; sudo apt-get update
-&gt;
-&gt; sudo apt-get install ubuntu-restricted-extras
-</code></pre>
-<h2 id="3-多条命令执行区别"><a class="markdownIt-Anchor" href="#3-多条命令执行区别"></a> 3. 多条命令执行区别</h2>
-<pre><code>（1） 每个命令之间用;隔开
-
-说明：各命令的执行给果，不会影响其它命令的执行。换句话说，各个命令都会执行，但不保证每个命令都执行成功。
-
-（2） 每个命令之间用&amp;&amp;隔开
-
-说明：若前面的命令执行成功，才会去执行后面的命令。这样可以保证所有的命令执行完毕后，执行过程都是成功的。
-
-（3）每个命令之间用||隔开
-
-说明：||是或的意思，只有前面的命令执行失败后才去执行下一条命令，直到成功执行一条命令为止。
-
-（4）每个命令之间用&amp;隔开
-说明：&amp;表示and，按顺序执行每条命令，但是前后不影响，也就是无论第一条是否执行失败，后一条总是要执行
-
-（5）每个命令之间用|隔开
-说明：管道符|，前一条执行的结果作为后一条执行语句的输入，依次执行。
-</code></pre>
-<h2 id="4ubuntu安装各种格式软件"><a class="markdownIt-Anchor" href="#4ubuntu安装各种格式软件"></a> 4.Ubuntu安装各种格式软件</h2>
-<pre><code>安装.deb格式的软件
-dpkg -i &lt;package.deb&gt;
-</code></pre>
-<h2 id="5-快速回到桌面快捷键"><a class="markdownIt-Anchor" href="#5-快速回到桌面快捷键"></a> 5. 快速回到桌面快捷键</h2>
-<p><code>ctrl + win + d</code> 快速回到桌面快捷键</p>
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>ubuntu</tag>
-        <tag>html5</tag>
-      </tags>
   </entry>
   <entry>
     <title>vscode/vscode笔记</title>
