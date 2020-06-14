@@ -6,6 +6,7 @@
     <content><![CDATA[<a id="more"></a>
 <!-- ![我的图片](/mynotes/images/pic001.png) -->
 <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>test</p>
 <p>这里仓库主要我在linux系统下的使用以及相关软件和配置笔记，好记性不如烂笔头，希望自己能有朝一日成为大神，无所不能</p>
 <p>这里记录自己遇到的相关问题，并解决问题方案，以备后用</p>
 <p>同时也记录自己系统学习新知识而敲出来的代码和笔记</p>
@@ -15,7 +16,7 @@
 <!-- hexo中点击可以跳转 -->
 <ol>
 <li>
-<a href="/mynotes/2020/06/13/hexo/hello-world/" title="Hello World">Hello World</a>
+
 </li>
 <li>
 <a href="/mynotes/2020/06/13/vscode/vscode%E7%AC%94%E8%AE%B0/" title="vscode&#x2F;vscode笔记">vscode&#x2F;vscode笔记</a>
