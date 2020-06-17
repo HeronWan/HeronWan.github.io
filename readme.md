@@ -1,7 +1,7 @@
 ---
 
 ---
-# MyNotes
+# [MyNotes](https://heronwan.github.io/)
 
 ## 相关命令
 
