@@ -17,6 +17,7 @@
     "hexo-asset-link": "^2.0.1",
     "hexo-deployer-git": "^2.1.0",
     "hexo-enhancer": "^1.0.8",
+    "hexo-fs": "^3.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^1.0.0",
@@ -25,6 +26,7 @@
     "hexo-renderer-ejs": "^1.0.0",
     "hexo-renderer-markdown-it-plus": "^1.0.4",
     "hexo-renderer-stylus": "^1.1.0",
-    "hexo-server": "^1.0.0"
+    "hexo-server": "^1.0.0",
+    "hexo-symbols-count-time": "^0.7.1"
   }
 }
