@@ -16,7 +16,7 @@
 - `git push origin hexo` //推送到远程的hexo分支中
   
 1. 一键部署：
-  hexo c && hexo g && hexo g && hexo s
+  hexo clean && hexo generate  && hexo d && hexo s
 
 2. 博客迁移
 > git clone https://github.com/HeronWan/HeronWan.github.io.git hexo  # 克隆远程仓库

@@ -1,3 +1,9 @@
+---
+toc:
+  depth_from: 2
+  depth_to: 6
+  ordered: false
+---
 # 大道至简
 
 ## 目标：系统架构师系列课程
