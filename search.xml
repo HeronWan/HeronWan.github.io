@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo不能显示mermaid流程图</title>
+    <url>/HeronWan.github.io/2020/08/31/hexo%E9%83%A8%E7%BD%B2%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BAmermaid%E6%B5%81%E7%A8%8B%E5%9B%BE/</url>
+    <content><![CDATA[<h1 id="hexo修复显示mermaid流程图"><a class="markdownIt-Anchor" href="#hexo修复显示mermaid流程图"></a> hexo修复显示mermaid流程图</h1>
+<p>这两天本来想着要好好的做做笔记，谢谢博客，把自己的博客系统好好的运营起来，但是却遇到了一系列棘手的问题，一开始不能运行，慢慢的解决后，然后斜率一篇哈夫曼的笔记，在这篇文章中，我就用了mermaid语法画的二叉树图，然后在typora里面能够轻松且正常的显示和编辑，但是部署到hexo后，图形却无法正常渲染出来。百度搜集相关问题，今天整理出我的解决方法。</p>
+<a id="more"></a>
+<h3 id="安装依赖有两种方式"><a class="markdownIt-Anchor" href="#安装依赖有两种方式"></a> 安装依赖，有两种方式</h3>
+<ol>
+<li>使用yarn安装
+<ul>
+<li>npm install yarn -g //全局安装yarn ，以备后用</li>
+<li>yarn add mermaid //使用yarn安装mermaid依赖</li>
+<li>yarn add mermaid --dev //将依赖添加到开发环境中</li>
+</ul>
+</li>
+<li>使用npm 安装依赖
+<ul>
+<li>npm install hexo-filter-mermaid-diagrams</li>
+</ul>
+</li>
+</ol>
+<p>添加 配置和注入js</p>
+<p>1，添加配置</p>
+<p>​	这里和百度的出来有些不一样，百度出来的结果就是直接在根目录下面 的_config.yml 直接添加配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># mermaid chart</span><br><span class="line">mermaid: ## mermaid url https:&#x2F;&#x2F;github.com&#x2F;knsv&#x2F;mermaid</span><br><span class="line">  enable: true  # default true</span><br><span class="line">  version: &quot;8.7.0&quot; # default v7.1.2</span><br><span class="line">  options:  # find more api options from https:&#x2F;&#x2F;github.com&#x2F;knsv&#x2F;mermaid&#x2F;blob&#x2F;master&#x2F;src&#x2F;mermaidAPI.js</span><br><span class="line">    #startOnload: true  &#x2F;&#x2F; default true</span><br></pre></td></tr></table></figure>
+<p>​	但是在我这里并没有奏效，经过我的折腾才发现，next主题里面的已经有mermaid配置（已经设置为了enable: false） ，会将根目录下面的配置覆盖,所以没有奏效。既然知道了配置被覆盖的原因，那上面的配置就没必要添加了，直接修改next主题里面的配置将false改为true即可。</p>
+<p>2，注入js使得配置生效</p>
+<p>找到 theme/next/layout/_partials/footer.swig 文件 并打开，然后在末尾添上如下的代码即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if theme.mermaid.enable %&#125;</span><br><span class="line">  &lt;script src&#x3D;&#39;https:&#x2F;&#x2F;unpkg.com&#x2F;mermaid@&#123;&#123; theme.mermaid.version &#125;&#125;&#x2F;dist&#x2F;mermaid.min.js&#39;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    if (window.mermaid) &#123;</span><br><span class="line">      mermaid.initialize(&#123;&#123;theme.mermaid.options &#125;&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>最终生效</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>hexo博客相关</category>
+      </categories>
+  </entry>
+  <entry>
     <title>hexo博客相关/5.hexo使用</title>
     <url>/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/5.hexo%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="hexo搭建个人博客与优化"><a class="markdownIt-Anchor" href="#hexo搭建个人博客与优化"></a> hexo搭建个人博客与优化</h1>
 <h2 id="搭建流程"><a class="markdownIt-Anchor" href="#搭建流程"></a> 搭建流程</h2>
+<a id="more"></a>
 <ol>
 <li>
 <p>需要本地预先安装好安装好git和node环境</p>
@@ -44,72 +100,126 @@
       </categories>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>hexo博客相关</category>
-      </categories>
-  </entry>
-  <entry>
     <title>hexo博客相关/readme</title>
     <url>/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/readme/</url>
-    <content><![CDATA[<p>—</p>
-<p>—</p>
-<p># <a href="https://heronwan.github.io/">MyNotes</a></p>
-<p>## 相关命令</p>
-<p>- <code>hexo c</code> //清除public中生成的编译文件</p>
-<p>- <code>hexo g</code> //生成public编译文件</p>
-<p>- <code>hexo s</code> //启动本地服务，浏览器中可查看项目</p>
-<p>- <code>hexo d</code> //项目部署远程，将生成的public中的文件推送到远程master分支中</p>
-<p>- <code>hexo c</code> &amp;&amp; hexo g &amp;&amp;hexo d &amp;&amp; hexo s</p>
-<p>- <code>git pull</code> //同步远程的修改</p>
-<p>- <code>git add .</code> //将本地修改添加到暂存区</p>
-<p>- <code>git commit -m &quot;提交信息&quot;</code> // 将修改提交到本地仓库</p>
-<p>- <code>git push origin hexo</code> //推送到远程的hexo分支中</p>
-<p>\1. 一键部署：</p>
+    <content><![CDATA[<h1 id="mynotes"><a class="markdownIt-Anchor" href="#mynotes"></a> <a href="https://heronwan.github.io/">MyNotes</a></h1>
+<h2 id="相关命令"><a class="markdownIt-Anchor" href="#相关命令"></a> 相关命令</h2>
+<ul>
+<li>
+<p><code>hexo c</code> //清除public中生成的编译文件</p>
+</li>
+<li>
+<p><code>hexo g</code> //生成public编译文件</p>
+</li>
+<li>
+<p><code>hexo s</code> //启动本地服务，浏览器中可查看项目</p>
+</li>
+<li>
+<p><code>hexo d</code> //项目部署远程，将生成的public中的文件推送到远程master分支中</p>
+</li>
+<li>
+<p><code>hexo c</code> &amp;&amp; hexo g &amp;&amp;hexo d &amp;&amp; hexo s</p>
+</li>
+<li>
+<p><code>git pull</code> //同步远程的修改</p>
+</li>
+<li>
+<p><code>git add .</code> //将本地修改添加到暂存区</p>
+</li>
+<li>
+<p><code>git commit -m &quot;提交信息&quot;</code> // 将修改提交到本地仓库</p>
+</li>
+<li>
+<p><code>git push origin hexo</code> //推送到远程的hexo分支中</p>
+</li>
+</ul>
+ <a id="more"></a>
+<ol>
+<li>一键部署：</li>
+</ol>
 <p>hexo c &amp;&amp; hexo g &amp;&amp; hexo g &amp;&amp; hexo s</p>
-<p>\2. 博客迁移</p>
-<p>&gt; git clone <a href="https://github.com/HeronWan/HeronWan.github.io.git" target="_blank" rel="noopener">https://github.com/HeronWan/HeronWan.github.io.git</a> hexo # 克隆远程仓库</p>
-<p>&gt; npm install -g hexo-cli #安装全局hexo环境，可提供hexo c/g/s/d命令使用</p>
-<p>&gt; npm install # 本地安装依赖（会将package.json中的依赖全部安装）</p>
-<p>\3. 同步博客源码：</p>
+<ol start="2">
+<li>博客迁移</li>
+</ol>
+<blockquote>
+<p>git clone <a href="https://github.com/HeronWan/HeronWan.github.io.git" target="_blank" rel="noopener">https://github.com/HeronWan/HeronWan.github.io.git</a> hexo # 克隆远程仓库</p>
+</blockquote>
+<blockquote>
+<p>npm install -g hexo-cli #安装全局hexo环境，可提供hexo c/g/s/d命令使用</p>
+</blockquote>
+<blockquote>
+<p>npm install # 本地安装依赖（会将package.json中的依赖全部安装）</p>
+</blockquote>
+<ol start="3">
+<li>同步博客源码：</li>
+</ol>
 <p>git add . &amp;&amp; git commit -m “some changes” &amp;&amp; git push origin hexo</p>
-<p>## 博客源码维护</p>
+<h2 id="博客源码维护"><a class="markdownIt-Anchor" href="#博客源码维护"></a> 博客源码维护</h2>
 <p>该仓库中有两个分支：</p>
-<p>\1. master负责保存编译好了的部署文件，在本地执行“hexo d”就会自动更新部署</p>
-<p>\2. hexo保存的是该仓库的源码，包括配置文件和md文件以及其他页面的源码。在本地修改可通过git命令提交维护。</p>
-<p>## todos</p>
-<p>\1. leetcode刷题</p>
-<p>\2. opencv实战</p>
-<p>\3. 动手学深度学习pytorch实战</p>
-<p>## 搭建流程</p>
-<p>\1. 需要本地预先安装好安装好git和node环境</p>
-<p>\2. 在node全局环境中安装hexo-cli手脚架<code>npm install -g hexo-cli</code></p>
-<p>\3. 在本地新建一个空白文件夹，注意文件夹一定要是空白的，在该文件夹路径打开终端，运行：</p>
-<p>- <code>hexo init</code>   # 初始化</p>
-<p>- <code>npm install</code>  # 安装组件</p>
-<p>\4. 启动本地进行预览</p>
-<p>- <code>hexo g</code> 生成编译文件</p>
-<p>- <code>hexo s</code> 启动服务器，访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>，出现 Hexo 默认页面，本地博客安装成功！</p>
-<p>\5. 在码云上创建gitee pages</p>
-<p>\6. 配置文件</p>
-<p>\7. 部署 命令<code>hexo d</code></p>
+<ol>
+<li>
+<p>master负责保存编译好了的部署文件，在本地执行“hexo d”就会自动更新部署</p>
+</li>
+<li>
+<p>hexo保存的是该仓库的源码，包括配置文件和md文件以及其他页面的源码。在本地修改可通过git命令提交维护。</p>
+</li>
+</ol>
+<h2 id="todos"><a class="markdownIt-Anchor" href="#todos"></a> todos</h2>
+<ol>
+<li>
+<p>leetcode刷题</p>
+</li>
+<li>
+<ol start="2">
+<li>opencv实战</li>
+</ol>
+</li>
+<li>
+<p>动手学深度学习pytorch实战</p>
+</li>
+</ol>
+<h2 id="搭建流程"><a class="markdownIt-Anchor" href="#搭建流程"></a> 搭建流程</h2>
+<ol>
+<li>
+<p>需要本地预先安装好安装好git和node环境</p>
+</li>
+<li>
+<p>在node全局环境中安装hexo-cli手脚架<code>npm install -g hexo-cli</code></p>
+</li>
+<li>
+<p>在本地新建一个空白文件夹，注意文件夹一定要是空白的，在该文件夹路径打开终端，运行：</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><code>hexo init</code>   # 初始化</p>
+</li>
+<li>
+<p><code>npm install</code>  # 安装组件</p>
+</li>
+</ul>
+<ol start="4">
+<li>启动本地进行预览</li>
+</ol>
+<ul>
+<li>
+<p><code>hexo g</code> 生成编译文件</p>
+</li>
+<li>
+<p><code>hexo s</code> 启动服务器，访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>，出现 Hexo 默认页面，本地博客安装成功！</p>
+</li>
+</ul>
+<ol start="5">
+<li>
+<p>在码云上创建gitee pages</p>
+</li>
+<li>
+<p>配置文件</p>
+</li>
+<li>
+<p>部署 命令<code>hexo d</code></p>
+</li>
+</ol>
 <p><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d &amp;&amp; hexo g</code></p>
 ]]></content>
       <categories>
@@ -120,58 +230,12 @@
       </tags>
   </entry>
   <entry>
-    <title>算法笔记/leetcode做题总结</title>
-    <url>/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/leetcode%E5%81%9A%E9%A2%98%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="总结经验"><a class="markdownIt-Anchor" href="#总结经验"></a> 总结经验</h1>
-<ul>
-<li>先测试用例，后编码</li>
-<li>先整体思路，后局部。</li>
-<li>用注释标记思路和需要注意的地方。</li>
-</ul>
-<h2 id="掌握的知识点"><a class="markdownIt-Anchor" href="#掌握的知识点"></a> 掌握的知识点</h2>
-<ol>
-<li>
-<p>广搜</p>
-</li>
-<li>
-<p>深搜</p>
-</li>
-<li>
-<p>链表</p>
-</li>
-<li>
-<p>栈</p>
-</li>
-<li>
-<p>数组</p>
-</li>
-<li>
-<p>队列</p>
-</li>
-<li>
-<p>简单的动态规划</p>
-</li>
-</ol>
-<h2 id="需要加强的知识点"><a class="markdownIt-Anchor" href="#需要加强的知识点"></a> 需要加强的知识点</h2>
-<ol>
-<li>回溯法</li>
-<li>全排列</li>
-<li>全排列的次序</li>
-<li>快速排序和多路快排</li>
-<li>并查集</li>
-<li>背包问题</li>
-</ol>
-]]></content>
-      <categories>
-        <category>算法笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>前端笔记/最佳实践</title>
+    <title>javascript最佳实践</title>
     <url>/HeronWan.github.io/2020/08/30/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</url>
     <content><![CDATA[<h1 id="最佳实践"><a class="markdownIt-Anchor" href="#最佳实践"></a> 最佳实践</h1>
 <p>​						--《JavaScript高级程序设计》笔记</p>
 <h2 id="一可维护性"><a class="markdownIt-Anchor" href="#一可维护性"></a> 一，可维护性</h2>
+<a id="more"></a>
 <ol>
 <li>
 <p>什么是可维护性？</p>
@@ -303,114 +367,206 @@
       </tags>
   </entry>
   <entry>
-    <title>软件与工具使用/git常见问题</title>
-    <url>/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="git常见问题汇"><a class="markdownIt-Anchor" href="#git常见问题汇"></a> git常见问题汇</h1>
-<h2 id="1-git怎么快捷提交到远程"><a class="markdownIt-Anchor" href="#1-git怎么快捷提交到远程"></a> 1. git怎么快捷提交到远程</h2>
-<p>有时候只是修改了一个简单的地方，但是提交却要好几行才能完成</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -am <span class="string">"change some text"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-<p>能不能把这几句合并成一句，以后再也不用桥一些繁琐的命令，以提高工作效率<br />
-当然可以，如下：</p>
+    <title>哈夫曼编码笔记</title>
+    <url>/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/</url>
+    <content><![CDATA[<h1 id="哈弗曼编码"><a class="markdownIt-Anchor" href="#哈弗曼编码"></a> 哈弗曼编码</h1>
+<blockquote>
+<p>最近在笔试中大概遇到这样的一道题：</p>
+<p>​	<strong>给定字符集{a,b,c,d}组成的字符串 “aaabbbdaaabdcc” 的最佳编码的长度是多少？</strong></p>
+<p>看到最佳编码一开始我也是想到了要用哈弗曼编码，但是在答题过程中，始终没有回忆起来哈弗曼编码的流程是什么样的。</p>
+<p>事后百度，然后自己再来总结一遍。</p>
 <a id="more"></a>
-<blockquote>
-<p>git add . &amp;&amp;  git commit -am “change some text” &amp;&amp; git push</p>
 </blockquote>
-<p>一句搞定！<br />
-但是问题来了，这句命令也太长了吧，做人能不能简单一点，不要搞得那么复杂吗！或者能直接设置快捷键呢？</p>
-<p>好的，满足你，跟着我来一起做，步骤如下：</p>
-<ol>
-<li>
-<p>用vscode打开当前仓库，配置task.json:</p>
-<p>点击vscode界面左下角，打开 command palette… —&gt; 输入task 进行搜索  —&gt;  选择task：configure task -&gt; 选择task 模板 ，新建task.json文件 —&gt; 在task.json文件中修改成以下内容：</p>
- <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">// See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">// for the documentation about the tasks.json format</span><br><span class="line">"version": "2.0.0",</span><br><span class="line">"tasks": [</span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        "label": "push code",</span></span><br><span class="line"><span class="code">        "type": "shell",</span></span><br><span class="line"><span class="code">        "command": "git add . &amp;  git commit -am 'change something' &amp; git push"</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>验证 task是否能运行：</p>
-<p>点击vscode界面左下角，打开 command palette… —&gt; 输入run task 回车 —&gt; 点击 push code看task是否能成功执行</p>
-</li>
-<li>
-<p>配置快捷键：</p>
-<p>file —&gt; preference —&gt; keyboard shortcut —&gt; 打开了快捷键配置文件，点击右上角的 {}，进入文本编辑模式，添加如下内容：</p>
- <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        // 为git提交代码到远程仓库设置快捷键 </span></span><br><span class="line"><span class="code">        "key": "ctrl+p ctrl+p",</span></span><br><span class="line"><span class="code">        "command": "workbench.action.tasks.runTask",</span></span><br><span class="line"><span class="code">        "args": "push code",</span></span><br><span class="line"><span class="code">        "when": "isLinux"    </span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>使用 快捷键&quot;ctrl+p ctrl+p&quot; 验证是否能成功push代码到远程仓库。</p>
-</li>
-</ol>
-<p>原本按照这个想法，我想到了两个思路：</p>
-<ol>
-<li>
-<p>通过vscode的设置task和快捷键完成操作，步骤如上。</p>
-</li>
-<li>
-<p>将三条命令alias一条简短的快捷命令,在终端上执行。</p>
-<p>2.1 但是这个并没有想象中那么简单，至少在gitvonfig中是难以实现的。因为 alias 中的快捷命令是需要运行时需要在前面添加 git 才能运行的，比如：<code>alias p=push </code>，那么在命令行运行 <code>git p</code> 就相当于 <code>git push </code>。这就限制了无法用 将这三条命令 缩写成一条命令来运行。</p>
-<p>2.2 但是世上无难事，只要有心人，曲线也是能救国的！不要局限在git的配置中怎么去实现，思维要开阔些！我们可以在当前文件夹下面新建一个bash脚本，把上面三条命令直接写进去，直接运行脚本不就可以了嘛!</p>
-<p><a href="http://xn--push-494fr2cb5kmlat54c6rn21ar85cw26m.sh" target="_blank" rel="noopener">当前文件夹下面创建push.sh</a>,写入文本：</p>
- <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">echo 成功添加暂存区</span><br><span class="line">git commit -am "change some text"</span><br><span class="line">echo 成功提交到本地仓库</span><br><span class="line">git push</span><br><span class="line">echo 成功push到远程仓库</span><br></pre></td></tr></table></figure>
-<p>在当前文件夹下面的终端运行：</p>
-<blockquote>
-<p>chmod a+x <a href="http://push.sh" target="_blank" rel="noopener">push.sh</a></p>
-<p>./push.sh</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="2-git提交码云上没有显示贡献度"><a class="markdownIt-Anchor" href="#2-git提交码云上没有显示贡献度"></a> 2. git提交码云上没有显示贡献度</h2>
-<p>结果竟然是因为我设置的全局邮箱有问题:</p>
-  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user.email&#x3D;&quot;1002860620@qq.com&quot;</span><br><span class="line">user.name&#x3D;heronwang</span><br></pre></td></tr></table></figure>
-<p>上面所示，邮箱多了一双引号，去掉引号就可以啦<br />
-<code>git config --global user.email 1002860620@qq.com</code></p>
-<p>然后再输入<code>git config -l</code> 查看配置：</p>
-  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user.email&#x3D;1002860620@qq.com</span><br><span class="line">user.name&#x3D;heronwang</span><br></pre></td></tr></table></figure>
-<p>引号去掉了，然后<code>git push</code>提交，在后台查看终于显示我的贡献度了，</p>
-<p>好气哦，ubuntu用了这么长时间，在码云上提交了那么多贡献全是空的！！</p>
-<h2 id="3怎么给仓库打tag记录历史中重要的节点"><a class="markdownIt-Anchor" href="#3怎么给仓库打tag记录历史中重要的节点"></a> 3.怎么给仓库打tag，记录历史中重要的节点</h2>
-<p>首先<code>git tag -l</code> 查看仓库中所有tag</p>
-<p>Git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）</p>
-<ul>
-<li>
-<p>轻量标签：很像一个不会改变的分支——它只是某个特定提交的引用。</p>
-<p><code>git tag &lt;tagname&gt;</code> 创建轻量标签<br />
-<code>git show &lt;tagname&gt;</code> 显示出提交信息</p>
-</li>
-<li>
-<p>附注标签：是存储在 Git 数据库中的一个完整对象， 它们是可以被校验的，其中包含打标签者的名字、电子邮件地址、日期时间， 此外还有一个标签信息，并且可以使用 GNU Privacy Guard （GPG）签名并验证。<br />
-<code>git tag -a &lt;tagname&gt; -m &quot;标签信息&quot;</code> 创建附注标签</p>
-</li>
-<li>
-<p>后期打标签：你也可以对过去的提交打标签<br />
-<code>git log --pretty=oneline</code> 显示历史提交信息<br />
-<code>git tag -a &lt;tagname&gt; &lt;某个提交的哈希码&gt;</code> 为历史提交打标签</p>
-</li>
-<li>
-<p>共享标签：将标签上传到远程共享<br />
-<code>git push origin --tags</code> 上传所有tags<br />
-<code>git push origin &lt;tagname&gt;</code> 上传某个tag</p>
-</li>
-<li>
-<p>删除标签tag<br />
-<code>git tag -d &lt;tagname&gt;</code> 删除本地tag<br />
-<code>git push origin --delete &lt;tagname&gt;</code>   删除远程tag</p>
-</li>
-<li>
-<p>检出标签：如果你想查看某个标签所指向的文件版本，可以使用 git checkout 命令， 虽然这会使你的仓库处于“分离头指针（detached HEAD）”的状态——这个状态有些不好的副作用，在“分离头指针”状态下，如果你做了某些更改然后提交它们，标签不会发生变化， 但你的新提交将不属于任何分支，并且将无法访问，除非通过确切的提交哈希才能访问。 因此，如果你需要进行更改，比如你要修复旧版本中的错误，那么通常需要创建一个新分支。<br />
-<code>git checkout &lt;tagname&gt;</code> 查看标签具体内容</p>
-<p><code>git checkout -b &lt;branchName&gt; &lt;tagname&gt;</code> 为某个标签创建分支</p>
-</li>
-</ul>
+<p>1.首先统计每个字符的数量</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字符</th>
+<th style="text-align:center">a</th>
+<th style="text-align:center">b</th>
+<th style="text-align:center">c</th>
+<th style="text-align:center">d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">出现数量（权重）</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<p>然后 将字符根据权重从小到大进行排序，，每次选出最小的两个权重，进行相加<br />
+第一步，将最小的1放在左边，次小的2放在右边，求出和作为父节点，并将父节点添加到权值数组中形成新数组[3,4,6 ]，并在其中继续找出最小的两个数</p>
+<pre class="mermaid">graph TB;
+d((1))
+c((2))
+
+3((3))-->d
+3((3))-->c
+
+b((4))
+a((6))</pre>
+<p>找到的两个最小的数 3，和次小的4，求出和7作为父节点，依次类推</p>
+<pre class="mermaid">graph TB;
+d((1))
+c((2))
+
+3((3))-->d
+3((3))-->c
+
+b((4))
+a((6))
+7((7))-->b
+7-->3
+13-->a
+13-->7</pre>
+<p>然后进行对路径进行编号</p>
+<pre class="mermaid">graph TB;
+%% 节点
+d((1)) 
+c((2))
+%% 结构
+3((3)) -->|1| d
+3((3)) -->|0| c
+
+b((4))
+a((6))
+7((7))--0-->b
+7((7))--1-->3
+13((13))--1-->a
+13--0-->7</pre>
+<p>根据路径的编号，那么叶子结点所对应的字符的编码就是从根到当前的叶子结点的路径了</p>
+<p>字符所对应的编码如下所示：</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>编码</td>
+<td>1</td>
+<td>00</td>
+<td>010</td>
+<td>011</td>
+</tr>
+<tr>
+<td>权重（频率）</td>
+<td>6</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>字符串中当前字符的总编码长度</td>
+<td>6</td>
+<td>8</td>
+<td>6</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>最终求出的最佳编码长度为 1 * 6 + 2 * 4 + 3 * 2 + 3 * 1 =  13，其实就是哈夫曼树根节点的值。</p>
 ]]></content>
       <categories>
-        <category>软件与工具使用</category>
+        <category>算法笔记</category>
       </categories>
-      <tags>
-        <tag>ubuntu</tag>
-      </tags>
   </entry>
   <entry>
-    <title>软件与工具使用/guns笔记</title>
+    <title>leetcode刷题总结</title>
+    <url>/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/leetcode%E5%81%9A%E9%A2%98%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="总结经验"><a class="markdownIt-Anchor" href="#总结经验"></a> 总结经验</h2>
+<ul>
+<li>先测试用例，后编码</li>
+<li>先整体思路，后局部。</li>
+<li>用注释标记思路和需要注意的地方。</li>
+</ul>
+<a id="more"></a>
+<h2 id="掌握的知识点"><a class="markdownIt-Anchor" href="#掌握的知识点"></a> 掌握的知识点</h2>
+<ol>
+<li>
+<p>广搜</p>
+</li>
+<li>
+<p>深搜</p>
+</li>
+<li>
+<p>链表</p>
+</li>
+<li>
+<p>栈</p>
+</li>
+<li>
+<p>数组</p>
+</li>
+<li>
+<p>队列</p>
+</li>
+<li>
+<p>简单的动态规划</p>
+</li>
+</ol>
+<h2 id="需要加强的知识点"><a class="markdownIt-Anchor" href="#需要加强的知识点"></a> 需要加强的知识点</h2>
+<ol>
+<li>回溯法</li>
+<li>全排列</li>
+<li>全排列的次序</li>
+<li>快速排序和多路快排</li>
+<li>并查集</li>
+<li>背包问题</li>
+</ol>
+]]></content>
+      <categories>
+        <category>算法笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>康托展开</title>
+    <url>/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/</url>
+    <content><![CDATA[<h1 id="康托展开和逆康托展开"><a class="markdownIt-Anchor" href="#康托展开和逆康托展开"></a> 康托展开和逆康托展开</h1>
+<p>题目详见：<a href="https://leetcode-cn.com/problems/permutation-sequence/" target="_blank" rel="noopener">leetcode060. 第k个排列</a></p>
+<p>该题就是求n个数全排列中的第k的排序，查看评论区才知道有一个叫做康拓展开的概念，我从来都没有接触过，所以现在做下笔记，学习康拓排序，来解决这个leetcode题。</p>
+<a id="more"></a>
+<h2 id="康拓排序"><a class="markdownIt-Anchor" href="#康拓排序"></a> 康拓排序</h2>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi><mo>=</mo><msub><mi>a</mi><mi>n</mi></msub><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">−</mi><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub><mi mathvariant="normal">−</mi><mn>1</mn><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">−</mi><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mo>×</mo><mn>0</mn><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">rank=a_n\times(n−1)!+a_n−1\times(n−2)!+⋯+a_1\times0!
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">−</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mclose">!</span></span></span></span></span></p>
+<p>其中, a[i]为整数，并且0 &lt;= a[i] &lt;= i, 0 &lt;= i &lt; n,  <code>rank</code>   表示当前的序列在全排列中排第几个，这就是康托展开。</p>
+<p>康托展开 就是已知序列，求出它的排列名次</p>
+<h2 id="逆康拓排序"><a class="markdownIt-Anchor" href="#逆康拓排序"></a> 逆康拓排序</h2>
+<p>逆康拓排序就是已知排列的名次，求出所对应的序列。</p>
+<h2 id="应用"><a class="markdownIt-Anchor" href="#应用"></a> 应用</h2>
+<p>因为序列和名次是一一对应的，所以可以用来压缩 字符串</p>
+]]></content>
+      <categories>
+        <category>算法笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>设计模式笔记</title>
+    <url>/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="设计模式"><a class="markdownIt-Anchor" href="#设计模式"></a> 设计模式</h1>
+<p>笔试中遇到过问设计模式中的依赖倒置原则是什么？</p>
+<p>所以今天我就来总结下设计模式中比较常见的设计模式</p>
+<a id="more"></a>
+]]></content>
+      <categories>
+        <category>算法笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>guns笔记</title>
     <url>/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="大道至简"><a class="markdownIt-Anchor" href="#大道至简"></a> 大道至简</h1>
 <h2 id="目标系统架构师系列课程"><a class="markdownIt-Anchor" href="#目标系统架构师系列课程"></a> 目标：系统架构师系列课程</h2>
+<a id="more"></a>
 <h2 id="系统高可用"><a class="markdownIt-Anchor" href="#系统高可用"></a> 系统高可用：</h2>
 <ul>
 <li>负载均衡</li>
@@ -525,78 +681,107 @@ memcached-&gt;最好的缓存管理中间件</li>
       </categories>
   </entry>
   <entry>
-    <title>算法笔记/康拓展开与康拓逆展开</title>
-    <url>/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/</url>
-    <content><![CDATA[<h1 id="康托展开和逆康托展开"><a class="markdownIt-Anchor" href="#康托展开和逆康托展开"></a> 康托展开和逆康托展开</h1>
-<p>题目详见：<a href="https://leetcode-cn.com/problems/permutation-sequence/" target="_blank" rel="noopener">leetcode060. 第k个排列</a></p>
-<p>该题就是求n个数全排列中的第k的排序，查看评论区才知道有一个叫做康拓展开的概念，我从来都没有接触过，所以现在做下笔记，学习康拓排序，来解决这个leetcode题。</p>
-<h2 id="康拓排序"><a class="markdownIt-Anchor" href="#康拓排序"></a> 康拓排序</h2>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi><mo>=</mo><msub><mi>a</mi><mi>n</mi></msub><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">−</mi><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub><mi mathvariant="normal">−</mi><mn>1</mn><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">−</mi><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mo>×</mo><mn>0</mn><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">rank=a_n\times(n−1)!+a_n−1\times(n−2)!+⋯+a_1\times0!
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">−</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mclose">!</span></span></span></span></span></p>
-<p>其中, a[i]为整数，并且0 &lt;= a[i] &lt;= i, 0 &lt;= i &lt; n,  <code>rank</code>   表示当前的序列在全排列中排第几个，这就是康托展开。</p>
-<p>康托展开 就是已知序列，求出它的排列名次</p>
-<h2 id="逆康拓排序"><a class="markdownIt-Anchor" href="#逆康拓排序"></a> 逆康拓排序</h2>
-<p>逆康拓排序就是已知排列的名次，求出所对应的序列。</p>
-<h2 id="应用"><a class="markdownIt-Anchor" href="#应用"></a> 应用</h2>
-<p>因为序列和名次是一一对应的，所以可以用来压缩 字符串</p>
-]]></content>
-      <categories>
-        <category>算法笔记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>软件与工具使用/linux命令</title>
-    <url>/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h1 id="linux常见问题总结"><a class="markdownIt-Anchor" href="#linux常见问题总结"></a> linux常见问题总结</h1>
-<pre><code>这个是在使用linux/ubuntu 系统过程中，对遇到的问题进行记录总结，以备后用。好记性不如烂键盘！
-</code></pre>
-<h2 id="1-怎么使用管理员权限打开文件夹"><a class="markdownIt-Anchor" href="#1-怎么使用管理员权限打开文件夹"></a> 1. 怎么使用管理员权限打开文件夹?</h2>
-<pre><code>&gt; sudo natilus
-</code></pre>
+    <title>git常见问题汇总</title>
+    <url>/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="git常见问题汇"><a class="markdownIt-Anchor" href="#git常见问题汇"></a> git常见问题汇</h1>
+<h2 id="1-git怎么快捷提交到远程"><a class="markdownIt-Anchor" href="#1-git怎么快捷提交到远程"></a> 1. git怎么快捷提交到远程</h2>
+<p>有时候只是修改了一个简单的地方，但是提交却要好几行才能完成</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -am <span class="string">"change some text"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>能不能把这几句合并成一句，以后再也不用桥一些繁琐的命令，以提高工作效率<br />
+当然可以，如下：</p>
 <a id="more"></a>
-<h2 id="2-浏览器看不了视频"><a class="markdownIt-Anchor" href="#2-浏览器看不了视频"></a> 2. 浏览器看不了视频?</h2>
-<pre><code>安装flash,执行一下命令前先需要设置允许安装未知版权的软件：  system settings -&gt; software&amp;updates -&gt; ubuntu software -&gt; 取消software restricted copyright or legal issues(第四个选项)
-
-&gt;  sudo apt-get install flashplugin-installer
-
-安装html5音视频所支持的依赖
-
-&gt; sudo apt-get update
-&gt;
-&gt; sudo apt-get install ubuntu-restricted-extras
-</code></pre>
-<h2 id="3-多条命令执行区别"><a class="markdownIt-Anchor" href="#3-多条命令执行区别"></a> 3. 多条命令执行区别</h2>
-<pre><code>（1） 每个命令之间用;隔开
-
-说明：各命令的执行给果，不会影响其它命令的执行。换句话说，各个命令都会执行，但不保证每个命令都执行成功。
-
-（2） 每个命令之间用&amp;&amp;隔开
-
-说明：若前面的命令执行成功，才会去执行后面的命令。这样可以保证所有的命令执行完毕后，执行过程都是成功的。
-
-（3）每个命令之间用||隔开
-
-说明：||是或的意思，只有前面的命令执行失败后才去执行下一条命令，直到成功执行一条命令为止。
-
-（4）每个命令之间用&amp;隔开
-说明：&amp;表示and，按顺序执行每条命令，但是前后不影响，也就是无论第一条是否执行失败，后一条总是要执行
-
-（5）每个命令之间用|隔开
-说明：管道符|，前一条执行的结果作为后一条执行语句的输入，依次执行。
-</code></pre>
-<h2 id="4ubuntu安装各种格式软件"><a class="markdownIt-Anchor" href="#4ubuntu安装各种格式软件"></a> 4.Ubuntu安装各种格式软件</h2>
-<pre><code>安装.deb格式的软件
-dpkg -i &lt;package.deb&gt;
-</code></pre>
-<h2 id="5-快速回到桌面快捷键"><a class="markdownIt-Anchor" href="#5-快速回到桌面快捷键"></a> 5. 快速回到桌面快捷键</h2>
-<p><code>ctrl + win + d</code> 快速回到桌面快捷键</p>
+<blockquote>
+<p>git add . &amp;&amp;  git commit -am “change some text” &amp;&amp; git push</p>
+</blockquote>
+<p>一句搞定！<br />
+但是问题来了，这句命令也太长了吧，做人能不能简单一点，不要搞得那么复杂吗！或者能直接设置快捷键呢？</p>
+<p>好的，满足你，跟着我来一起做，步骤如下：</p>
+<ol>
+<li>
+<p>用vscode打开当前仓库，配置task.json:</p>
+<p>点击vscode界面左下角，打开 command palette… —&gt; 输入task 进行搜索  —&gt;  选择task：configure task -&gt; 选择task 模板 ，新建task.json文件 —&gt; 在task.json文件中修改成以下内容：</p>
+ <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">// See https://go.microsoft.com/fwlink/?LinkId=733558</span><br><span class="line">// for the documentation about the tasks.json format</span><br><span class="line">"version": "2.0.0",</span><br><span class="line">"tasks": [</span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        "label": "push code",</span></span><br><span class="line"><span class="code">        "type": "shell",</span></span><br><span class="line"><span class="code">        "command": "git add . &amp;  git commit -am 'change something' &amp; git push"</span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>验证 task是否能运行：</p>
+<p>点击vscode界面左下角，打开 command palette… —&gt; 输入run task 回车 —&gt; 点击 push code看task是否能成功执行</p>
+</li>
+<li>
+<p>配置快捷键：</p>
+<p>file —&gt; preference —&gt; keyboard shortcut —&gt; 打开了快捷键配置文件，点击右上角的 {}，进入文本编辑模式，添加如下内容：</p>
+ <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line"><span class="code">    &#123;</span></span><br><span class="line"><span class="code">        // 为git提交代码到远程仓库设置快捷键 </span></span><br><span class="line"><span class="code">        "key": "ctrl+p ctrl+p",</span></span><br><span class="line"><span class="code">        "command": "workbench.action.tasks.runTask",</span></span><br><span class="line"><span class="code">        "args": "push code",</span></span><br><span class="line"><span class="code">        "when": "isLinux"    </span></span><br><span class="line"><span class="code">    &#125;</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>使用 快捷键&quot;ctrl+p ctrl+p&quot; 验证是否能成功push代码到远程仓库。</p>
+</li>
+</ol>
+<p>原本按照这个想法，我想到了两个思路：</p>
+<ol>
+<li>
+<p>通过vscode的设置task和快捷键完成操作，步骤如上。</p>
+</li>
+<li>
+<p>将三条命令alias一条简短的快捷命令,在终端上执行。</p>
+<p>2.1 但是这个并没有想象中那么简单，至少在gitvonfig中是难以实现的。因为 alias 中的快捷命令是需要运行时需要在前面添加 git 才能运行的，比如：<code>alias p=push </code>，那么在命令行运行 <code>git p</code> 就相当于 <code>git push </code>。这就限制了无法用 将这三条命令 缩写成一条命令来运行。</p>
+<p>2.2 但是世上无难事，只要有心人，曲线也是能救国的！不要局限在git的配置中怎么去实现，思维要开阔些！我们可以在当前文件夹下面新建一个bash脚本，把上面三条命令直接写进去，直接运行脚本不就可以了嘛!</p>
+<p><a href="http://xn--push-494fr2cb5kmlat54c6rn21ar85cw26m.sh" target="_blank" rel="noopener">当前文件夹下面创建push.sh</a>,写入文本：</p>
+ <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">echo 成功添加暂存区</span><br><span class="line">git commit -am "change some text"</span><br><span class="line">echo 成功提交到本地仓库</span><br><span class="line">git push</span><br><span class="line">echo 成功push到远程仓库</span><br></pre></td></tr></table></figure>
+<p>在当前文件夹下面的终端运行：</p>
+<blockquote>
+<p>chmod a+x <a href="http://push.sh" target="_blank" rel="noopener">push.sh</a></p>
+<p>./push.sh</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="2-git提交码云上没有显示贡献度"><a class="markdownIt-Anchor" href="#2-git提交码云上没有显示贡献度"></a> 2. git提交码云上没有显示贡献度</h2>
+<p>结果竟然是因为我设置的全局邮箱有问题:</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user.email&#x3D;&quot;1002860620@qq.com&quot;</span><br><span class="line">user.name&#x3D;heronwang</span><br></pre></td></tr></table></figure>
+<p>上面所示，邮箱多了一双引号，去掉引号就可以啦<br />
+<code>git config --global user.email 1002860620@qq.com</code></p>
+<p>然后再输入<code>git config -l</code> 查看配置：</p>
+  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">user.email&#x3D;1002860620@qq.com</span><br><span class="line">user.name&#x3D;heronwang</span><br></pre></td></tr></table></figure>
+<p>引号去掉了，然后<code>git push</code>提交，在后台查看终于显示我的贡献度了，</p>
+<p>好气哦，ubuntu用了这么长时间，在码云上提交了那么多贡献全是空的！！</p>
+<h2 id="3怎么给仓库打tag记录历史中重要的节点"><a class="markdownIt-Anchor" href="#3怎么给仓库打tag记录历史中重要的节点"></a> 3.怎么给仓库打tag，记录历史中重要的节点</h2>
+<p>首先<code>git tag -l</code> 查看仓库中所有tag</p>
+<p>Git 支持两种标签：轻量标签（lightweight）与附注标签（annotated）</p>
+<ul>
+<li>
+<p>轻量标签：很像一个不会改变的分支——它只是某个特定提交的引用。</p>
+<p><code>git tag &lt;tagname&gt;</code> 创建轻量标签<br />
+<code>git show &lt;tagname&gt;</code> 显示出提交信息</p>
+</li>
+<li>
+<p>附注标签：是存储在 Git 数据库中的一个完整对象， 它们是可以被校验的，其中包含打标签者的名字、电子邮件地址、日期时间， 此外还有一个标签信息，并且可以使用 GNU Privacy Guard （GPG）签名并验证。<br />
+<code>git tag -a &lt;tagname&gt; -m &quot;标签信息&quot;</code> 创建附注标签</p>
+</li>
+<li>
+<p>后期打标签：你也可以对过去的提交打标签<br />
+<code>git log --pretty=oneline</code> 显示历史提交信息<br />
+<code>git tag -a &lt;tagname&gt; &lt;某个提交的哈希码&gt;</code> 为历史提交打标签</p>
+</li>
+<li>
+<p>共享标签：将标签上传到远程共享<br />
+<code>git push origin --tags</code> 上传所有tags<br />
+<code>git push origin &lt;tagname&gt;</code> 上传某个tag</p>
+</li>
+<li>
+<p>删除标签tag<br />
+<code>git tag -d &lt;tagname&gt;</code> 删除本地tag<br />
+<code>git push origin --delete &lt;tagname&gt;</code>   删除远程tag</p>
+</li>
+<li>
+<p>检出标签：如果你想查看某个标签所指向的文件版本，可以使用 git checkout 命令， 虽然这会使你的仓库处于“分离头指针（detached HEAD）”的状态——这个状态有些不好的副作用，在“分离头指针”状态下，如果你做了某些更改然后提交它们，标签不会发生变化， 但你的新提交将不属于任何分支，并且将无法访问，除非通过确切的提交哈希才能访问。 因此，如果你需要进行更改，比如你要修复旧版本中的错误，那么通常需要创建一个新分支。<br />
+<code>git checkout &lt;tagname&gt;</code> 查看标签具体内容</p>
+<p><code>git checkout -b &lt;branchName&gt; &lt;tagname&gt;</code> 为某个标签创建分支</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>软件与工具使用</category>
       </categories>
       <tags>
         <tag>ubuntu</tag>
-        <tag>html5</tag>
       </tags>
   </entry>
   <entry>
@@ -700,6 +885,81 @@ dpkg -i &lt;package.deb&gt;
       </categories>
   </entry>
   <entry>
+    <title>软件与工具使用/linux命令</title>
+    <url>/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h1 id="linux常见问题总结"><a class="markdownIt-Anchor" href="#linux常见问题总结"></a> linux常见问题总结</h1>
+<pre><code>这个是在使用linux/ubuntu 系统过程中，对遇到的问题进行记录总结，以备后用。好记性不如烂键盘！
+</code></pre>
+<h2 id="1-怎么使用管理员权限打开文件夹"><a class="markdownIt-Anchor" href="#1-怎么使用管理员权限打开文件夹"></a> 1. 怎么使用管理员权限打开文件夹?</h2>
+<pre><code>&gt; sudo natilus
+</code></pre>
+<a id="more"></a>
+<h2 id="2-浏览器看不了视频"><a class="markdownIt-Anchor" href="#2-浏览器看不了视频"></a> 2. 浏览器看不了视频?</h2>
+<pre><code>安装flash,执行一下命令前先需要设置允许安装未知版权的软件：  system settings -&gt; software&amp;updates -&gt; ubuntu software -&gt; 取消software restricted copyright or legal issues(第四个选项)
+
+&gt;  sudo apt-get install flashplugin-installer
+
+安装html5音视频所支持的依赖
+
+&gt; sudo apt-get update
+&gt;
+&gt; sudo apt-get install ubuntu-restricted-extras
+</code></pre>
+<h2 id="3-多条命令执行区别"><a class="markdownIt-Anchor" href="#3-多条命令执行区别"></a> 3. 多条命令执行区别</h2>
+<pre><code>（1） 每个命令之间用;隔开
+
+说明：各命令的执行给果，不会影响其它命令的执行。换句话说，各个命令都会执行，但不保证每个命令都执行成功。
+
+（2） 每个命令之间用&amp;&amp;隔开
+
+说明：若前面的命令执行成功，才会去执行后面的命令。这样可以保证所有的命令执行完毕后，执行过程都是成功的。
+
+（3）每个命令之间用||隔开
+
+说明：||是或的意思，只有前面的命令执行失败后才去执行下一条命令，直到成功执行一条命令为止。
+
+（4）每个命令之间用&amp;隔开
+说明：&amp;表示and，按顺序执行每条命令，但是前后不影响，也就是无论第一条是否执行失败，后一条总是要执行
+
+（5）每个命令之间用|隔开
+说明：管道符|，前一条执行的结果作为后一条执行语句的输入，依次执行。
+</code></pre>
+<h2 id="4ubuntu安装各种格式软件"><a class="markdownIt-Anchor" href="#4ubuntu安装各种格式软件"></a> 4.Ubuntu安装各种格式软件</h2>
+<pre><code>安装.deb格式的软件
+dpkg -i &lt;package.deb&gt;
+</code></pre>
+<h2 id="5-快速回到桌面快捷键"><a class="markdownIt-Anchor" href="#5-快速回到桌面快捷键"></a> 5. 快速回到桌面快捷键</h2>
+<p><code>ctrl + win + d</code> 快速回到桌面快捷键</p>
+]]></content>
+      <categories>
+        <category>软件与工具使用</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>html5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件与工具使用/window命令行笔记</title>
+    <url>/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="windows下面有用的cmd指令"><a class="markdownIt-Anchor" href="#windows下面有用的cmd指令"></a> windows下面有用的cmd指令</h1>
+<h3 id="1-临时禁用键盘"><a class="markdownIt-Anchor" href="#1-临时禁用键盘"></a> 1. 临时禁用键盘</h3>
+<p>说明： 之前键盘坏了，敲键盘的的时候会一直输入字符k，于是使用卸载驱动的形式，将键盘禁用了，现在我只是想临时的想要禁用自己笔记本的键盘，便于在自己的键盘上放书或者本子什么的，方便阅读和外接键盘的输入。于是就搜到了如下的命令，解决自己的燃眉之急</p>
+<p>禁用键盘：sc config i8042prt start= disabled，重启</p>
+<p>恢复键盘：sc config i8042prt start= auto， 重启</p>
+<a id="more"></a>
+<h3 id="2-将cpp文件编译生成的exe文件放在指定的位置"><a class="markdownIt-Anchor" href="#2-将cpp文件编译生成的exe文件放在指定的位置"></a> 2. 将cpp文件编译生成的exe文件放在指定的位置</h3>
+<p>需求说明：在编译单个cpp文件时，生成的exe文件总是放在当前文件夹下面，我花费了点心思，终于解决了将当前文件夹下面cpp编译生成的exe文件，放在当前文件下下面的build文件夹里面。</p>
+<p>修改Setting.json文件里面的&quot;code-runner.executorMap&quot;.&quot;cpp&quot;的值为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;code-runner.executorMap&quot;: &#123;</span><br><span class="line">	...</span><br><span class="line">    &quot;cpp&quot;: &quot;cd $dir &amp;&amp;  (IF NOT EXIST build (md build) )  &amp;&amp; g++ $fileName -o build\\$fileNameWithoutExt &amp;&amp; $dir\\build\\$fileNameWithoutExt&quot;,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面其实就是将四句cmd命令合并成一句执行。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd $dir     &#x2F;&#x2F;进入到当前执行文件所在的文件夹</span><br><span class="line"></span><br><span class="line">( IF NOT EXIST build (md build)  )  &#x2F;&#x2F;  当前文件夹下面如果不存在build文件夹就创建build文件夹</span><br><span class="line"></span><br><span class="line">g++ $fileName -o build\\$fileNameWithoutExt &#x2F;&#x2F;编译当前文件并将编译结果放置在build文件夹下面</span><br><span class="line"></span><br><span class="line">$dir\\build\\$fileNameWithoutExt &#x2F;&#x2F;执行已经编译好的可执行文件</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>软件与工具使用</category>
+      </categories>
+  </entry>
+  <entry>
     <title>软件与工具使用/vscode笔记</title>
     <url>/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/vscode%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="vscode常见问题"><a class="markdownIt-Anchor" href="#vscode常见问题"></a> vscode常见问题</h1>
@@ -766,25 +1026,6 @@ markdown快捷键
 <h2 id="6-怎么拆分和合并分屏"><a class="markdownIt-Anchor" href="#6-怎么拆分和合并分屏"></a> 6. 怎么拆分和合并分屏</h2>
 <pre><code>见 [4.灵活好用的快捷建](#4灵活好用的快捷建) 中的分屏快捷键
 </code></pre>
-]]></content>
-      <categories>
-        <category>软件与工具使用</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>软件与工具使用/window命令行笔记</title>
-    <url>/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="windows下面有用的cmd指令"><a class="markdownIt-Anchor" href="#windows下面有用的cmd指令"></a> windows下面有用的cmd指令</h1>
-<h3 id="1-临时禁用键盘"><a class="markdownIt-Anchor" href="#1-临时禁用键盘"></a> 1. 临时禁用键盘</h3>
-<p>说明： 之前键盘坏了，敲键盘的的时候会一直输入字符k，于是使用卸载驱动的形式，将键盘禁用了，现在我只是想临时的想要禁用自己笔记本的键盘，便于在自己的键盘上放书或者本子什么的，方便阅读和外接键盘的输入。于是就搜到了如下的命令，解决自己的燃眉之急</p>
-<p>禁用键盘：sc config i8042prt start= disabled，重启</p>
-<p>恢复键盘：sc config i8042prt start= auto， 重启</p>
-<h3 id="2-将cpp文件编译生成的exe文件放在指定的位置"><a class="markdownIt-Anchor" href="#2-将cpp文件编译生成的exe文件放在指定的位置"></a> 2. 将cpp文件编译生成的exe文件放在指定的位置</h3>
-<p>需求说明：在编译单个cpp文件时，生成的exe文件总是放在当前文件夹下面，我花费了点心思，终于解决了将当前文件夹下面cpp编译生成的exe文件，放在当前文件下下面的build文件夹里面。</p>
-<p>修改Setting.json文件里面的&quot;code-runner.executorMap&quot;.&quot;cpp&quot;的值为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;code-runner.executorMap&quot;: &#123;</span><br><span class="line">	...</span><br><span class="line">    &quot;cpp&quot;: &quot;cd $dir &amp;&amp;  (IF NOT EXIST build (md build) )  &amp;&amp; g++ $fileName -o build\\$fileNameWithoutExt &amp;&amp; $dir\\build\\$fileNameWithoutExt&quot;,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面其实就是将四句cmd命令合并成一句执行。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd $dir     &#x2F;&#x2F;进入到当前执行文件所在的文件夹</span><br><span class="line"></span><br><span class="line">( IF NOT EXIST build (md build)  )  &#x2F;&#x2F;  当前文件夹下面如果不存在build文件夹就创建build文件夹</span><br><span class="line"></span><br><span class="line">g++ $fileName -o build\\$fileNameWithoutExt &#x2F;&#x2F;编译当前文件并将编译结果放置在build文件夹下面</span><br><span class="line"></span><br><span class="line">$dir\\build\\$fileNameWithoutExt &#x2F;&#x2F;执行已经编译好的可执行文件</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>软件与工具使用</category>
@@ -976,6 +1217,62 @@ K</p>
       </tags>
   </entry>
   <entry>
+    <title>深度学习/opencv笔记/opencv02</title>
+    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv02/</url>
+    <content><![CDATA[<h2 id="2图像运算"><a class="markdownIt-Anchor" href="#2图像运算"></a> 2，图像运算</h2>
+<h3 id="加法"><a class="markdownIt-Anchor" href="#加法"></a> 加法</h3>
+<p>img1 + img2 ,遵循规则：<br />
+a+b = (a+b) % 256,即结果对256取膜</p>
+<p>cv2.add(img1,img2) ,遵循规则：<br />
+a+b = min(a+b,255), 即和大于255时结果取255</p>
+<h3 id="图像加权和"><a class="markdownIt-Anchor" href="#图像加权和"></a> 图像加权和</h3>
+<p>dst = cv2.addWeighted(src1,alpha,src2,beta,gamma) 参数不能省略<br />
+结果就是 dst = src * alpha +src2 *beta +gamma</p>
+<p>加权和超过255，结果同样取255</p>
+<h3 id="按位逻辑运算"><a class="markdownIt-Anchor" href="#按位逻辑运算"></a> 按位逻辑运算</h3>
+<p>cv2.bitwise_and() 与<br />
+cv2.bitwise_or()  或<br />
+cv2.bitwise_xor() 异或<br />
+cv2.bitwise_not() 非</p>
+<p>跟 0 位与结果为 0 ，变成黑色<br />
+跟255位与结果是本身 ，颜色不变</p>
+<h3 id="掩膜"><a class="markdownIt-Anchor" href="#掩膜"></a> 掩膜</h3>
+<p>使用掩膜参数时，操作只会在掩膜值为非空的像素点上执行，并将其他像素点的值设置为0</p>
+<h3 id="图像与数值运算"><a class="markdownIt-Anchor" href="#图像与数值运算"></a> 图像与数值运算</h3>
+<p>cv2.add(img,6) 参与运算的既可以是图片也可以是数值</p>
+<h3 id="位平面分解"><a class="markdownIt-Anchor" href="#位平面分解"></a> 位平面分解</h3>
+<p>将同一比特位上的二进制像素值进行组合，得到一副二进制值图像，该图像被称为灰度图像的一个位平面，这个过程被称为位平面分解。<br />
+在8位灰度图中，可以组成8个二进制图像<br />
+<a href="opencv/%E4%BD%8D%E5%B9%B3%E9%9D%A2.py">代码</a></p>
+<h3 id="图像加密和解密"><a class="markdownIt-Anchor" href="#图像加密和解密"></a> 图像加密和解密</h3>
+<p>通过按位异或运算可以实现图像的加密和解密</p>
+<p>通过对原始图像与秘钥图像进行按位异或就可以进行加密，将加密后的图像与秘钥图像再次进行按位异或就可以进行解密</p>
+<p><a href="opencv/%E5%9B%BE%E5%83%8F%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86.py">代码实现</a></p>
+<h3 id="数字水印"><a class="markdownIt-Anchor" href="#数字水印"></a> 数字水印</h3>
+<p>最低有效位指一个二进制中的第0位，由于二进制图像处于载体图像的最低有效位上面，所以对于载体图像的影响非常不明显，具有较高的隐蔽性。</p>
+<p>在必要时，我们可以直接将载体图像中的最低有效位提取出来，即可得到嵌入该位上的二值图像，达到提取秘密信息的目的。<br />
+这种信息隐藏也被称为数字水印，通过该方式可以实现信息影藏，版权认证，身份认证等功能</p>
+<p>分两步：</p>
+<pre><code>嵌入过程
+  用数字水印信息将图像的最低有效位替换掉
+
+提取过程
+  提取出最低有效位的水印信息即可
+</code></pre>
+<p><a href="opencv/%E6%95%B0%E5%AD%97%E6%B0%B4%E5%8D%B0.py">demo</a></p>
+<h3 id="脸部打码以及解码"><a class="markdownIt-Anchor" href="#脸部打码以及解码"></a> 脸部打码以及解码</h3>
+<p>使用掩码和按位运算方式实现对脸部打码和解码实例<br />
+<a href="opencv/%E8%84%B8%E9%83%A8%E6%89%93%E7%A0%81%E4%BB%A5%E5%8F%8A%E8%A7%A3%E7%A0%81.py">demo</a></p>
+]]></content>
+      <categories>
+        <category>opencv笔记</category>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>opencv</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>深度学习/opencv笔记/opencv03</title>
     <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv03/</url>
     <content><![CDATA[<h2 id="3色彩空间类型转换"><a class="markdownIt-Anchor" href="#3色彩空间类型转换"></a> 3，色彩空间类型转换</h2>
@@ -1038,62 +1335,6 @@ itemset(索引值，新值) 用来修改像素值</p>
       </tags>
   </entry>
   <entry>
-    <title>深度学习/opencv笔记/opencv02</title>
-    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv02/</url>
-    <content><![CDATA[<h2 id="2图像运算"><a class="markdownIt-Anchor" href="#2图像运算"></a> 2，图像运算</h2>
-<h3 id="加法"><a class="markdownIt-Anchor" href="#加法"></a> 加法</h3>
-<p>img1 + img2 ,遵循规则：<br />
-a+b = (a+b) % 256,即结果对256取膜</p>
-<p>cv2.add(img1,img2) ,遵循规则：<br />
-a+b = min(a+b,255), 即和大于255时结果取255</p>
-<h3 id="图像加权和"><a class="markdownIt-Anchor" href="#图像加权和"></a> 图像加权和</h3>
-<p>dst = cv2.addWeighted(src1,alpha,src2,beta,gamma) 参数不能省略<br />
-结果就是 dst = src * alpha +src2 *beta +gamma</p>
-<p>加权和超过255，结果同样取255</p>
-<h3 id="按位逻辑运算"><a class="markdownIt-Anchor" href="#按位逻辑运算"></a> 按位逻辑运算</h3>
-<p>cv2.bitwise_and() 与<br />
-cv2.bitwise_or()  或<br />
-cv2.bitwise_xor() 异或<br />
-cv2.bitwise_not() 非</p>
-<p>跟 0 位与结果为 0 ，变成黑色<br />
-跟255位与结果是本身 ，颜色不变</p>
-<h3 id="掩膜"><a class="markdownIt-Anchor" href="#掩膜"></a> 掩膜</h3>
-<p>使用掩膜参数时，操作只会在掩膜值为非空的像素点上执行，并将其他像素点的值设置为0</p>
-<h3 id="图像与数值运算"><a class="markdownIt-Anchor" href="#图像与数值运算"></a> 图像与数值运算</h3>
-<p>cv2.add(img,6) 参与运算的既可以是图片也可以是数值</p>
-<h3 id="位平面分解"><a class="markdownIt-Anchor" href="#位平面分解"></a> 位平面分解</h3>
-<p>将同一比特位上的二进制像素值进行组合，得到一副二进制值图像，该图像被称为灰度图像的一个位平面，这个过程被称为位平面分解。<br />
-在8位灰度图中，可以组成8个二进制图像<br />
-<a href="opencv/%E4%BD%8D%E5%B9%B3%E9%9D%A2.py">代码</a></p>
-<h3 id="图像加密和解密"><a class="markdownIt-Anchor" href="#图像加密和解密"></a> 图像加密和解密</h3>
-<p>通过按位异或运算可以实现图像的加密和解密</p>
-<p>通过对原始图像与秘钥图像进行按位异或就可以进行加密，将加密后的图像与秘钥图像再次进行按位异或就可以进行解密</p>
-<p><a href="opencv/%E5%9B%BE%E5%83%8F%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86.py">代码实现</a></p>
-<h3 id="数字水印"><a class="markdownIt-Anchor" href="#数字水印"></a> 数字水印</h3>
-<p>最低有效位指一个二进制中的第0位，由于二进制图像处于载体图像的最低有效位上面，所以对于载体图像的影响非常不明显，具有较高的隐蔽性。</p>
-<p>在必要时，我们可以直接将载体图像中的最低有效位提取出来，即可得到嵌入该位上的二值图像，达到提取秘密信息的目的。<br />
-这种信息隐藏也被称为数字水印，通过该方式可以实现信息影藏，版权认证，身份认证等功能</p>
-<p>分两步：</p>
-<pre><code>嵌入过程
-  用数字水印信息将图像的最低有效位替换掉
-
-提取过程
-  提取出最低有效位的水印信息即可
-</code></pre>
-<p><a href="opencv/%E6%95%B0%E5%AD%97%E6%B0%B4%E5%8D%B0.py">demo</a></p>
-<h3 id="脸部打码以及解码"><a class="markdownIt-Anchor" href="#脸部打码以及解码"></a> 脸部打码以及解码</h3>
-<p>使用掩码和按位运算方式实现对脸部打码和解码实例<br />
-<a href="opencv/%E8%84%B8%E9%83%A8%E6%89%93%E7%A0%81%E4%BB%A5%E5%8F%8A%E8%A7%A3%E7%A0%81.py">demo</a></p>
-]]></content>
-      <categories>
-        <category>opencv笔记</category>
-        <category>深度学习</category>
-      </categories>
-      <tags>
-        <tag>opencv</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深度学习/opencv笔记/opencv04</title>
     <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv04/</url>
     <content><![CDATA[<h2 id="4几何变换"><a class="markdownIt-Anchor" href="#4几何变换"></a> 4，<strong>几何变换</strong></h2>
@@ -1122,6 +1363,43 @@ cv2.bitwise_not() 非</p>
 <p>把一副图像内像素点放置到另一幅图像内的指定位置，这个过程被称为重映射</p>
 <p>映射函数：<code>dst = cv2.remap(src,map1,map2,interpolation,borderMode,borderValue)</code></p>
 <p>映射就是通过修改图像像素点的位置一副新的图像，在构建新图像时，需要确定新图像中的每个像素点在原图中的位置，因此，映射函数的作用就是查找新图像像素点在原始图像内的位置。该过程就是将新图像像素映射到原始图像的过程，因此被称为反向映射。</p>
+]]></content>
+      <categories>
+        <category>opencv笔记</category>
+        <category>深度学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>深度学习/opencv笔记/opencv06</title>
+    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv06/</url>
+    <content><![CDATA[<h2 id="6形态学操作"><a class="markdownIt-Anchor" href="#6形态学操作"></a> 6，<strong>形态学操作</strong></h2>
+<p>形态学，即数学形态学,图像处理中一个非常重要分操作，形态学主要从图像内提取分量信息，该分量信息通常对于表达和描绘图像时所使用的最本质的形状特征。</p>
+<h3 id="腐蚀"><a class="markdownIt-Anchor" href="#腐蚀"></a> <strong>腐蚀</strong></h3>
+<p>简介：腐蚀是形态学的最基本的形态学操作之一，它能够将图像的边界点消除，使图像沿着边界向内收缩，也可以将小于指定结构体元素的部分去除</p>
+<p>作用：腐蚀用来<strong>收缩</strong>或者<strong>细化</strong>二值图像中的前景，借此实现去除噪声、元素分割等操作</p>
+<p>原理：取局部最小值来实现</p>
+<p><code>dst= cv2.erode( src, kernal, anchor, iterations, borderType )</code></p>
+<h3 id="膨胀"><a class="markdownIt-Anchor" href="#膨胀"></a> <strong>膨胀</strong></h3>
+<p>原理类似<strong>腐蚀</strong>,取局部最大值</p>
+<p>膨胀就是求局部最大值的操作，核B与图形卷积，即计算核B覆盖的区域（体现局部）的像素点的最大值，并把这个最大值赋值给参考点指定的像素。这样就会使图像中的高亮区域逐渐增长</p>
+<p><code>dst = cv2.dilate(src,kernal, anchor, iterations, borderType, borderValue )</code></p>
+<h3 id="通用形态学函数"><a class="markdownIt-Anchor" href="#通用形态学函数"></a> <strong>通用形态学函数</strong></h3>
+<p>形态学函数<br />
+<code>dst = cv2.morphologyEx( src, kernal , anchor, iterations, borderType)</code></p>
+<h3 id="开运算"><a class="markdownIt-Anchor" href="#开运算"></a> <strong>开运算</strong></h3>
+<p>先腐蚀，后膨胀，这一过程称为开运算</p>
+<h3 id="闭运算"><a class="markdownIt-Anchor" href="#闭运算"></a> <strong>闭运算</strong></h3>
+<p>先膨胀，后腐蚀，这一过程称为闭运算</p>
+<h3 id="形态学梯度运算"><a class="markdownIt-Anchor" href="#形态学梯度运算"></a> <strong>形态学梯度运算</strong></h3>
+<p>形态学梯度运算 是用图像膨胀 减去 图像腐蚀的操作，该操作可以获得原始图像的前景图像的边缘</p>
+<h3 id="礼帽运算"><a class="markdownIt-Anchor" href="#礼帽运算"></a> <strong>礼帽运算</strong></h3>
+<p>礼帽运算是用原始图像减去开运算图像的操作，</p>
+<p>礼貌运算能够获得图像的噪声信息</p>
+<h3 id="黑帽运算"><a class="markdownIt-Anchor" href="#黑帽运算"></a> <strong>黑帽运算</strong></h3>
+<p>黑帽运算是用闭运算图像减去原始图像的操作</p>
+<p>闭运算能够获得图像内部的小孔，或者前景中的小黑点，或者得到比原始图像的边缘更暗的边缘部分</p>
+<h3 id="核函数"><a class="markdownIt-Anchor" href="#核函数"></a> <strong>核函数</strong></h3>
+<p>在进行形态学操作时，必须使用一个特定的核（结构单元）。该核能够自定义生成，也可以通过函数cv2.getStructuringElement()构造，它能够返回一个用于形态学处理的结构单元</p>
 ]]></content>
       <categories>
         <category>opencv笔记</category>
@@ -1250,122 +1528,6 @@ cv2.bitwise_not() 非</p>
       </tags>
   </entry>
   <entry>
-    <title>深度学习/opencv笔记/opencv08</title>
-    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv08/</url>
-    <content><![CDATA[<h2 id="8canny边缘检测"><a class="markdownIt-Anchor" href="#8canny边缘检测"></a> 8，<strong>canny边缘检测</strong></h2>
-<p>canny检测步骤：</p>
-<ol>
-<li>去噪，噪声会影响边缘检测的准确性
-<ul>
-<li>应用高斯滤波器去噪，一般采用5*5的核</li>
-<li>高斯滤波的特点，离中心越远权值越小</li>
-</ul>
-</li>
-<li>计算梯度的幅度和方向
-<ul>
-<li>梯度的方向和边缘方向是垂直的</li>
-<li>根据边缘检测算子得出的水平和垂直方向的分量，计算出梯度的幅度和方向</li>
-</ul>
-</li>
-</ol>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">梯</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">幅</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">：</mi><mi>G</mi><mo>=</mo><msqrt><msubsup><mi>G</mi><mi>x</mi><mn>2</mn></msubsup></msqrt><mo>+</mo><msqrt><msubsup><mi>G</mi><mi>y</mi><mn>2</mn></msubsup></msqrt></mrow><annotation encoding="application/x-tex">梯度的幅度：G = \sqrt{G_x^2} +\sqrt{G_y^2}  
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">梯</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">幅</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault">G</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.259571em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.980429em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.940429em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
-158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
-c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
-175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
-c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
--252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
-s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.259571em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6276250000000001em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.212375em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7401079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.1723749999999997em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
-572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
--7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
-c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
-s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
--658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
-M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6276250000000001em;"><span></span></span></span></span></span></span></span></span></span></p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">梯</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">向</mi><mi mathvariant="normal">：</mi><mi>θ</mi><mo>=</mo><mi>a</mi><mi>r</mi><mi>c</mi><mi>t</mi><mi>a</mi><mi>n</mi><mo stretchy="false">(</mo><msqrt><msubsup><mi>G</mi><mi>x</mi><mn>2</mn></msubsup></msqrt><mo separator="true">,</mo><msqrt><msubsup><mi>G</mi><mi>y</mi><mn>2</mn></msubsup></msqrt><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">梯度的方向：\theta = arctan( \sqrt{G_x^2} ,\sqrt{G_y^2})
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord cjk_fallback">梯</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">向</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6276250000000001em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.980429em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.940429em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
-158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
-c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
-175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
-c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
--252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
-s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.259571em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.212375em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7401079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.1723749999999997em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
-572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
--7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
-c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
-s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
--658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
-M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6276250000000001em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
-<ol start="3">
-<li>
-<p>极非大值抑制，即适当的让边缘变瘦</p>
-<ul>
-<li>如果该点是正负梯度上的局部最大值，保留该点</li>
-<li>如果不是，则抑制该点（归零）</li>
-</ul>
-</li>
-<li>
-<p>确定边缘，使用双阈值算法确定最终的边缘信息</p>
-<ul>
-<li>设置两个阈值，一个为高阈值maxval,一个为低阈值minval</li>
-<li>如果当前边缘像素的梯度值大于maxval，则将当前边缘标记为强边缘</li>
-<li>如果当前边缘像素梯度值介于maxval和minval之间，则将当前边缘像素标记为虚边缘</li>
-<li>如果小于minval，则抑制但钱边缘像素</li>
-<li>与强边缘相连，则将该边缘标记为边缘</li>
-<li>与强边缘无连接，则将该边缘抑制</li>
-</ul>
-</li>
-</ol>
-<h3 id="canny函数及使用"><a class="markdownIt-Anchor" href="#canny函数及使用"></a> <strong>canny函数及使用</strong></h3>
-<p><code>edges = cv.Canny(image ,threshold1, threshold2, apertureSize, L2gradient)</code><br />
-- threshold1第一个阈值<br />
-- threshold2第二个阈值<br />
-- apertureSize表示sobel孔径的大小<br />
-- L2gradient计算梯度幅度的标识</p>
-]]></content>
-      <categories>
-        <category>opencv笔记</category>
-        <category>深度学习</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>深度学习/opencv笔记/opencv06</title>
-    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv06/</url>
-    <content><![CDATA[<h2 id="6形态学操作"><a class="markdownIt-Anchor" href="#6形态学操作"></a> 6，<strong>形态学操作</strong></h2>
-<p>形态学，即数学形态学,图像处理中一个非常重要分操作，形态学主要从图像内提取分量信息，该分量信息通常对于表达和描绘图像时所使用的最本质的形状特征。</p>
-<h3 id="腐蚀"><a class="markdownIt-Anchor" href="#腐蚀"></a> <strong>腐蚀</strong></h3>
-<p>简介：腐蚀是形态学的最基本的形态学操作之一，它能够将图像的边界点消除，使图像沿着边界向内收缩，也可以将小于指定结构体元素的部分去除</p>
-<p>作用：腐蚀用来<strong>收缩</strong>或者<strong>细化</strong>二值图像中的前景，借此实现去除噪声、元素分割等操作</p>
-<p>原理：取局部最小值来实现</p>
-<p><code>dst= cv2.erode( src, kernal, anchor, iterations, borderType )</code></p>
-<h3 id="膨胀"><a class="markdownIt-Anchor" href="#膨胀"></a> <strong>膨胀</strong></h3>
-<p>原理类似<strong>腐蚀</strong>,取局部最大值</p>
-<p>膨胀就是求局部最大值的操作，核B与图形卷积，即计算核B覆盖的区域（体现局部）的像素点的最大值，并把这个最大值赋值给参考点指定的像素。这样就会使图像中的高亮区域逐渐增长</p>
-<p><code>dst = cv2.dilate(src,kernal, anchor, iterations, borderType, borderValue )</code></p>
-<h3 id="通用形态学函数"><a class="markdownIt-Anchor" href="#通用形态学函数"></a> <strong>通用形态学函数</strong></h3>
-<p>形态学函数<br />
-<code>dst = cv2.morphologyEx( src, kernal , anchor, iterations, borderType)</code></p>
-<h3 id="开运算"><a class="markdownIt-Anchor" href="#开运算"></a> <strong>开运算</strong></h3>
-<p>先腐蚀，后膨胀，这一过程称为开运算</p>
-<h3 id="闭运算"><a class="markdownIt-Anchor" href="#闭运算"></a> <strong>闭运算</strong></h3>
-<p>先膨胀，后腐蚀，这一过程称为闭运算</p>
-<h3 id="形态学梯度运算"><a class="markdownIt-Anchor" href="#形态学梯度运算"></a> <strong>形态学梯度运算</strong></h3>
-<p>形态学梯度运算 是用图像膨胀 减去 图像腐蚀的操作，该操作可以获得原始图像的前景图像的边缘</p>
-<h3 id="礼帽运算"><a class="markdownIt-Anchor" href="#礼帽运算"></a> <strong>礼帽运算</strong></h3>
-<p>礼帽运算是用原始图像减去开运算图像的操作，</p>
-<p>礼貌运算能够获得图像的噪声信息</p>
-<h3 id="黑帽运算"><a class="markdownIt-Anchor" href="#黑帽运算"></a> <strong>黑帽运算</strong></h3>
-<p>黑帽运算是用闭运算图像减去原始图像的操作</p>
-<p>闭运算能够获得图像内部的小孔，或者前景中的小黑点，或者得到比原始图像的边缘更暗的边缘部分</p>
-<h3 id="核函数"><a class="markdownIt-Anchor" href="#核函数"></a> <strong>核函数</strong></h3>
-<p>在进行形态学操作时，必须使用一个特定的核（结构单元）。该核能够自定义生成，也可以通过函数cv2.getStructuringElement()构造，它能够返回一个用于形态学处理的结构单元</p>
-]]></content>
-      <categories>
-        <category>opencv笔记</category>
-        <category>深度学习</category>
-      </categories>
-  </entry>
-  <entry>
     <title>深度学习/opencv笔记/opencv07</title>
     <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv07/</url>
     <content><![CDATA[<h2 id="7图像梯度"><a class="markdownIt-Anchor" href="#7图像梯度"></a> 7，<strong>图像梯度</strong></h2>
@@ -1468,22 +1630,6 @@ Gy=
       </categories>
   </entry>
   <entry>
-    <title>深度学习/opencv笔记/opencv11</title>
-    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv11/</url>
-    <content><![CDATA[<h2 id="11傅里叶变换"><a class="markdownIt-Anchor" href="#11傅里叶变换"></a> 11，<strong>傅里叶变换</strong></h2>
-<p>图像处理一般分为空间域处理和频率域处理</p>
-<p>空间域处理是直接对图像中的像素进行处理</p>
-<p>频率域处理是先将图像变为图像域，然后在频率域对图像进行处理，最后再通过反变换将图像从频率域变换到空间域。</p>
-<p>傅里叶变换能够将将空间域变换到频率域，而逆傅里叶变换能够将频率域变换到空间域内。</p>
-<h3 id="理论基础"><a class="markdownIt-Anchor" href="#理论基础"></a> <strong>理论基础</strong></h3>
-<h3 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> <strong>实现</strong></h3>
-]]></content>
-      <categories>
-        <category>opencv笔记</category>
-        <category>深度学习</category>
-      </categories>
-  </entry>
-  <entry>
     <title>深度学习/opencv笔记/opencv09</title>
     <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv09/</url>
     <content><![CDATA[<h2 id="9图像金字塔"><a class="markdownIt-Anchor" href="#9图像金字塔"></a> 9，<strong>图像金字塔</strong></h2>
@@ -1524,6 +1670,85 @@ Gy=
 <p>我们希望通过对金字塔中的小图像进行上采样以获得完整的大尺寸高分辨率图像，这时就需要用到拉普拉斯金字塔</p>
 <p>为了在向上采样时能够恢复具有较高分辨率的原始图像，就要获取在采样过程中所丢失的信息，这些丢失的信息就构成了拉普拉斯金字塔</p>
 <p>拉普拉斯金字塔的第i层，等于 高斯金字塔中的第i层 与 高斯金字塔第i+1层上采样结果 之差</p>
+]]></content>
+      <categories>
+        <category>opencv笔记</category>
+        <category>深度学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>深度学习/opencv笔记/opencv08</title>
+    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv08/</url>
+    <content><![CDATA[<h2 id="8canny边缘检测"><a class="markdownIt-Anchor" href="#8canny边缘检测"></a> 8，<strong>canny边缘检测</strong></h2>
+<p>canny检测步骤：</p>
+<ol>
+<li>去噪，噪声会影响边缘检测的准确性
+<ul>
+<li>应用高斯滤波器去噪，一般采用5*5的核</li>
+<li>高斯滤波的特点，离中心越远权值越小</li>
+</ul>
+</li>
+<li>计算梯度的幅度和方向
+<ul>
+<li>梯度的方向和边缘方向是垂直的</li>
+<li>根据边缘检测算子得出的水平和垂直方向的分量，计算出梯度的幅度和方向</li>
+</ul>
+</li>
+</ol>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">梯</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">幅</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">：</mi><mi>G</mi><mo>=</mo><msqrt><msubsup><mi>G</mi><mi>x</mi><mn>2</mn></msubsup></msqrt><mo>+</mo><msqrt><msubsup><mi>G</mi><mi>y</mi><mn>2</mn></msubsup></msqrt></mrow><annotation encoding="application/x-tex">梯度的幅度：G = \sqrt{G_x^2} +\sqrt{G_y^2}  
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">梯</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">幅</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault">G</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.259571em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.980429em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.940429em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
+158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
+c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
+175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
+c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
+-252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
+s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.259571em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6276250000000001em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.212375em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7401079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.1723749999999997em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
+572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
+-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
+c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
+s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
+-658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
+M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6276250000000001em;"><span></span></span></span></span></span></span></span></span></span></p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">梯</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">向</mi><mi mathvariant="normal">：</mi><mi>θ</mi><mo>=</mo><mi>a</mi><mi>r</mi><mi>c</mi><mi>t</mi><mi>a</mi><mi>n</mi><mo stretchy="false">(</mo><msqrt><msubsup><mi>G</mi><mi>x</mi><mn>2</mn></msubsup></msqrt><mo separator="true">,</mo><msqrt><msubsup><mi>G</mi><mi>y</mi><mn>2</mn></msubsup></msqrt><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">梯度的方向：\theta = arctan( \sqrt{G_x^2} ,\sqrt{G_y^2})
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord cjk_fallback">梯</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">向</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6276250000000001em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.980429em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.940429em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
+158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
+c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
+175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
+c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
+-252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
+s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.259571em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.212375em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7401079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.1723749999999997em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
+572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
+-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
+c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
+s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
+-658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
+M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6276250000000001em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<ol start="3">
+<li>
+<p>极非大值抑制，即适当的让边缘变瘦</p>
+<ul>
+<li>如果该点是正负梯度上的局部最大值，保留该点</li>
+<li>如果不是，则抑制该点（归零）</li>
+</ul>
+</li>
+<li>
+<p>确定边缘，使用双阈值算法确定最终的边缘信息</p>
+<ul>
+<li>设置两个阈值，一个为高阈值maxval,一个为低阈值minval</li>
+<li>如果当前边缘像素的梯度值大于maxval，则将当前边缘标记为强边缘</li>
+<li>如果当前边缘像素梯度值介于maxval和minval之间，则将当前边缘像素标记为虚边缘</li>
+<li>如果小于minval，则抑制但钱边缘像素</li>
+<li>与强边缘相连，则将该边缘标记为边缘</li>
+<li>与强边缘无连接，则将该边缘抑制</li>
+</ul>
+</li>
+</ol>
+<h3 id="canny函数及使用"><a class="markdownIt-Anchor" href="#canny函数及使用"></a> <strong>canny函数及使用</strong></h3>
+<p><code>edges = cv.Canny(image ,threshold1, threshold2, apertureSize, L2gradient)</code><br />
+- threshold1第一个阈值<br />
+- threshold2第二个阈值<br />
+- apertureSize表示sobel孔径的大小<br />
+- L2gradient计算梯度幅度的标识</p>
 ]]></content>
       <categories>
         <category>opencv笔记</category>
@@ -1744,23 +1969,6 @@ c-8,0,-12,-0.7,-12,-2z M1001 80H400000v40H1014z'/></svg></span></span></span><sp
       </categories>
   </entry>
   <entry>
-    <title>深度学习/opencv笔记/opencv17</title>
-    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv17/</url>
-    <content><![CDATA[<h2 id="17k近邻算法"><a class="markdownIt-Anchor" href="#17k近邻算法"></a> 17，<strong>k近邻算法</strong></h2>
-<h3 id="理论基础"><a class="markdownIt-Anchor" href="#理论基础"></a> <strong>理论基础</strong></h3>
-<h3 id="计算"><a class="markdownIt-Anchor" href="#计算"></a> <strong>计算</strong></h3>
-<h3 id="手写数字识别原理"><a class="markdownIt-Anchor" href="#手写数字识别原理"></a> <strong>手写数字识别原理</strong></h3>
-<h3 id="自定义函数手写数字识别"><a class="markdownIt-Anchor" href="#自定义函数手写数字识别"></a> <strong>自定义函数手写数字识别</strong></h3>
-<h3 id="k近邻模块的基本使用"><a class="markdownIt-Anchor" href="#k近邻模块的基本使用"></a> <strong>k近邻模块的基本使用</strong></h3>
-<h3 id="k-近邻手写板数字的识别"><a class="markdownIt-Anchor" href="#k-近邻手写板数字的识别"></a> <strong>K 近邻手写板数字的识别</strong></h3>
-<h3 id="svm案例介绍"><a class="markdownIt-Anchor" href="#svm案例介绍"></a> <strong>svm案例介绍</strong></h3>
-]]></content>
-      <categories>
-        <category>opencv笔记</category>
-        <category>深度学习</category>
-      </categories>
-  </entry>
-  <entry>
     <title>深度学习/opencv笔记/opencv15</title>
     <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv15/</url>
     <content><![CDATA[<h2 id="15视频处理"><a class="markdownIt-Anchor" href="#15视频处理"></a> 15，<strong>视频处理</strong></h2>
@@ -1774,12 +1982,45 @@ c-8,0,-12,-0.7,-12,-2z M1001 80H400000v40H1014z'/></svg></span></span></span><sp
       </categories>
   </entry>
   <entry>
+    <title>深度学习/opencv笔记/opencv11</title>
+    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv11/</url>
+    <content><![CDATA[<h2 id="11傅里叶变换"><a class="markdownIt-Anchor" href="#11傅里叶变换"></a> 11，<strong>傅里叶变换</strong></h2>
+<p>图像处理一般分为空间域处理和频率域处理</p>
+<p>空间域处理是直接对图像中的像素进行处理</p>
+<p>频率域处理是先将图像变为图像域，然后在频率域对图像进行处理，最后再通过反变换将图像从频率域变换到空间域。</p>
+<p>傅里叶变换能够将将空间域变换到频率域，而逆傅里叶变换能够将频率域变换到空间域内。</p>
+<h3 id="理论基础"><a class="markdownIt-Anchor" href="#理论基础"></a> <strong>理论基础</strong></h3>
+<h3 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> <strong>实现</strong></h3>
+]]></content>
+      <categories>
+        <category>opencv笔记</category>
+        <category>深度学习</category>
+      </categories>
+  </entry>
+  <entry>
     <title>深度学习/opencv笔记/opencv16</title>
     <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv16/</url>
     <content><![CDATA[<h2 id="16绘图机交互"><a class="markdownIt-Anchor" href="#16绘图机交互"></a> 16，<strong>绘图机交互</strong></h2>
 <h3 id="绘图基础"><a class="markdownIt-Anchor" href="#绘图基础"></a> <strong>绘图基础</strong></h3>
 <h3 id="鼠标交互"><a class="markdownIt-Anchor" href="#鼠标交互"></a> <strong>鼠标交互</strong></h3>
 <h3 id="滚动条"><a class="markdownIt-Anchor" href="#滚动条"></a> <strong>滚动条</strong></h3>
+]]></content>
+      <categories>
+        <category>opencv笔记</category>
+        <category>深度学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>深度学习/opencv笔记/opencv17</title>
+    <url>/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv17/</url>
+    <content><![CDATA[<h2 id="17k近邻算法"><a class="markdownIt-Anchor" href="#17k近邻算法"></a> 17，<strong>k近邻算法</strong></h2>
+<h3 id="理论基础"><a class="markdownIt-Anchor" href="#理论基础"></a> <strong>理论基础</strong></h3>
+<h3 id="计算"><a class="markdownIt-Anchor" href="#计算"></a> <strong>计算</strong></h3>
+<h3 id="手写数字识别原理"><a class="markdownIt-Anchor" href="#手写数字识别原理"></a> <strong>手写数字识别原理</strong></h3>
+<h3 id="自定义函数手写数字识别"><a class="markdownIt-Anchor" href="#自定义函数手写数字识别"></a> <strong>自定义函数手写数字识别</strong></h3>
+<h3 id="k近邻模块的基本使用"><a class="markdownIt-Anchor" href="#k近邻模块的基本使用"></a> <strong>k近邻模块的基本使用</strong></h3>
+<h3 id="k-近邻手写板数字的识别"><a class="markdownIt-Anchor" href="#k-近邻手写板数字的识别"></a> <strong>K 近邻手写板数字的识别</strong></h3>
+<h3 id="svm案例介绍"><a class="markdownIt-Anchor" href="#svm案例介绍"></a> <strong>svm案例介绍</strong></h3>
 ]]></content>
       <categories>
         <category>opencv笔记</category>

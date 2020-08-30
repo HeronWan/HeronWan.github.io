@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">31</span></a>
+    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">34</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -196,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/31/hexo%E9%83%A8%E7%BD%B2%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BAmermaid%E6%B5%81%E7%A8%8B%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
@@ -210,7 +210,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">软件与工具使用/window命令行笔记</a>
+            <a href="/HeronWan.github.io/2020/08/31/hexo%E9%83%A8%E7%BD%B2%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BAmermaid%E6%B5%81%E7%A8%8B%E5%9B%BE/" class="post-title-link" itemprop="url">hexo不能显示mermaid流程图</a>
         </h2>
 
         <div class="post-meta">
@@ -219,8 +219,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+              <time title="创建时间：2020-08-31 02:18:31 / 修改时间：03:08:16" itemprop="dateCreated datePublished" datetime="2020-08-31T02:18:31+08:00">2020-08-31</time>
             </span>
 
           <br>
@@ -229,7 +230,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>896</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -248,18 +249,200 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="windows下面有用的cmd指令"><a class="markdownIt-Anchor" href="#windows下面有用的cmd指令"></a> windows下面有用的cmd指令</h1>
-<h3 id="1-临时禁用键盘"><a class="markdownIt-Anchor" href="#1-临时禁用键盘"></a> 1. 临时禁用键盘</h3>
-<p>说明： 之前键盘坏了，敲键盘的的时候会一直输入字符k，于是使用卸载驱动的形式，将键盘禁用了，现在我只是想临时的想要禁用自己笔记本的键盘，便于在自己的键盘上放书或者本子什么的，方便阅读和外接键盘的输入。于是就搜到了如下的命令，解决自己的燃眉之急</p>
-<p>禁用键盘：sc config i8042prt start= disabled，重启</p>
-<p>恢复键盘：sc config i8042prt start= auto， 重启</p>
-<h3 id="2-将cpp文件编译生成的exe文件放在指定的位置"><a class="markdownIt-Anchor" href="#2-将cpp文件编译生成的exe文件放在指定的位置"></a> 2. 将cpp文件编译生成的exe文件放在指定的位置</h3>
-<p>需求说明：在编译单个cpp文件时，生成的exe文件总是放在当前文件夹下面，我花费了点心思，终于解决了将当前文件夹下面cpp编译生成的exe文件，放在当前文件下下面的build文件夹里面。</p>
-<p>修改Setting.json文件里面的&quot;code-runner.executorMap&quot;.&quot;cpp&quot;的值为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;code-runner.executorMap&quot;: &#123;</span><br><span class="line">	...</span><br><span class="line">    &quot;cpp&quot;: &quot;cd $dir &amp;&amp;  (IF NOT EXIST build (md build) )  &amp;&amp; g++ $fileName -o build\\$fileNameWithoutExt &amp;&amp; $dir\\build\\$fileNameWithoutExt&quot;,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面其实就是将四句cmd命令合并成一句执行。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd $dir     &#x2F;&#x2F;进入到当前执行文件所在的文件夹</span><br><span class="line"></span><br><span class="line">( IF NOT EXIST build (md build)  )  &#x2F;&#x2F;  当前文件夹下面如果不存在build文件夹就创建build文件夹</span><br><span class="line"></span><br><span class="line">g++ $fileName -o build\\$fileNameWithoutExt &#x2F;&#x2F;编译当前文件并将编译结果放置在build文件夹下面</span><br><span class="line"></span><br><span class="line">$dir\\build\\$fileNameWithoutExt &#x2F;&#x2F;执行已经编译好的可执行文件</span><br></pre></td></tr></table></figure>
+          <p>这两天本来想着要好好的做做笔记，谢谢博客，把自己的博客系统好好的运营起来，但是却遇到了一系列棘手的问题，一开始不能运行，慢慢的解决后，然后斜率一篇哈夫曼的笔记，在这篇文章中，我就用了mermaid语法画的二叉树图，然后在typora里面能够轻松且正常的显示和编辑，但是部署到hexo后，图形却无法正常渲染出来。百度搜集相关问题，今天整理出我的解决方法。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/31/hexo%E9%83%A8%E7%BD%B2%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BAmermaid%E6%B5%81%E7%A8%8B%E5%9B%BE/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">设计模式笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-31 00:33:14 / 修改时间：03:13:37" itemprop="dateCreated datePublished" datetime="2020-08-31T00:33:14+08:00">2020-08-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>51</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="设计模式"><a class="markdownIt-Anchor" href="#设计模式"></a> 设计模式</h1>
+<p>笔试中遇到过问设计模式中的依赖倒置原则是什么？</p>
+<p>所以今天我就来总结下设计模式中比较常见的设计模式</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" class="post-title-link" itemprop="url">哈夫曼编码笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-31 00:29:09 / 修改时间：03:08:27" itemprop="dateCreated datePublished" datetime="2020-08-31T00:29:09+08:00">2020-08-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>710</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="哈弗曼编码"><a class="markdownIt-Anchor" href="#哈弗曼编码"></a> 哈弗曼编码</h1>
+<blockquote>
+<p>最近在笔试中大概遇到这样的一道题：</p>
+<p>​	<strong>给定字符集{a,b,c,d}组成的字符串 “aaabbbdaaabdcc” 的最佳编码的长度是多少？</strong></p>
+<p>看到最佳编码一开始我也是想到了要用哈弗曼编码，但是在答题过程中，始终没有回忆起来哈弗曼编码的流程是什么样的。</p>
+<p>事后百度，然后自己再来总结一遍。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -303,6 +486,15 @@
               <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                </span>
             </span>
 
           <br>
@@ -362,6 +554,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">软件与工具使用/window命令行笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:11:50" itemprop="dateModified" datetime="2020-08-31T03:11:50+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>896</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="windows下面有用的cmd指令"><a class="markdownIt-Anchor" href="#windows下面有用的cmd指令"></a> windows下面有用的cmd指令</h1>
+<h3 id="1-临时禁用键盘"><a class="markdownIt-Anchor" href="#1-临时禁用键盘"></a> 1. 临时禁用键盘</h3>
+<p>说明： 之前键盘坏了，敲键盘的的时候会一直输入字符k，于是使用卸载驱动的形式，将键盘禁用了，现在我只是想临时的想要禁用自己笔记本的键盘，便于在自己的键盘上放书或者本子什么的，方便阅读和外接键盘的输入。于是就搜到了如下的命令，解决自己的燃眉之急</p>
+<p>禁用键盘：sc config i8042prt start= disabled，重启</p>
+<p>恢复键盘：sc config i8042prt start= auto， 重启</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -376,7 +667,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">软件与工具使用/guns笔记</a>
+            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">guns笔记</a>
         </h2>
 
         <div class="post-meta">
@@ -387,6 +678,22 @@
               <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:12:37" itemprop="dateModified" datetime="2020-08-31T03:12:37+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                </span>
             </span>
 
           <br>
@@ -416,194 +723,9 @@
       
           <h1 id="大道至简"><a class="markdownIt-Anchor" href="#大道至简"></a> 大道至简</h1>
 <h2 id="目标系统架构师系列课程"><a class="markdownIt-Anchor" href="#目标系统架构师系列课程"></a> 目标：系统架构师系列课程</h2>
-<h2 id="系统高可用"><a class="markdownIt-Anchor" href="#系统高可用"></a> 系统高可用：</h2>
-<ul>
-<li>负载均衡</li>
-<li>限流措施</li>
-<li>分布式事务</li>
-<li>分布式session</li>
-<li>压力测试</li>
-</ul>
-<h2 id="系统高并发"><a class="markdownIt-Anchor" href="#系统高并发"></a> 系统高并发</h2>
-<ul>
-<li>缓存应用</li>
-<li>异步并发处理</li>
-<li>http缓存</li>
-<li>jvm的优化</li>
-<li>队列应用</li>
-<li>动静分离</li>
-</ul>
-<h2 id="构建应用"><a class="markdownIt-Anchor" href="#构建应用"></a> 构建应用</h2>
-<ul>
-<li>目标：快速构建应用系统</li>
-<li>引入guns框架</li>
-</ul>
-<hr />
-<h1 id="guns入门"><a class="markdownIt-Anchor" href="#guns入门"></a> guns入门</h1>
-<h2 id="基本概念"><a class="markdownIt-Anchor" href="#基本概念"></a> 基本概念</h2>
-<ul>
-<li>快速构建后台管理系统的开源框架</li>
-<li>guns默认提供诸多业务系统的基本功能</li>
-<li>guns集成诸多优秀开源框架</li>
-</ul>
-<h2 id="权限管理"><a class="markdownIt-Anchor" href="#权限管理"></a> 权限管理</h2>
-<ul>
-<li>用户管理</li>
-<li>角色管理</li>
-<li>部门管理</li>
-<li>菜单管理</li>
-<li>字典管理</li>
-<li>业务日志</li>
-<li>登录日志</li>
-<li>监控日志</li>
-<li>通知管理</li>
-<li>代码生成</li>
-</ul>
-<h2 id="guns部署"><a class="markdownIt-Anchor" href="#guns部署"></a> guns部署</h2>
-<ul>
-<li>
-<p>使用idea open-&gt;guns-parents</p>
-</li>
-<li>
-<p>修改数据源<br />
-目标：guns-admin\src\main\resources\application.yml<br><br />
-修改内容：<br><br />
-修改端口，修改连接本地数据库账户密码<br />
-[1] spring.datasource<br><br />
-[2] guns.flowable.datasource<br><br />
-[3] guns.flowable.muti-datasource</p>
-</li>
-<li>
-<p>启动guns：</p>
-<ol>
-<li>
-<p>运行java文件【spring boot】:<br><br />
-guns-admin\src\main\java\com\stylefeng\guns\GunsApplication.java\com\stylefeng\guns\GunsApplication<br><br />
-run as即可</p>
-</li>
-<li>
-<p>直接运行jar文件<br><br />
-2.1 对guns进行打包部署<br><br />
-2.1.1 找到guns-parents<br><br />
-2.1.2 运行命令 mvn clean package -Dmaven.test.skip=true<br />
-2.1.3 拷贝jar包至运行目录<br />
-java -jar guns-admin-1.0.0-SNAPSHOT.jar</p>
-</li>
-<li>
-<p>运行war包<br />
-3.1. 修改guns-admin中的pom文件打包方式<br />
-3.2. 对guns进行打包部署<br />
-3.2.1  找到guns-parents<br><br />
-3.2.2 运行命令 mvn clean package -Dmaven.test.skip=true<br />
-3.2.3 拷贝war包至web服务器的webapp目录中<br />
-java -jar guns-admin-1.0.0-SNAPSHOT.jar</p>
-</li>
-</ol>
-</li>
-</ul>
-<h1 id="guns结构组成"><a class="markdownIt-Anchor" href="#guns结构组成"></a> guns结构组成</h1>
-<h2 id="技术组成"><a class="markdownIt-Anchor" href="#技术组成"></a> 技术组成</h2>
-<ul>
-<li>spring boot</li>
-<li>mybatis-plus</li>
-<li>swagger</li>
-<li>shiro</li>
-<li>spring mvc</li>
-</ul>
-<h2 id="模块组成"><a class="markdownIt-Anchor" href="#模块组成"></a> 模块组成</h2>
-<ul>
-<li>guns-parent:guns的maven父工程</li>
-<li>guns-admin:guns的业务子模块</li>
-<li>guns-rest：guns的restful子模块</li>
-</ul>
-<h1 id="展望"><a class="markdownIt-Anchor" href="#展望"></a> 展望</h1>
-<ol>
-<li>guns的rest和权限</li>
-<li>将业务代码放置在tomcat中</li>
-<li>tomcat集群优化和搭建<br />
-msm-&gt; memcached-session-manager[分布式session处理]<br />
-memcached-&gt;最好的缓存管理中间件</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">软件与工具使用/linux命令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>789</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="linux常见问题总结"><a class="markdownIt-Anchor" href="#linux常见问题总结"></a> linux常见问题总结</h1>
-<pre><code>这个是在使用linux/ubuntu 系统过程中，对遇到的问题进行记录总结，以备后用。好记性不如烂键盘！
-</code></pre>
-<h2 id="1-怎么使用管理员权限打开文件夹"><a class="markdownIt-Anchor" href="#1-怎么使用管理员权限打开文件夹"></a> 1. 怎么使用管理员权限打开文件夹?</h2>
-<pre><code>&gt; sudo natilus
-</code></pre>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/#more" rel="contents">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -652,6 +774,15 @@ memcached-&gt;最好的缓存管理中间件</li>
               <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                </span>
             </span>
 
           <br>
@@ -711,6 +842,196 @@ memcached-&gt;最好的缓存管理中间件</li>
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">软件与工具使用/linux命令</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>789</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="linux常见问题总结"><a class="markdownIt-Anchor" href="#linux常见问题总结"></a> linux常见问题总结</h1>
+<pre><code>这个是在使用linux/ubuntu 系统过程中，对遇到的问题进行记录总结，以备后用。好记性不如烂键盘！
+</code></pre>
+<h2 id="1-怎么使用管理员权限打开文件夹"><a class="markdownIt-Anchor" href="#1-怎么使用管理员权限打开文件夹"></a> 1. 怎么使用管理员权限打开文件夹?</h2>
+<pre><code>&gt; sudo natilus
+</code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/" class="post-title-link" itemprop="url">康托展开</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:11:19" itemprop="dateModified" datetime="2020-08-31T03:11:19+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>387</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="康托展开和逆康托展开"><a class="markdownIt-Anchor" href="#康托展开和逆康托展开"></a> 康托展开和逆康托展开</h1>
+<p>题目详见：<a href="https://leetcode-cn.com/problems/permutation-sequence/" target="_blank" rel="noopener">leetcode060. 第k个排列</a></p>
+<p>该题就是求n个数全排列中的第k的排序，查看评论区才知道有一个叫做康拓展开的概念，我从来都没有接触过，所以现在做下笔记，学习康拓排序，来解决这个leetcode题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -725,7 +1046,7 @@ memcached-&gt;最好的缓存管理中间件</li>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">软件与工具使用/git常见问题</a>
+            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">git常见问题汇总</a>
         </h2>
 
         <div class="post-meta">
@@ -736,6 +1057,22 @@ memcached-&gt;最好的缓存管理中间件</li>
               <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:13:24" itemprop="dateModified" datetime="2020-08-31T03:13:24+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                </span>
             </span>
 
           <br>
@@ -777,350 +1114,6 @@ memcached-&gt;最好的缓存管理中间件</li>
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/" class="post-title-link" itemprop="url">算法笔记/康拓展开与康拓逆展开</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>387</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="康托展开和逆康托展开"><a class="markdownIt-Anchor" href="#康托展开和逆康托展开"></a> 康托展开和逆康托展开</h1>
-<p>题目详见：<a href="https://leetcode-cn.com/problems/permutation-sequence/" target="_blank" rel="noopener">leetcode060. 第k个排列</a></p>
-<p>该题就是求n个数全排列中的第k的排序，查看评论区才知道有一个叫做康拓展开的概念，我从来都没有接触过，所以现在做下笔记，学习康拓排序，来解决这个leetcode题。</p>
-<h2 id="康拓排序"><a class="markdownIt-Anchor" href="#康拓排序"></a> 康拓排序</h2>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi><mo>=</mo><msub><mi>a</mi><mi>n</mi></msub><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">−</mi><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub><mi mathvariant="normal">−</mi><mn>1</mn><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">−</mi><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mo>×</mo><mn>0</mn><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">rank=a_n\times(n−1)!+a_n−1\times(n−2)!+⋯+a_1\times0!
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">−</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mclose">!</span></span></span></span></span></p>
-<p>其中, a[i]为整数，并且0 &lt;= a[i] &lt;= i, 0 &lt;= i &lt; n,  <code>rank</code>   表示当前的序列在全排列中排第几个，这就是康托展开。</p>
-<p>康托展开 就是已知序列，求出它的排列名次</p>
-<h2 id="逆康拓排序"><a class="markdownIt-Anchor" href="#逆康拓排序"></a> 逆康拓排序</h2>
-<p>逆康拓排序就是已知排列的名次，求出所对应的序列。</p>
-<h2 id="应用"><a class="markdownIt-Anchor" href="#应用"></a> 应用</h2>
-<p>因为序列和名次是一一对应的，所以可以用来压缩 字符串</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv17/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv17/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv17</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>61</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="17k近邻算法"><a class="markdownIt-Anchor" href="#17k近邻算法"></a> 17，<strong>k近邻算法</strong></h2>
-<h3 id="理论基础"><a class="markdownIt-Anchor" href="#理论基础"></a> <strong>理论基础</strong></h3>
-<h3 id="计算"><a class="markdownIt-Anchor" href="#计算"></a> <strong>计算</strong></h3>
-<h3 id="手写数字识别原理"><a class="markdownIt-Anchor" href="#手写数字识别原理"></a> <strong>手写数字识别原理</strong></h3>
-<h3 id="自定义函数手写数字识别"><a class="markdownIt-Anchor" href="#自定义函数手写数字识别"></a> <strong>自定义函数手写数字识别</strong></h3>
-<h3 id="k近邻模块的基本使用"><a class="markdownIt-Anchor" href="#k近邻模块的基本使用"></a> <strong>k近邻模块的基本使用</strong></h3>
-<h3 id="k-近邻手写板数字的识别"><a class="markdownIt-Anchor" href="#k-近邻手写板数字的识别"></a> <strong>K 近邻手写板数字的识别</strong></h3>
-<h3 id="svm案例介绍"><a class="markdownIt-Anchor" href="#svm案例介绍"></a> <strong>svm案例介绍</strong></h3>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/leetcode%E5%81%9A%E9%A2%98%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/leetcode%E5%81%9A%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">算法笔记/leetcode做题总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>99</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="总结经验"><a class="markdownIt-Anchor" href="#总结经验"></a> 总结经验</h1>
-<ul>
-<li>先测试用例，后编码</li>
-<li>先整体思路，后局部。</li>
-<li>用注释标记思路和需要注意的地方。</li>
-</ul>
-<h2 id="掌握的知识点"><a class="markdownIt-Anchor" href="#掌握的知识点"></a> 掌握的知识点</h2>
-<ol>
-<li>
-<p>广搜</p>
-</li>
-<li>
-<p>深搜</p>
-</li>
-<li>
-<p>链表</p>
-</li>
-<li>
-<p>栈</p>
-</li>
-<li>
-<p>数组</p>
-</li>
-<li>
-<p>队列</p>
-</li>
-<li>
-<p>简单的动态规划</p>
-</li>
-</ol>
-<h2 id="需要加强的知识点"><a class="markdownIt-Anchor" href="#需要加强的知识点"></a> 需要加强的知识点</h2>
-<ol>
-<li>回溯法</li>
-<li>全排列</li>
-<li>全排列的次序</li>
-<li>快速排序和多路快排</li>
-<li>并查集</li>
-<li>背包问题</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv18/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv18/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv18</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>8</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="18k均值聚类"><a class="markdownIt-Anchor" href="#18k均值聚类"></a> 18，<strong>k均值聚类</strong></h2>
-
       
     </div>
 
@@ -1206,7 +1199,7 @@ memcached-&gt;最好的缓存管理中间件</li>
       <div class="site-state-item site-state-posts">
           <a href="/HeronWan.github.io/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1268,16 +1261,27 @@ memcached-&gt;最好的缓存管理中间件</li>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">28k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">25 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize();
+    }
+  </script>
+
+
 
         
 
@@ -1329,6 +1333,19 @@ memcached-&gt;最好的缓存管理中间件</li>
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   

@@ -142,7 +142,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">31</span></a>
+    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">34</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -224,6 +224,19 @@
 
               <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
             </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -268,8 +281,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv07/" rel="prev" title="深度学习/opencv笔记/opencv07">
-      <i class="fa fa-chevron-left"></i> 深度学习/opencv笔记/opencv07
+    <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv10/" rel="prev" title="深度学习/opencv笔记/opencv10">
+      <i class="fa fa-chevron-left"></i> 深度学习/opencv笔记/opencv10
     </a></div>
       <div class="post-nav-item">
     <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv11/" rel="next" title="深度学习/opencv笔记/opencv11">
@@ -349,7 +362,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/HeronWan.github.io/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -411,16 +424,27 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">26k</span>
+    <span title="站点总字数">28k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">23 分钟</span>
+    <span title="站点阅读时长">25 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize();
+    }
+  </script>
+
+
 
         
 
@@ -472,6 +496,19 @@
 
 
 
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
   
