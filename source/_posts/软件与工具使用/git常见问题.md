@@ -1,8 +1,5 @@
 ---
-toc:
-  depth_from: 2
-  depth_to: 6
-  ordered: false
+title: git常见问题汇总
 ---
 # git常见问题汇 
 
@@ -101,10 +98,10 @@ git push
   user.email="1002860620@qq.com"
   user.name=heronwang
   ```
-  
+
   上面所示，邮箱多了一双引号，去掉引号就可以啦
   `git config --global user.email 1002860620@qq.com`
-  
+
   然后再输入`git config -l` 查看配置：
 
   ```
