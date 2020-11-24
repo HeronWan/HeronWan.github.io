@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/HeronWan.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/HeronWan.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/HeronWan.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/HeronWan.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/HeronWan.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/HeronWan.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"heronwan.github.io","root":"/HeronWan.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="最佳实践 ​						--《JavaScript高级程序设计》笔记  一，可维护性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript最佳实践">
+<meta property="og:url" content="https://heronwan.github.io/2020/08/30/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/js%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:site_name" content="Heron&#39;s NoteBook">
+<meta property="og:description" content="最佳实践 ​						--《JavaScript高级程序设计》笔记  一，可维护性">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-30T15:22:33.373Z">
+<meta property="article:modified_time" content="2020-08-31T05:17:25.577Z">
+<meta property="article:author" content="Heronwang">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="性能">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://heronwan.github.io/2020/08/30/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/js%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>javascript最佳实践 | Heron's NoteBook</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/HeronWan.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Heron's NoteBook</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">to my life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/HeronWan.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/HeronWan.github.io/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/HeronWan.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/HeronWan.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/HeronWan/HeronWan.github.io" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/js%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          javascript最佳实践
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 13:17:25" itemprop="dateModified" datetime="2020-08-31T13:17:25+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">前端笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="最佳实践"><a class="markdownIt-Anchor" href="#最佳实践"></a> 最佳实践</h1>
+<p>​						--《JavaScript高级程序设计》笔记</p>
+<h2 id="一可维护性"><a class="markdownIt-Anchor" href="#一可维护性"></a> 一，可维护性</h2>
+<a id="more"></a>
+<ol>
+<li>
+<p>什么是可维护性？</p>
+<ul>
+<li>可理解性 — 其他人可以接手代码并理解它的意图。</li>
+<li>直观性 — 代码中的东西一看就能明白，不管其操作过程多么复杂</li>
+<li>可适应性 — 代码以一种数据上的变化不要求完全重写的方法撰写</li>
+<li>可扩展性— 在代码架构上已考虑在未来允许对核心功能进行扩展</li>
+<li>可调式性— 的出错失时，代码可以给予你足够的信息来尽可能直接地确定问题所在。</li>
+</ul>
+</li>
+<li>
+<p>代码约定：</p>
+<ul>
+<li>可读性
+<ul>
+<li>缩进</li>
+<li>注释</li>
+</ul>
+</li>
+<li>变量和函数命名
+<ul>
+<li>变量名应该为名词，如car</li>
+<li>函数名为动词开始 ，如 getName(), setName()</li>
+<li>变量和函数都应该使用合乎逻辑的名字</li>
+</ul>
+</li>
+<li>变量类型透明 （推荐第一种 和 第二种）
+<ul>
+<li>初始化</li>
+<li>匈牙利标记法—在变量名前面添加前缀：
+<ul>
+<li>o代表对象</li>
+<li>s字符串</li>
+<li>i整数</li>
+<li>f浮点数</li>
+<li>b布尔值</li>
+</ul>
+</li>
+<li>指定类型的注释</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>松散耦合 – 某部分过分依赖另一部分，代码就会 耦合过紧，难以维护</p>
+<ul>
+<li>解耦js/html</li>
+<li>解耦js/css</li>
+<li>解耦应用逻辑/事件处理程序
+<ul>
+<li>问题：某个事件处理程序除了包含应用逻辑，还进行事件处理，会让调试变得困难</li>
+<li>解决：分离应用逻辑和事件处理程序，两者分别处理各自的东西。一个事件处理程序应该从事件对象中提取相关信息，并将这些信息传递到处理应用逻辑的某个方法中</li>
+<li>好处：容易更改触发特定过程的事件。容易进行调试代码，创建单元测试等。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>编程实践</p>
+<ul>
+<li>尊重对象所有权</li>
+<li>减少全局变量</li>
+<li>进行充分的类型检测</li>
+<li>使用一个常量命名空间，便于统一管理。</li>
+</ul>
+</li>
+</ol>
+<h2 id="二性能优化"><a class="markdownIt-Anchor" href="#二性能优化"></a> 二，性能优化</h2>
+<ol>
+<li>注意作用域
+<ol>
+<li>避免全局查找，使用局部变量指向已经查找好的全局变量</li>
+<li>避免使用with</li>
+</ol>
+</li>
+<li>选择正确的方法
+<ol>
+<li>避免不必要的属性查询，可以使用数组查询
+<ul>
+<li>属性查询的复杂度为 O(n),数组查询的复杂度O(1)</li>
+</ul>
+</li>
+<li>优化循环
+<ol>
+<li>减值迭代</li>
+<li>简化终止条件</li>
+<li>简化循环体</li>
+<li>使用后测试循环 – do{} while 语句</li>
+</ol>
+</li>
+<li>避免双重解释，-- 不要使用类似eval() 方式解析</li>
+<li>性能的其他注意事项
+<ol>
+<li>原生方法较快</li>
+<li>switch语句较快</li>
+<li>位运算较快</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>最小化语句数 – 尽可能的合并语句
+<ol>
+<li>多个变量声明</li>
+<li>插入迭代值</li>
+<li>使用数组和对象字面量</li>
+</ol>
+</li>
+<li>优化DOM交互
+<ol>
+<li>最小化现场更新</li>
+<li>使用innerHTML</li>
+<li>使用事件代理
+<ol>
+<li>任何可以冒泡的事件都不仅仅可以在时间目标上进行处理，目标的任何祖先节点上也能处理。</li>
+</ol>
+</li>
+<li>注意HTMLCollection ,对其查询开销很昂贵，减少查询次数</li>
+</ol>
+</li>
+</ol>
+<h2 id="三部署"><a class="markdownIt-Anchor" href="#三部署"></a> 三，部署</h2>
+<ol>
+<li>
+<p>构建过程</p>
+<ol>
+<li>软件开发的典型过程： 写代码-- 编译— 测试，由于js并非一个编译型语言，模式变成了 写代码 – 测试</li>
+<li>ant构建工具，进行JavaScript和css的构建自动化</li>
+</ol>
+</li>
+<li>
+<p>验证</p>
+<ol>
+<li>JSLint可以查找JavaScript代码中的语法错误以及常见的编程错误，可以发掘一些潜在的问题如下：
+<ol>
+<li>eval()的使用</li>
+<li>未声明变量使用</li>
+<li>遗漏分号</li>
+<li>不恰当换行</li>
+<li>错误的逗号使用</li>
+<li>语句周围遗漏的括号</li>
+<li>switch分支语句中遗漏的break；</li>
+<li>重复声明的变量</li>
+<li>with的使用</li>
+<li>错误使用的等号</li>
+<li>无法到达的艾迪玛</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>压缩</p>
+<ol>
+<li>
+<p>文件压缩</p>
+<ol>
+<li>
+<p>删除额外的空白</p>
+</li>
+<li>
+<p>删除所有注释</p>
+</li>
+<li>
+<p>缩短变量名</p>
+</li>
+</ol>
+</li>
+<li>
+<p>http压缩</p>
+<ol>
+<li>配置指的是实际服务器传送到浏览器的字节数。进行压缩后，这个字节数不一定和代码长度一样。</li>
+<li>一个指定了文件使用了给定格式进行了压缩额http头包含在服务器响应中。接着浏览器会查看该http头确定文件是否以备压缩，然后使用合适的格式进行解压缩。结果是和原来的代码量相比在网络中传递的字节数大大减少了。</li>
+<li>mine类型来确定时候对齐进行压缩。</li>
+<li>mod_gzip 和mod_deflate 都可以节约70%的JavaScript文件大小。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/HeronWan.github.io/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/HeronWan.github.io/tags/%E6%80%A7%E8%83%BD/" rel="tag"><i class="fa fa-tag"></i> 性能</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/readme/" rel="next" title="hexo博客相关/readme">
+      hexo博客相关/readme <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最佳实践"><span class="nav-number">1.</span> <span class="nav-text"> 最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一可维护性"><span class="nav-number">1.1.</span> <span class="nav-text"> 一，可维护性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二性能优化"><span class="nav-number">1.2.</span> <span class="nav-text"> 二，性能优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三部署"><span class="nav-number">1.3.</span> <span class="nav-text"> 三，部署</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Heronwang"
+      src="/HeronWan.github.io/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Heronwang</p>
+  <div class="site-description" itemprop="description">这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/HeronWan.github.io/archives/">
+        
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/HeronWan.github.io/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/HeronWan.github.io/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HeronWan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HeronWan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1002860620@qq.com" title="E-Mail → mailto:1002860620@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heronwang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">54k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">49 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize();
+    }
+  </script>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/HeronWan.github.io/lib/anime.min.js"></script>
+  <script src="/HeronWan.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/HeronWan.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/HeronWan.github.io/js/utils.js"></script>
+
+<script src="/HeronWan.github.io/js/motion.js"></script>
+
+
+<script src="/HeronWan.github.io/js/schemes/muse.js"></script>
+
+
+<script src="/HeronWan.github.io/js/next-boot.js"></script>
+
+
+  <script defer src="/HeronWan.github.io/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/HeronWan.github.io/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

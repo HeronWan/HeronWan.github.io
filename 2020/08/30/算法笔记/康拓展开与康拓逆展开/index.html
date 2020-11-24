@@ -27,16 +27,13 @@
 <meta property="og:site_name" content="Heron&#39;s NoteBook">
 <meta property="og:description" content="康托展开和逆康托展开 题目详见：leetcode060. 第k个排列 该题就是求n个数全排列中的第k的排序，查看评论区才知道有一个叫做康拓展开的概念，我从来都没有接触过，所以现在做下笔记，学习康拓排序，来解决这个leetcode题。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/.assets/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/d63672a409fb3da91a0107e3778273d0.svg">
 <meta property="article:published_time" content="2020-08-30T15:22:33.381Z">
-<meta property="article:modified_time" content="2020-08-30T19:11:19.357Z">
+<meta property="article:modified_time" content="2020-09-05T06:13:58.214Z">
 <meta property="article:author" content="Heronwang">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="html5">
-<meta property="article:tag" content="css3">
-<meta property="article:tag" content="deep learning">
-<meta property="article:tag" content="ubuntu">
-<meta property="article:tag" content="opencv">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/.assets/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/d63672a409fb3da91a0107e3778273d0.svg">
 
 <link rel="canonical" href="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/">
 
@@ -132,17 +129,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/HeronWan.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+    <a href="/HeronWan.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/HeronWan.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+    <a href="/HeronWan.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">34</span></a>
+    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -229,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 03:11:19" itemprop="dateModified" datetime="2020-08-31T03:11:19+08:00">2020-08-31</time>
+                <time title="修改时间：2020-09-05 14:13:58" itemprop="dateModified" datetime="2020-09-05T14:13:58+08:00">2020-09-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,7 +244,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>387</span>
+              <span>419</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -273,7 +270,8 @@
 <h2 id="康拓排序"><a class="markdownIt-Anchor" href="#康拓排序"></a> 康拓排序</h2>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi><mo>=</mo><msub><mi>a</mi><mi>n</mi></msub><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">−</mi><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub><mi mathvariant="normal">−</mi><mn>1</mn><mo>×</mo><mo stretchy="false">(</mo><mi>n</mi><mi mathvariant="normal">−</mi><mn>2</mn><mo stretchy="false">)</mo><mo stretchy="false">!</mo><mo>+</mo><mo>⋯</mo><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><mo>×</mo><mn>0</mn><mo stretchy="false">!</mo></mrow><annotation encoding="application/x-tex">rank=a_n\times(n−1)!+a_n−1\times(n−2)!+⋯+a_1\times0!
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">−</span><span class="mord">1</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.79444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">−</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord">−</span><span class="mord">2</span><span class="mclose">)</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="minner">⋯</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.73333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mclose">!</span></span></span></span></span></p>
-<p>其中, a[i]为整数，并且0 &lt;= a[i] &lt;= i, 0 &lt;= i &lt; n,  <code>rank</code>   表示当前的序列在全排列中排第几个，这就是康托展开。</p>
+<p>其中, a[i]为整数，<img src=".assets/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/d63672a409fb3da91a0107e3778273d0.svg" alt="img" /> 表示区间 <code>[i, n-1]</code> 内比当前 <code>nums[i-1]</code> 小的数字有几个，并且0 &lt;= a[i] &lt;= i, 0 &lt;= i &lt; n,</p>
+<p><code>rank</code>   表示当前的序列在全排列中排第几个，这就是康托展开。</p>
 <p>康托展开 就是已知序列，求出它的排列名次</p>
 <h2 id="逆康拓排序"><a class="markdownIt-Anchor" href="#逆康拓排序"></a> 逆康拓排序</h2>
 <p>逆康拓排序就是已知排列的名次，求出所对应的序列。</p>
@@ -287,6 +285,10 @@
     
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/HeronWan.github.io/tags/leetcode/" rel="tag"><i class="fa fa-tag"></i> leetcode</a>
+          </div>
 
         
 
@@ -298,8 +300,8 @@
       <i class="fa fa-chevron-left"></i> git常见问题汇总
     </a></div>
       <div class="post-nav-item">
-    <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/" rel="next" title="软件与工具使用/linux命令">
-      软件与工具使用/linux命令 <i class="fa fa-chevron-right"></i>
+    <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/" rel="next" title="guns笔记">
+      guns笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -375,20 +377,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/HeronWan.github.io/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/HeronWan.github.io/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/HeronWan.github.io/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -437,13 +439,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">25 分钟</span>
+    <span title="站点阅读时长">49 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>

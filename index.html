@@ -33,7 +33,16 @@
 <meta property="article:tag" content="css3">
 <meta property="article:tag" content="deep learning">
 <meta property="article:tag" content="ubuntu">
-<meta property="article:tag" content="opencv">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://heronwan.github.io/">
@@ -130,17 +139,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/HeronWan.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+    <a href="/HeronWan.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/HeronWan.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+    <a href="/HeronWan.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">34</span></a>
+    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -196,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/31/hexo%E9%83%A8%E7%BD%B2%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BAmermaid%E6%B5%81%E7%A8%8B%E5%9B%BE/">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/09/07/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/facenet%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
@@ -210,7 +219,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/31/hexo%E9%83%A8%E7%BD%B2%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BAmermaid%E6%B5%81%E7%A8%8B%E5%9B%BE/" class="post-title-link" itemprop="url">hexo不能显示mermaid流程图</a>
+            <a href="/HeronWan.github.io/2020/09/07/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/facenet%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">深度学习/facenet总结</a>
         </h2>
 
         <div class="post-meta">
@@ -219,9 +228,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-08-31 02:18:31 / 修改时间：03:08:16" itemprop="dateCreated datePublished" datetime="2020-08-31T02:18:31+08:00">2020-08-31</time>
+              <time title="创建时间：2020-09-07 17:42:43" itemprop="dateCreated datePublished" datetime="2020-09-07T17:42:43+08:00">2020-09-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 13:04:31" itemprop="dateModified" datetime="2020-09-15T13:04:31+08:00">2020-09-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
             </span>
 
           <br>
@@ -230,7 +254,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>242</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -249,15 +273,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>这两天本来想着要好好的做做笔记，谢谢博客，把自己的博客系统好好的运营起来，但是却遇到了一系列棘手的问题，一开始不能运行，慢慢的解决后，然后斜率一篇哈夫曼的笔记，在这篇文章中，我就用了mermaid语法画的二叉树图，然后在typora里面能够轻松且正常的显示和编辑，但是部署到hexo后，图形却无法正常渲染出来。百度搜集相关问题，今天整理出我的解决方法。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/31/hexo%E9%83%A8%E7%BD%B2%E4%B8%8D%E8%83%BD%E6%98%BE%E7%A4%BAmermaid%E6%B5%81%E7%A8%8B%E5%9B%BE/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p><a href="https://blog.csdn.net/Fire_Light_/article/details/79592804?utm_medium=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param_right&amp;depth_1-utm_source=distribute.pc_relevant_right.none-task-blog-BlogCommendFromMachineLearnPai2-2.channel_param_right" target="_blank" rel="noopener">人脸识别系列（六）：FaceNet</a></p>
+<p>Facenet没有使用Softmax作为损失函数，而是先接了一个l2 <strong>嵌入</strong>（Embedding）层。</p>
+<p>所谓嵌入，可以理解为一种<strong>映射关系</strong>，即将特征从原来的特征空间中映射到一个新的特征空间，新的特征就可以称为原来特征的一种嵌入。</p>
+<p>网络会直接学习特征间的可分性：同一类的特征之间的距离要尽可能的小，而不同类之间的特征距离要尽可能的大。</p>
+<h1 id="triplet-loss"><a class="markdownIt-Anchor" href="#triplet-loss"></a> Triplet Loss</h1>
+<h2 id="选择最佳的三元组"><a class="markdownIt-Anchor" href="#选择最佳的三元组"></a> 选择最佳的三元组</h2>
+<p>意思就是说通过学习，使得类间的距离要大于类内的距离。</p>
+<h3 id="一次5-5的卷积相当于两次3-3的卷积"><a class="markdownIt-Anchor" href="#一次5-5的卷积相当于两次3-3的卷积"></a> 一次5 * 5的卷积相当于两次3 * 3的卷积</h3>
+<p><img src=".assets/facenet%E6%80%BB%E7%BB%93/image-20200908104228377.png" alt="image-20200908104228377" /></p>
+
       
     </div>
 
@@ -276,7 +301,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/09/07/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
@@ -290,7 +315,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">设计模式笔记</a>
+            <a href="/HeronWan.github.io/2020/09/07/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%A1%88%E8%AE%BE%E8%AE%A1/" class="post-title-link" itemprop="url">深度学习/实验方案设计</a>
         </h2>
 
         <div class="post-meta">
@@ -299,17 +324,23 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-08-31 00:33:14 / 修改时间：03:13:37" itemprop="dateCreated datePublished" datetime="2020-08-31T00:33:14+08:00">2020-08-31</time>
+              <time title="创建时间：2020-09-07 15:38:34" itemprop="dateCreated datePublished" datetime="2020-09-07T15:38:34+08:00">2020-09-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-15 13:40:49" itemprop="dateModified" datetime="2020-09-15T13:40:49+08:00">2020-09-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
+                  <a href="/HeronWan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
                 </span>
             </span>
 
@@ -319,7 +350,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>51</span>
+              <span>187</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -338,17 +369,49 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="设计模式"><a class="markdownIt-Anchor" href="#设计模式"></a> 设计模式</h1>
-<p>笔试中遇到过问设计模式中的依赖倒置原则是什么？</p>
-<p>所以今天我就来总结下设计模式中比较常见的设计模式</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <ol>
+<li>
+<p>搭建实验平台</p>
+<ol>
+<li>
+<p>人脸数据收集系统，使用opencv调用摄像头<strong>检测到人脸就截图保存</strong>，这个检测用mtcnn和传统的检测（检测器）方法进行比较</p>
+<ol>
+<li>
+<p>比较性能指标：</p>
+<ol>
+<li>
+<p>检测速度 ，支持多少fps</p>
+</li>
+<li>
+<p>误检测率，</p>
+<p>分析：</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>人脸裁剪和模型顺训练模型，facenet模型和其他方法（如SVM，egentface）对测试人脸的识别率比较</p>
+<ol>
+<li>识别率</li>
+<li>误识别率</li>
+<li>识别效率</li>
+</ol>
+<p>分析：</p>
+</li>
+<li>
+<p>应用实际场景</p>
+</li>
+</ol>
+</li>
+<li>
+<p>数据处理做好</p>
+</li>
+<li>
+<p>要用到的相关方法也要整理好。</p>
+</li>
+</ol>
+
       
     </div>
 
@@ -367,7 +430,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/09/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
@@ -381,7 +444,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" class="post-title-link" itemprop="url">哈夫曼编码笔记</a>
+            <a href="/HeronWan.github.io/2020/09/06/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/" class="post-title-link" itemprop="url">深度学习/论文笔记/人脸识别</a>
         </h2>
 
         <div class="post-meta">
@@ -392,7 +455,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-08-31 00:29:09 / 修改时间：03:08:27" itemprop="dateCreated datePublished" datetime="2020-08-31T00:29:09+08:00">2020-08-31</time>
+              <time title="创建时间：2020-09-06 09:17:41 / 修改时间：09:20:33" itemprop="dateCreated datePublished" datetime="2020-09-06T09:17:41+08:00">2020-09-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -400,7 +463,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
+                  <a href="/HeronWan.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">论文笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
                 </span>
             </span>
 
@@ -410,7 +477,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>710</span>
+              <span>44</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -429,20 +496,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="哈弗曼编码"><a class="markdownIt-Anchor" href="#哈弗曼编码"></a> 哈弗曼编码</h1>
-<blockquote>
-<p>最近在笔试中大概遇到这样的一道题：</p>
-<p>​	<strong>给定字符集{a,b,c,d}组成的字符串 “aaabbbdaaabdcc” 的最佳编码的长度是多少？</strong></p>
-<p>看到最佳编码一开始我也是想到了要用哈弗曼编码，但是在答题过程中，始终没有回忆起来哈弗曼编码的流程是什么样的。</p>
-<p>事后百度，然后自己再来总结一遍。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/31/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>人脸识别算法总结：</p>
+<p>人脸对齐：能够将人脸图片进行裁剪成指定大小，对人脸进行预处理</p>
+<ol>
+<li>mtcnn</li>
+<li></li>
+</ol>
+
       
     </div>
 
@@ -461,7 +521,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/vscode%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/09/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
@@ -475,7 +535,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/vscode%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">软件与工具使用/vscode笔记</a>
+            <a href="/HeronWan.github.io/2020/09/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">深度学习/学习总结</a>
         </h2>
 
         <div class="post-meta">
@@ -485,17 +545,257 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+              <time title="创建时间：2020-09-05 15:36:46" itemprop="dateCreated datePublished" datetime="2020-09-05T15:36:46+08:00">2020-09-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-14 19:50:54" itemprop="dateModified" datetime="2020-09-14T19:50:54+08:00">2020-09-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                  <a href="/HeronWan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
                 </span>
             </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>367</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h6 id="学习总结"><a class="markdownIt-Anchor" href="#学习总结"></a> 学习总结</h6>
+<p>最近心态不太好，写论文到现在还没有完成，归根到底还是心态的问题，以及没有掌握正确的学习方法。现在对近段时间以来的学习状态做出一下总结以及对以后的警示：</p>
+<ol>
+<li>
+<p>以实际需求为导向，解决实际问题为根本，抓住问题的根源。</p>
+</li>
+<li>
+<p>不要左顾右盼，瞻前顾后，丢了时间，也没了精力</p>
+</li>
+<li>
+<p>不懂就要问题，指导搞懂为止，不要一笔带过，不要急躁，不要放弃，好好的深入琢磨，终会搞懂问题的本质，以及找到解决之道。</p>
+</li>
+<li>
+<p>现在的主要任务是写论文，而论文的必要条件是做好实验，能够得出实验结论。所以：</p>
+<ol>
+<li>
+<p>把实验平台搭建好，</p>
+</li>
+<li>
+<p>数据处理做好</p>
+</li>
+<li>
+<p>要用到的相关方法也要整理好。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>最近在运行代码的时候出现了这个错误——AttributeError: module ‘scipy.misc’ has no attribute ‘imread’。</p>
+<p>解决：命令如下：将scipy降级：<br />
+pip install scipy==1.2.1</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/09/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/facenet-pytorch%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/09/05/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/facenet-pytorch%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90/" class="post-title-link" itemprop="url">深度学习/facenet-pytorch源码解析</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-05 15:15:39" itemprop="dateCreated datePublished" datetime="2020-09-05T15:15:39+08:00">2020-09-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-07 15:37:56" itemprop="dateModified" datetime="2020-09-07T15:37:56+08:00">2020-09-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="facenet-pytorch-源码详解"><a class="markdownIt-Anchor" href="#facenet-pytorch-源码详解"></a> facenet-pytorch 源码详解</h2>
+<h3 id="1-组织结构"><a class="markdownIt-Anchor" href="#1-组织结构"></a> 1. 组织结构</h3>
+<p>facenet-pytorch<br />
+—data<br />
+—dependencies 依赖<br />
+—examples    使用示例代码<br />
+—models   训练好的模型<br />
+—tests   测试代码 ，迭代性能等<br />
+—mydemo 我自己的代码</p>
+<h3 id="2-运行过程问题详解"><a class="markdownIt-Anchor" href="#2-运行过程问题详解"></a> 2. 运行过程问题详解</h3>
+<ol>
+<li>
+<p>datasets.ImageFolder() 这里要使用绝对路径，使用相对路径会报错！</p>
+</li>
+<li>
+<p>MTCNN( )  用于处理人脸对齐的，传入的参数详解：</p>
+<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">	image_size：输出的（对齐后的）图片的大小</span></span><br><span class="line"></span><br><span class="line">​	margin：要添加的边框的边距，默认为 0</span><br><span class="line"></span><br><span class="line">​	min<span class="emphasis">_face_</span>size： 最小的可检测的人脸大小（单位px），默认20; 对于小于该值的人脸会忽略掉。</span><br><span class="line"></span><br><span class="line">​	thresholds： 人脸检测的阈值，默认[0.6, 0.7, 0.7]，阈值越高，通过率和误识率越低，阈值越低，通过率和误识率越高。所以阈值不是越高越好，也不是越低越好</span><br><span class="line"></span><br><span class="line">​	factor： 用于创建面部尺寸缩放金字塔的因子，默认：&#123;0.709&#125;</span><br><span class="line"></span><br><span class="line">​	post_process：在返回之前 是否发布图像处理张量。</span><br><span class="line"></span><br><span class="line">​	select_largest：如果为True，则如果检测到多个面部，则返回最大的面部。如果为False，则返回具有最高检测概率的面部。</span><br><span class="line"></span><br><span class="line">​	keep<span class="emphasis">_all：如果为True，则按照select_</span>largest参数指定的顺序返回所有检测到的面部。如果指定了save<span class="emphasis">_path，则将第一个面保存到该路径，并将其余面保存到&lt;save_</span>path&gt; 1，<span class="xml"><span class="tag">&lt;<span class="name">save_path</span>&gt;</span></span> 2等</span><br><span class="line"></span><br><span class="line">​	device：通过什么设备运行神经网络</span><br><span class="line"><span class="code">	</span></span><br><span class="line"><span class="code">    mtcnn使用方法</span></span><br><span class="line"><span class="code">        &gt;&gt;&gt; from facenet_pytorch import MTCNN</span></span><br><span class="line"><span class="code">        &gt;&gt;&gt; mtcnn = MTCNN() # 这里是初始实例化对象</span></span><br><span class="line"><span class="code">        &gt;&gt;&gt; face_tensor, prob = mtcnn(img, save_path='face.png', return_prob=True) # 这里是调用对象的forword函数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>RuntimeError: Calculated padded input size per channel: (2 x 2). Kernel size: (3 x 3). Kernel size can’t be greater than actual input size</p>
+<p>点进 出错的源码：</p>
+<p>是出现在Conv2d这个类里面一个conv2d_forward函数里面</p>
+<p>然后查看这个类的注释：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Applies a 2D convolution over an input signal composed of several input</span><br><span class="line">planes.</span><br><span class="line">在由多个输入平面组成的输入信号上应用2D卷积。</span><br><span class="line">   </span><br><span class="line">In the simplest case, the output value of the layer with input size</span><br><span class="line">:math:&#96;(N, C_&#123;\text&#123;in&#125;&#125;, H, W)&#96; and output :math:&#96;(N, C_&#123;\text&#123;out&#125;&#125;, H_&#123;\text&#123;out&#125;&#125;, W_&#123;\text&#123;out&#125;&#125;)&#96;</span><br><span class="line">can be precisely described as:</span><br><span class="line">   </span><br><span class="line">.. math::</span><br><span class="line">    \text&#123;out&#125;(N_i, C_&#123;\text&#123;out&#125;_j&#125;) &#x3D; \text&#123;bias&#125;(C_&#123;\text&#123;out&#125;_j&#125;) +</span><br><span class="line">    \sum_&#123;k &#x3D; 0&#125;^&#123;C_&#123;\text&#123;in&#125;&#125; - 1&#125; \text&#123;weight&#125;(C_&#123;\text&#123;out&#125;_j&#125;, k) \star \text&#123;input&#125;(N_i, k)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="../.assets/Untitled/image-20200905164953780.png" alt="image-20200905164953780" /></p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">where :math:&#96;\star&#96; is the valid 2D &#96;cross-correlation&#96;_ operator,</span><br><span class="line">:math:&#96;N&#96; is a batch size, :math:&#96;C&#96; denotes a number of channels,</span><br><span class="line">:math:&#96;H&#96; is a height of input planes in pixels, and :math:&#96;W&#96; is</span><br><span class="line">width in pixels.</span><br><span class="line"></span><br><span class="line">* :attr:&#96;stride&#96; controls the stride for the cross-correlation, a single</span><br><span class="line">  number or a tuple.</span><br><span class="line"></span><br><span class="line">* :attr:&#96;padding&#96; controls the amount of implicit zero-paddings on both</span><br><span class="line">  sides for :attr:&#96;padding&#96; number of points for each dimension.</span><br><span class="line"></span><br><span class="line">* :attr:&#96;dilation&#96; controls the spacing between the kernel points; also</span><br><span class="line">  known as the à trous algorithm. It is harder to describe, but this &#96;link&#96;_</span><br><span class="line">  has a nice visualization of what :attr:&#96;dilation&#96; does.</span><br><span class="line"></span><br><span class="line">* :attr:&#96;groups&#96; controls the connections between inputs and outputs.</span><br><span class="line">  :attr:&#96;in_channels&#96; and :attr:&#96;out_channels&#96; must both be divisible by</span><br><span class="line">  :attr:&#96;groups&#96;. For example,</span><br><span class="line"></span><br><span class="line">    * At groups&#x3D;1, all inputs are convolved to all outputs.</span><br><span class="line">    * At groups&#x3D;2, the operation becomes equivalent to having two conv</span><br><span class="line">      layers side by side, each seeing half the input channels,</span><br><span class="line">      and producing half the output channels, and both subsequently</span><br><span class="line">      concatenated.</span><br><span class="line">    * At groups&#x3D; :attr:&#96;in_channels&#96;, each input channel is convolved with</span><br><span class="line">      its own set of filters, of size:</span><br><span class="line">      :math:&#96;\left\lfloor\frac&#123;out\_channels&#125;&#123;in\_channels&#125;\right\rfloor&#96;.</span><br><span class="line"></span><br><span class="line">The parameters :attr:&#96;kernel_size&#96;, :attr:&#96;stride&#96;, :attr:&#96;padding&#96;, :attr:&#96;dilation&#96; can either be:</span><br><span class="line"></span><br><span class="line">    - a single &#96;&#96;int&#96;&#96; -- in which case the same value is used for the height and width dimension</span><br><span class="line">    - a &#96;&#96;tuple&#96;&#96; of two ints -- in which case, the first &#96;int&#96; is used for the height dimension,</span><br><span class="line">      and the second &#96;int&#96; for the width dimension</span><br><span class="line"></span><br><span class="line">.. note::</span><br><span class="line"></span><br><span class="line">     Depending of the size of your kernel, several (of the last)</span><br><span class="line">     columns of the input might be lost, because it is a valid &#96;cross-correlation&#96;_,</span><br><span class="line">     and not a full &#96;cross-correlation&#96;_.</span><br><span class="line">     It is up to the user to add proper padding.</span><br><span class="line"></span><br><span class="line">.. note::</span><br><span class="line"></span><br><span class="line">    When &#96;groups &#x3D;&#x3D; in_channels&#96; and &#96;out_channels &#x3D;&#x3D; K * in_channels&#96;,</span><br><span class="line">    where &#96;K&#96; is a positive integer, this operation is also termed in</span><br><span class="line">    literature as depthwise convolution.</span><br><span class="line"></span><br><span class="line">    In other words, for an input of size :math:&#96;(N, C_&#123;in&#125;, H_&#123;in&#125;, W_&#123;in&#125;)&#96;,</span><br><span class="line">    a depthwise convolution with a depthwise multiplier &#96;K&#96;, can be constructed by arguments</span><br><span class="line">    :math:&#96;(in\_channels&#x3D;C_&#123;in&#125;, out\_channels&#x3D;C_&#123;in&#125; \times K, ..., groups&#x3D;C_&#123;in&#125;)&#96;.</span><br><span class="line"></span><br><span class="line">.. include:: cudnn_deterministic.rst</span><br><span class="line"></span><br><span class="line">Args:</span><br><span class="line">    in_channels (int): Number of channels in the input image</span><br><span class="line">    out_channels (int): Number of channels produced by the convolution</span><br><span class="line">    kernel_size (int or tuple): Size of the convolving kernel</span><br><span class="line">    stride (int or tuple, optional): Stride of the convolution. Default: 1</span><br><span class="line">    padding (int or tuple, optional): Zero-padding added to both sides of the input. Default: 0</span><br><span class="line">    padding_mode (string, optional). Accepted values &#96;zeros&#96; and &#96;circular&#96; Default: &#96;zeros&#96;</span><br><span class="line">    dilation (int or tuple, optional): Spacing between kernel elements. Default: 1</span><br><span class="line">    groups (int, optional): Number of blocked connections from input channels to output channels. Default: 1</span><br><span class="line">    bias (bool, optional): If &#96;&#96;True&#96;&#96;, adds a learnable bias to the output. Default: &#96;&#96;True&#96;&#96;</span><br><span class="line"></span><br><span class="line">Shape:</span><br><span class="line">    - Input: :math:&#96;(N, C_&#123;in&#125;, H_&#123;in&#125;, W_&#123;in&#125;)&#96;</span><br><span class="line">    - Output: :math:&#96;(N, C_&#123;out&#125;, H_&#123;out&#125;, W_&#123;out&#125;)&#96; where</span><br><span class="line"></span><br><span class="line">      .. math::</span><br><span class="line">          H_&#123;out&#125; &#x3D; \left\lfloor\frac&#123;H_&#123;in&#125;  + 2 \times \text&#123;padding&#125;[0] - \text&#123;dilation&#125;[0]</span><br><span class="line">                    \times (\text&#123;kernel\_size&#125;[0] - 1) - 1&#125;&#123;\text&#123;stride&#125;[0]&#125; + 1\right\rfloor</span><br><span class="line"></span><br><span class="line">      .. math::</span><br><span class="line">          W_&#123;out&#125; &#x3D; \left\lfloor\frac&#123;W_&#123;in&#125;  + 2 \times \text&#123;padding&#125;[1] - \text&#123;dilation&#125;[1]</span><br><span class="line">                    \times (\text&#123;kernel\_size&#125;[1] - 1) - 1&#125;&#123;\text&#123;stride&#125;[1]&#125; + 1\right\rfloor</span><br><span class="line"></span><br><span class="line">Attributes:</span><br><span class="line">    weight (Tensor): the learnable weights of the module of shape</span><br><span class="line">                     :math:&#96;(\text&#123;out\_channels&#125;, \frac&#123;\text&#123;in\_channels&#125;&#125;&#123;\text&#123;groups&#125;&#125;,&#96;</span><br><span class="line">                     :math:&#96;\text&#123;kernel\_size[0]&#125;, \text&#123;kernel\_size[1]&#125;)&#96;.</span><br><span class="line">                     The values of these weights are sampled from</span><br><span class="line">                     :math:&#96;\mathcal&#123;U&#125;(-\sqrt&#123;k&#125;, \sqrt&#123;k&#125;)&#96; where</span><br><span class="line">                     :math:&#96;k &#x3D; \frac&#123;1&#125;&#123;C_\text&#123;in&#125; * \prod_&#123;i&#x3D;0&#125;^&#123;1&#125;\text&#123;kernel\_size&#125;[i]&#125;&#96;</span><br><span class="line">    bias (Tensor):   the learnable bias of the module of shape (out_channels). If :attr:&#96;bias&#96; is &#96;&#96;True&#96;&#96;,</span><br><span class="line">                     then the values of these weights are</span><br><span class="line">                     sampled from :math:&#96;\mathcal&#123;U&#125;(-\sqrt&#123;k&#125;, \sqrt&#123;k&#125;)&#96; where</span><br><span class="line">                     :math:&#96;k &#x3D; \frac&#123;1&#125;&#123;C_\text&#123;in&#125; * \prod_&#123;i&#x3D;0&#125;^&#123;1&#125;\text&#123;kernel\_size&#125;[i]&#125;&#96;</span><br><span class="line"></span><br><span class="line">Examples::</span><br><span class="line"></span><br><span class="line">    &gt;&gt;&gt; # With square kernels and equal stride</span><br><span class="line">    &gt;&gt;&gt; m &#x3D; nn.Conv2d(16, 33, 3, stride&#x3D;2)</span><br><span class="line">    &gt;&gt;&gt; # non-square kernels and unequal stride and with padding</span><br><span class="line">    &gt;&gt;&gt; m &#x3D; nn.Conv2d(16, 33, (3, 5), stride&#x3D;(2, 1), padding&#x3D;(4, 2))</span><br><span class="line">    &gt;&gt;&gt; # non-square kernels and unequal stride and with padding and dilation</span><br><span class="line">    &gt;&gt;&gt; m &#x3D; nn.Conv2d(16, 33, (3, 5), stride&#x3D;(2, 1), padding&#x3D;(4, 2), dilation&#x3D;(3, 1))</span><br><span class="line">    &gt;&gt;&gt; input &#x3D; torch.randn(20, 16, 50, 100)</span><br><span class="line">    &gt;&gt;&gt; output &#x3D; m(input)</span><br><span class="line"></span><br><span class="line">.. _cross-correlation:</span><br><span class="line">    https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cross-correlation</span><br><span class="line"></span><br><span class="line">.. _link:</span><br><span class="line">    https:&#x2F;&#x2F;github.com&#x2F;vdumoulin&#x2F;conv_arithmetic&#x2F;blob&#x2F;master&#x2F;README.md</span><br></pre></td></tr></table></figure>
+<p>然后我就将</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mtcnn &#x3D; MTCNN(</span><br><span class="line">    image_size&#x3D;64, margin&#x3D;0, min_face_size&#x3D;20,</span><br><span class="line">    thresholds&#x3D;[0.6, 0.7, 0.7], factor&#x3D;0.709, post_process&#x3D;True,</span><br><span class="line">    device&#x3D;device</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>中的 image_size=64 修改成 image_size=96 ，结果运行很顺畅，没有任何问题。最终经过的多次测试， image_size的值最小为 75 都是没有问题的，只要小于这个值就会报错。说明，说明核的单位大小是25</p>
+<ol start="4">
+<li>InceptionResnetV1类的详解</li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;Inception Resnet V1 model with optional loading of pretrained weights.</span><br><span class="line">   </span><br><span class="line">Model parameters can be loaded based on pretraining on the VGGFace2 or CASIA-Webface</span><br><span class="line">datasets. Pretrained state_dicts are automatically downloaded on model instantiation if</span><br><span class="line">requested and cached in the torch cache. Subsequent instantiations use the cache rather than</span><br><span class="line">redownloading.</span><br><span class="line">   </span><br><span class="line">Keyword Arguments:</span><br><span class="line">    pretrained &#123;str&#125; -- Optional pretraining dataset. Either &#39;vggface2&#39; or &#39;casia-webface&#39;.</span><br><span class="line">        (default: &#123;None&#125;)</span><br><span class="line">    classify &#123;bool&#125; -- Whether the model should output classification probabilities or feature</span><br><span class="line">        embeddings. (default: &#123;False&#125;)</span><br><span class="line">    num_classes &#123;int&#125; -- Number of output classes. If &#39;pretrained&#39; is set and num_classes not</span><br><span class="line">        equal to that used for the pretrained model, the final linear layer will be randomly</span><br><span class="line">        initialized. (default: &#123;None&#125;)</span><br><span class="line">    dropout_prob &#123;float&#125; -- Dropout probability. (default: &#123;0.6&#125;)</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+<p>Inception Resnet  V1模型，可以选择加载预训练的权重。可以基于对VGGFace2或CASIA-Webface数据集的预训练来加载模型参数。如果需要，可以在模型实例化时自动下载预训练的state_dict，并将其缓存在火炬缓存中。使用缓存而不是重新下载关键字参数：pretrained {str}-可选的pretraining数据集“ vggface2”或“  casia-webface”（默认值：{None}）对{bool}进行分类–模型是否应输出分类概率或特征嵌入（默认值：{False}）num_classes {int}-输出类数。如果设置了“ pretrained”，并且num_classes不等于用于预训练模型的数，则最终的线性层将被随机初始化。 （默认：{None}）dropout_prob {float}-退出概率。（默认：{0.6}）</p>
+<p><a href="https://baike.baidu.com/item/%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5/10087822?fr=aladdin" target="_blank" rel="noopener">混淆矩阵</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">datasets.ImageFolder()</span><br><span class="line">    &quot;&quot;&quot;A generic data loader where the images are arranged in this way: ::</span><br><span class="line"></span><br><span class="line">        root&#x2F;dog&#x2F;xxx.png</span><br><span class="line">        root&#x2F;dog&#x2F;xxy.png</span><br><span class="line">        root&#x2F;dog&#x2F;xxz.png</span><br><span class="line"></span><br><span class="line">        root&#x2F;cat&#x2F;123.png</span><br><span class="line">        root&#x2F;cat&#x2F;nsdf3.png</span><br><span class="line">        root&#x2F;cat&#x2F;asd932_.png</span><br><span class="line"></span><br><span class="line">    Args:</span><br><span class="line">        root (string): Root directory path.</span><br><span class="line">        transform (callable, optional): A function&#x2F;transform that  takes in an PIL image</span><br><span class="line">            and returns a transformed version. E.g, &#96;&#96;transforms.RandomCrop&#96;&#96;</span><br><span class="line">        target_transform (callable, optional): A function&#x2F;transform that takes in the</span><br><span class="line">            target and transforms it.</span><br><span class="line">        loader (callable, optional): A function to load an image given its path.</span><br><span class="line">        is_valid_file (callable, optional): A function that takes path of an Image file</span><br><span class="line">            and check if the file is a valid_file (used to check of corrupt files)</span><br><span class="line">        root(字符串):根目录路径。</span><br><span class="line">        transform(可调用，可选):接受PIL映像的函数&#x2F;转换</span><br><span class="line">        	并返回转换后的版本。如”、“transforms.RandomCrop &#39; &#39;</span><br><span class="line">        target_transform(可调用，可选):一个函数&#x2F;转换，它接受目标和转换它。</span><br><span class="line">        loader(可调用，可选):一个用于加载给定路径的图像的函数。</span><br><span class="line">        is_valid_file(可调用，可选):接受图像文件路径的函数</span><br><span class="line">检查文件是否为valid_file(用于检查损坏的文件)</span><br><span class="line"></span><br><span class="line">     Attributes:</span><br><span class="line">        classes (list): List of the class names.</span><br><span class="line">        class_to_idx (dict): Dict with items (class_name, class_index).</span><br><span class="line">        imgs (list): List of (image path, class_index) tuples</span><br><span class="line">    &quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/09/04/%E7%99%BE%E5%BA%A6%E7%AC%94%E8%AF%95%E5%A4%8D%E7%9B%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/09/04/%E7%99%BE%E5%BA%A6%E7%AC%94%E8%AF%95%E5%A4%8D%E7%9B%98/" class="post-title-link" itemprop="url">百度笔试复盘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-09-04 16:25:26" itemprop="dateCreated datePublished" datetime="2020-09-04T16:25:26+08:00">2020-09-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-05 14:41:18" itemprop="dateModified" datetime="2020-09-05T14:41:18+08:00">2020-09-05</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -522,401 +822,52 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="vscode常见问题"><a class="markdownIt-Anchor" href="#vscode常见问题"></a> vscode常见问题</h1>
-<h2 id="1怎么修改-vscode-主题颜色"><a class="markdownIt-Anchor" href="#1怎么修改-vscode-主题颜色"></a> 1.怎么修改 vscode 主题颜色？</h2>
-<p>😄</p>
-<p>新下载的 vscode 默认的都是黑色的主题，颜色太暗看不清怎么办？ 直接修改 vscoe 颜色颜色即可，步骤如下：</p>
-<p>file -&gt; preference -&gt; color theme -&gt; 选择 light 即可<br />
-也可以快捷键 ctrl + K + ctrl + T 直接打开颜色主题进行设置</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/vscode%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">软件与工具使用/window命令行笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 03:11:50" itemprop="dateModified" datetime="2020-08-31T03:11:50+08:00">2020-08-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>896</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="windows下面有用的cmd指令"><a class="markdownIt-Anchor" href="#windows下面有用的cmd指令"></a> windows下面有用的cmd指令</h1>
-<h3 id="1-临时禁用键盘"><a class="markdownIt-Anchor" href="#1-临时禁用键盘"></a> 1. 临时禁用键盘</h3>
-<p>说明： 之前键盘坏了，敲键盘的的时候会一直输入字符k，于是使用卸载驱动的形式，将键盘禁用了，现在我只是想临时的想要禁用自己笔记本的键盘，便于在自己的键盘上放书或者本子什么的，方便阅读和外接键盘的输入。于是就搜到了如下的命令，解决自己的燃眉之急</p>
-<p>禁用键盘：sc config i8042prt start= disabled，重启</p>
-<p>恢复键盘：sc config i8042prt start= auto， 重启</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/window%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">guns笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 03:12:37" itemprop="dateModified" datetime="2020-08-31T03:12:37+08:00">2020-08-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="大道至简"><a class="markdownIt-Anchor" href="#大道至简"></a> 大道至简</h1>
-<h2 id="目标系统架构师系列课程"><a class="markdownIt-Anchor" href="#目标系统架构师系列课程"></a> 目标：系统架构师系列课程</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/markdown%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/markdown%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">软件与工具使用/markdown笔记</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="markdown疑难杂症"><a class="markdownIt-Anchor" href="#markdown疑难杂症"></a> markdown疑难杂症</h1>
-<h2 id="1-单文件怎么生成目录并实现点击即可定位"><a class="markdownIt-Anchor" href="#1-单文件怎么生成目录并实现点击即可定位"></a> 1. 单文件怎么生成目录，并实现点击即可定位</h2>
-<h3 id="方法1手动添加"><a class="markdownIt-Anchor" href="#方法1手动添加"></a> 方法1:手动添加</h3>
-<p>原始格式如下所示，效果正如当前页面所生成的问题目录格式，原理其实是类似于插入链接的格式。插入链接格式</p>
-<p><a href="https://gitee.com/heronwang/linux_notes" target="_blank" rel="noopener">点击跳转我的linux笔记</a></p>
-<p>这里的链接的原始格式：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/markdown%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">软件与工具使用/linux命令</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>789</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="linux常见问题总结"><a class="markdownIt-Anchor" href="#linux常见问题总结"></a> linux常见问题总结</h1>
-<pre><code>这个是在使用linux/ubuntu 系统过程中，对遇到的问题进行记录总结，以备后用。好记性不如烂键盘！
+          <ol>
+<li>
+<p>arr.push() 返回值 为push后的长度</p>
+</li>
+<li>
+<p>css：translate 转换</p>
+<p>transform:rotate(7deg);</p>
+<p>transform: scaleY(0.5);</p>
+</li>
+<li>
+<p>promise.all，race等用法</p>
+<p>​	promise.all( iterablse) 方法返回一个 promise实例，此实例在iterable参数内所有的promise都完成 或者参数中不包含promise时回调完成；如果有一个失败，此实例回调失败，此实例回调失败（reject），失败原因的是第一个失败 <code>promise</code> 的结果</p>
+<pre><code> promise.race(iterable) 该方法返回一个promise实例，一旦迭代器中某个promise解决或者拒绝，返回的promise就会解决或者拒绝。
 </code></pre>
-<h2 id="1-怎么使用管理员权限打开文件夹"><a class="markdownIt-Anchor" href="#1-怎么使用管理员权限打开文件夹"></a> 1. 怎么使用管理员权限打开文件夹?</h2>
-<pre><code>&gt; sudo natilus
-</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/linux%E5%91%BD%E4%BB%A4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<p>​	promise.allSettled() 方法返回一个promise，该方法在所有给定的promise已被解析或者拒绝后解析，并且每个对象都描述每个promise的结果。</p>
+<p>故：因为空数组 [ ], 是不能返回 Promise的reject的，所以</p>
+<p>Promise.all([]).then(resolve,reject );  //结果执行的resolve 函数</p>
+<p>Promise.race([]).then(resolve,reject); // 结果执行的是resolve函数。</p>
+</li>
+<li>
+<p>生产者与消费者</p>
+<p>​	关系图： 生产者 --&gt; 缓冲区 --&gt; 消费者；</p>
+<p>由于node使用单线程的方式实现，所以，在此使用定时器timer代替线程thread来实现生产者消费者模型。</p>
+<p>​	优点：</p>
+<p>​		解耦</p>
+<p>​		支持并发</p>
+<p>​		支持忙闲不均</p>
+<p>​		关联到业务对象</p>
+<p>​		完整性</p>
+<p>独立性</p>
+<p>颗粒型</p>
+<p>​</p>
+</li>
+<li>
+<p>模板字符串函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let x &#x3D; &#39;Hi&#39;, y &#x3D; &#39;Kevin&#39;;</span><br><span class="line">var res &#x3D; message&#96;$&#123;x&#125;, I am $&#123;y&#125;&#96;;</span><br><span class="line">console.log(res);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; literals 文字</span><br><span class="line">&#x2F;&#x2F; 注意在这个例子中 literals 的第一个元素和最后一个元素都是空字符串</span><br><span class="line">function message(literals, value1, value2) &#123;</span><br><span class="line">	console.log(literals); &#x2F;&#x2F; [ &quot;&quot;, &quot;, I am &quot;, &quot;&quot; ]</span><br><span class="line">	console.log(value1); &#x2F;&#x2F; Hi</span><br><span class="line">	console.log(value2); &#x2F;&#x2F; Kevin</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>计算机网络：</p>
+<ol>
+<li>sourcemap</li>
+<li>局域网进行广播</li>
+</ol>
+</li>
+</ol>
+
       
     </div>
 
@@ -935,7 +886,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/09/02/%E4%B8%89%E4%B8%83%E4%BA%92%E5%A8%B1%E7%AC%94%E8%AF%95%E5%A4%8D%E7%9B%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
@@ -949,7 +900,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/" class="post-title-link" itemprop="url">康托展开</a>
+            <a href="/HeronWan.github.io/2020/09/02/%E4%B8%89%E4%B8%83%E4%BA%92%E5%A8%B1%E7%AC%94%E8%AF%95%E5%A4%8D%E7%9B%98/" class="post-title-link" itemprop="url">三七互娱笔试复盘</a>
         </h2>
 
         <div class="post-meta">
@@ -959,24 +910,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+              <time title="创建时间：2020-09-02 23:59:53" itemprop="dateCreated datePublished" datetime="2020-09-02T23:59:53+08:00">2020-09-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 03:11:19" itemprop="dateModified" datetime="2020-08-31T03:11:19+08:00">2020-08-31</time>
+                <time title="修改时间：2020-09-03 00:01:29" itemprop="dateModified" datetime="2020-09-03T00:01:29+08:00">2020-09-03</time>
               </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
-                </span>
-            </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -984,7 +926,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>387</span>
+              <span>37</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1003,17 +945,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="康托展开和逆康托展开"><a class="markdownIt-Anchor" href="#康托展开和逆康托展开"></a> 康托展开和逆康托展开</h1>
-<p>题目详见：<a href="https://leetcode-cn.com/problems/permutation-sequence/" target="_blank" rel="noopener">leetcode060. 第k个排列</a></p>
-<p>该题就是求n个数全排列中的第k的排序，查看评论区才知道有一个叫做康拓展开的概念，我从来都没有接触过，所以现在做下笔记，学习康拓排序，来解决这个leetcode题。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>轮询？</p>
+<p>websocket</p>
+<p>es6 发布订阅模式</p>
+<p>缓存雪崩</p>
+<p>并发与并行</p>
+<p>RSA加密算法</p>
+
       
     </div>
 
@@ -1032,7 +970,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/09/02/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E5%AF%BC%E5%9B%BE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
@@ -1046,7 +984,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">git常见问题汇总</a>
+            <a href="/HeronWan.github.io/2020/09/02/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E5%A4%8D%E4%B9%A0%E5%AF%BC%E5%9B%BE/" class="post-title-link" itemprop="url">前端面试复习导图</a>
         </h2>
 
         <div class="post-meta">
@@ -1055,24 +993,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 03:13:24" itemprop="dateModified" datetime="2020-08-31T03:13:24+08:00">2020-08-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
-                </span>
+              <time title="创建时间：2020-09-02 14:04:12 / 修改时间：14:09:05" itemprop="dateCreated datePublished" datetime="2020-09-02T14:04:12+08:00">2020-09-02</time>
             </span>
 
           <br>
@@ -1081,14 +1004,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.7k</span>
+              <span>106</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -1100,20 +1023,213 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="git常见问题汇"><a class="markdownIt-Anchor" href="#git常见问题汇"></a> git常见问题汇</h1>
-<h2 id="1-git怎么快捷提交到远程"><a class="markdownIt-Anchor" href="#1-git怎么快捷提交到远程"></a> 1. git怎么快捷提交到远程</h2>
-<p>有时候只是修改了一个简单的地方，但是提交却要好几行才能完成</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -am <span class="string">"change some text"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-<p>能不能把这几句合并成一句，以后再也不用桥一些繁琐的命令，以提高工作效率<br />
-当然可以，如下：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <pre class="mermaid">	graph LR;
+	前端面试导图--> 第一部分
+	-->fdf
+	第一部分-->1.1小节
+	第一部分-->1.2小节
+	
+	思维导图--> 第二部分
+	第二部分-->2.2小节
+	
+	思维导图--> 第三部分
+	第三部分--> 3.1小节
+	思维导图--> 若干</pre>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/31/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E5%AD%97%E8%8A%82-%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4%E5%89%8D%E7%AB%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/31/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E5%AD%97%E8%8A%82-%E7%95%AA%E8%8C%84%E5%B0%8F%E8%AF%B4%E5%89%8D%E7%AB%AF/" class="post-title-link" itemprop="url">前端笔记/字节-番茄小说前端</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-31 17:11:38" itemprop="dateCreated datePublished" datetime="2020-08-31T17:11:38+08:00">2020-08-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-16 21:44:56" itemprop="dateModified" datetime="2020-09-16T21:44:56+08:00">2020-09-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">前端笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>243</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h5 id="1-画出05px的线"><a class="markdownIt-Anchor" href="#1-画出05px的线"></a> 1. 画出0.5px的线</h5>
+<h5 id="2-http状态码"><a class="markdownIt-Anchor" href="#2-http状态码"></a> 2. http状态码</h5>
+<h5 id="3objectcreate"><a class="markdownIt-Anchor" href="#3objectcreate"></a> 3.Object.create()</h5>
+<ol>
+<li>
+<p>**<code>Object.create()</code>**方法创建一个新对象，使用现有的对象来提供新创建的对象的__proto__。</p>
+</li>
+<li>
+<p>用法：<code>Object.create(proto[, propertiesObject])</code></p>
+<ol>
+<li>proto</li>
+</ol>
+</li>
+<li>
+<p>新创建对象的原型对象。</p>
+</li>
+</ol>
+<h5 id="4-行标签和块级标签"><a class="markdownIt-Anchor" href="#4-行标签和块级标签"></a> 4. 行标签和块级标签。</h5>
+<h5 id="5vue的双向绑定"><a class="markdownIt-Anchor" href="#5vue的双向绑定"></a> 5.vue的双向绑定</h5>
+<h5 id="6vue-style中的-scoped"><a class="markdownIt-Anchor" href="#6vue-style中的-scoped"></a> 6.vue  style中的 scoped</h5>
+<h5 id="7判断某个值是否是array"><a class="markdownIt-Anchor" href="#7判断某个值是否是array"></a> 7.判断某个值是否是Array</h5>
+<h5 id="8-http20新特性"><a class="markdownIt-Anchor" href="#8-http20新特性"></a> 8. http2.0新特性</h5>
+<h5 id="9-进程和线程"><a class="markdownIt-Anchor" href="#9-进程和线程"></a> 9. 进程和线程</h5>
+<h5 id="10-单位pxemremvh"><a class="markdownIt-Anchor" href="#10-单位pxemremvh"></a> 10. 单位（px，em，rem，vh）</h5>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/31/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hexo%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/" class="post-title-link" itemprop="url">hexo 源码解读</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-31 13:29:40 / 修改时间：13:29:54" itemprop="dateCreated datePublished" datetime="2020-08-31T13:29:40+08:00">2020-08-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">hexo博客相关</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>68</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>为了更好的管理自己的博客系统，有必要将hexo的源码结构和设计模式进行一个解读。以便于后续满足自己的需求扩展该博客系统。</p>
+<h2 id="hexo源码解读"><a class="markdownIt-Anchor" href="#hexo源码解读"></a> hexo源码解读</h2>
+
       
     </div>
 
@@ -1131,7 +1247,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/HeronWan.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/HeronWan.github.io/page/4/">4</a><a class="extend next" rel="next" href="/HeronWan.github.io/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/HeronWan.github.io/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/HeronWan.github.io/page/6/">6</a><a class="extend next" rel="next" href="/HeronWan.github.io/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1199,20 +1315,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/HeronWan.github.io/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/HeronWan.github.io/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/HeronWan.github.io/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1261,13 +1377,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">25 分钟</span>
+    <span title="站点阅读时长">49 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>

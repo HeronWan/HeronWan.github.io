@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/HeronWan.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/HeronWan.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/HeronWan.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/HeronWan.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/HeronWan.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/HeronWan.github.io/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"heronwan.github.io","root":"/HeronWan.github.io/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这是我的笔记簿记录我的工作与学习还有生活上的点滴滴滴">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Heron&#39;s NoteBook">
+<meta property="og:url" content="https://heronwan.github.io/page/5/index.html">
+<meta property="og:site_name" content="Heron&#39;s NoteBook">
+<meta property="og:description" content="这是我的笔记簿记录我的工作与学习还有生活上的点滴滴滴">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Heronwang">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="html5">
+<meta property="article:tag" content="css3">
+<meta property="article:tag" content="deep learning">
+<meta property="article:tag" content="ubuntu">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://heronwan.github.io/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Heron's NoteBook</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/HeronWan.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Heron's NoteBook</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">to my life</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/HeronWan.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/HeronWan.github.io/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/HeronWan.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/HeronWan.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/HeronWan/HeronWan.github.io" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv02/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv02</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>816</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="2图像运算"><a class="markdownIt-Anchor" href="#2图像运算"></a> 2，图像运算</h2>
+<h3 id="加法"><a class="markdownIt-Anchor" href="#加法"></a> 加法</h3>
+<p>img1 + img2 ,遵循规则：<br />
+a+b = (a+b) % 256,即结果对256取膜</p>
+<p>cv2.add(img1,img2) ,遵循规则：<br />
+a+b = min(a+b,255), 即和大于255时结果取255</p>
+<h3 id="图像加权和"><a class="markdownIt-Anchor" href="#图像加权和"></a> 图像加权和</h3>
+<p>dst = cv2.addWeighted(src1,alpha,src2,beta,gamma) 参数不能省略<br />
+结果就是 dst = src * alpha +src2 *beta +gamma</p>
+<p>加权和超过255，结果同样取255</p>
+<h3 id="按位逻辑运算"><a class="markdownIt-Anchor" href="#按位逻辑运算"></a> 按位逻辑运算</h3>
+<p>cv2.bitwise_and() 与<br />
+cv2.bitwise_or()  或<br />
+cv2.bitwise_xor() 异或<br />
+cv2.bitwise_not() 非</p>
+<p>跟 0 位与结果为 0 ，变成黑色<br />
+跟255位与结果是本身 ，颜色不变</p>
+<h3 id="掩膜"><a class="markdownIt-Anchor" href="#掩膜"></a> 掩膜</h3>
+<p>使用掩膜参数时，操作只会在掩膜值为非空的像素点上执行，并将其他像素点的值设置为0</p>
+<h3 id="图像与数值运算"><a class="markdownIt-Anchor" href="#图像与数值运算"></a> 图像与数值运算</h3>
+<p>cv2.add(img,6) 参与运算的既可以是图片也可以是数值</p>
+<h3 id="位平面分解"><a class="markdownIt-Anchor" href="#位平面分解"></a> 位平面分解</h3>
+<p>将同一比特位上的二进制像素值进行组合，得到一副二进制值图像，该图像被称为灰度图像的一个位平面，这个过程被称为位平面分解。<br />
+在8位灰度图中，可以组成8个二进制图像<br />
+<a href="opencv/%E4%BD%8D%E5%B9%B3%E9%9D%A2.py">代码</a></p>
+<h3 id="图像加密和解密"><a class="markdownIt-Anchor" href="#图像加密和解密"></a> 图像加密和解密</h3>
+<p>通过按位异或运算可以实现图像的加密和解密</p>
+<p>通过对原始图像与秘钥图像进行按位异或就可以进行加密，将加密后的图像与秘钥图像再次进行按位异或就可以进行解密</p>
+<p><a href="opencv/%E5%9B%BE%E5%83%8F%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86.py">代码实现</a></p>
+<h3 id="数字水印"><a class="markdownIt-Anchor" href="#数字水印"></a> 数字水印</h3>
+<p>最低有效位指一个二进制中的第0位，由于二进制图像处于载体图像的最低有效位上面，所以对于载体图像的影响非常不明显，具有较高的隐蔽性。</p>
+<p>在必要时，我们可以直接将载体图像中的最低有效位提取出来，即可得到嵌入该位上的二值图像，达到提取秘密信息的目的。<br />
+这种信息隐藏也被称为数字水印，通过该方式可以实现信息影藏，版权认证，身份认证等功能</p>
+<p>分两步：</p>
+<pre><code>嵌入过程
+  用数字水印信息将图像的最低有效位替换掉
+
+提取过程
+  提取出最低有效位的水印信息即可
+</code></pre>
+<p><a href="opencv/%E6%95%B0%E5%AD%97%E6%B0%B4%E5%8D%B0.py">demo</a></p>
+<h3 id="脸部打码以及解码"><a class="markdownIt-Anchor" href="#脸部打码以及解码"></a> 脸部打码以及解码</h3>
+<p>使用掩码和按位运算方式实现对脸部打码和解码实例<br />
+<a href="opencv/%E8%84%B8%E9%83%A8%E6%89%93%E7%A0%81%E4%BB%A5%E5%8F%8A%E8%A7%A3%E7%A0%81.py">demo</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/oepncv01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/oepncv01/" class="post-title-link" itemprop="url">深度学习/opencv笔记/oepncv01</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>440</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1图像处理基础"><a class="markdownIt-Anchor" href="#1图像处理基础"></a> 1，图像处理基础</h2>
+<h3 id="图像的表示"><a class="markdownIt-Anchor" href="#图像的表示"></a> 图像的表示</h3>
+<p>二值图像：仅仅包含黑色和白色两种颜色的图像，黑色表示为0，白色表示为1。</p>
+<p>灰度图像：包含256个灰度级，数值区间[0,255]，其中 0 表示纯黑色， 255表示纯白色，中间数值表示纯白和纯黑之间的不同极度的灰度。</p>
+<p>彩色图像： 有红绿蓝三个颜色的通道，能表现更丰富的细节信息，图像的通道顺序是RGB；特别注意，opencv中通道的顺序是 BGR，和图片通道顺序相反</p>
+<h3 id="像素处理"><a class="markdownIt-Anchor" href="#像素处理"></a> 像素处理</h3>
+<p><a href="opencv/%E5%83%8F%E7%B4%A0%E5%A4%84%E7%90%86.py">像素处理代码实现</a></p>
+<h3 id="使用numpyarray访问元素"><a class="markdownIt-Anchor" href="#使用numpyarray访问元素"></a> 使用numpy.array访问元素</h3>
+<p><a href="opencv/numpy.array%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0.py">代码实现</a></p>
+<p>函数 item(行，列) 能高效访问图像的像素点<br />
+itemset(索引值，新值) 用来修改像素值</p>
+<h3 id="感兴趣区域roi-和-通道操作"><a class="markdownIt-Anchor" href="#感兴趣区域roi-和-通道操作"></a> 感兴趣区域ROI 和 通道操作</h3>
+<p><a href="opencv/ROI.py">代码实现</a></p>
+<p>设定ROI后，就可以对该区域进行整体操作，比如将一个ROI区域A复制给变量b，然后将该变量复制给另一个区域C</p>
+<p>通道拆分 cv.split(img)</p>
+<p>通道合并 cv.merge([b,g,r])</p>
+<h3 id="获取图像属性"><a class="markdownIt-Anchor" href="#获取图像属性"></a> 获取图像属性</h3>
+<p>img.shape 返回包含行数，列数，通道数的数组</p>
+<p>img.size  返回图像的像素数目</p>
+<p>img.dtype 返回图像的数据类型</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv/" class="post-title-link" itemprop="url">深度学习/opencv</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-05 15:45:31" itemprop="dateModified" datetime="2020-09-05T15:45:31+08:00">2020-09-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="opencv基础"><a class="markdownIt-Anchor" href="#opencv基础"></a> opencv基础</h1>
+<p><a href="../readme.md">返回readme</a></p>
+<h2 id="图像处理基础"><a class="markdownIt-Anchor" href="#图像处理基础"></a> 图像处理基础</h2>
+<h3 id="图像的表示"><a class="markdownIt-Anchor" href="#图像的表示"></a> 图像的表示</h3>
+<p>二值图像：仅仅包含黑色和白色两种颜色的图像，黑色表示为0，白色表示为1。</p>
+<p>灰度图像：包含256个灰度级，数值区间[0,255]，其中 0 表示纯黑色， 255表示纯白色，中间数值表示纯白和纯黑之间的不同极度的灰度。</p>
+<p>彩色图像： 有红绿蓝三个颜色的通道，能表现更丰富的细节信息，图像的通道顺序是RGB；特别注意，opencv中通道的顺序是 BGR，和图片通道顺序相反</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/readme/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/readme/" class="post-title-link" itemprop="url">hexo博客相关/readme</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:14:24" itemprop="dateModified" datetime="2020-08-31T03:14:24+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">hexo博客相关</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="mynotes"><a class="markdownIt-Anchor" href="#mynotes"></a> <a href="https://heronwan.github.io/">MyNotes</a></h1>
+<h2 id="相关命令"><a class="markdownIt-Anchor" href="#相关命令"></a> 相关命令</h2>
+<ul>
+<li>
+<p><code>hexo c</code> //清除public中生成的编译文件</p>
+</li>
+<li>
+<p><code>hexo g</code> //生成public编译文件</p>
+</li>
+<li>
+<p><code>hexo s</code> //启动本地服务，浏览器中可查看项目</p>
+</li>
+<li>
+<p><code>hexo d</code> //项目部署远程，将生成的public中的文件推送到远程master分支中</p>
+</li>
+<li>
+<p><code>hexo c</code> &amp;&amp; hexo g &amp;&amp;hexo d &amp;&amp; hexo s</p>
+</li>
+<li>
+<p><code>git pull</code> //同步远程的修改</p>
+</li>
+<li>
+<p><code>git add .</code> //将本地修改添加到暂存区</p>
+</li>
+<li>
+<p><code>git commit -m &quot;提交信息&quot;</code> // 将修改提交到本地仓库</p>
+</li>
+<li>
+<p><code>git push origin hexo</code> //推送到远程的hexo分支中</p>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/readme/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/js%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/js%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" class="post-title-link" itemprop="url">javascript最佳实践</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 13:17:25" itemprop="dateModified" datetime="2020-08-31T13:17:25+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">前端笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="最佳实践"><a class="markdownIt-Anchor" href="#最佳实践"></a> 最佳实践</h1>
+<p>​						--《JavaScript高级程序设计》笔记</p>
+<h2 id="一可维护性"><a class="markdownIt-Anchor" href="#一可维护性"></a> 一，可维护性</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/js%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:09:07" itemprop="dateModified" datetime="2020-08-31T03:09:07+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">hexo博客相关</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>357</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/5.hexo%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/5.hexo%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">hexo博客相关/5.hexo使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:14:13" itemprop="dateModified" datetime="2020-08-31T03:14:13+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">hexo博客相关</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>318</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="hexo搭建个人博客与优化"><a class="markdownIt-Anchor" href="#hexo搭建个人博客与优化"></a> hexo搭建个人博客与优化</h1>
+<h2 id="搭建流程"><a class="markdownIt-Anchor" href="#搭建流程"></a> 搭建流程</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/hexo%E5%8D%9A%E5%AE%A2%E7%9B%B8%E5%85%B3/5.hexo%E4%BD%BF%E7%94%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/28/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E6%88%91%E7%9A%84%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/28/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E6%88%91%E7%9A%84%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/" class="post-title-link" itemprop="url">前端笔记/我的面试准备</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-28 22:42:26" itemprop="dateCreated datePublished" datetime="2020-08-28T22:42:26+08:00">2020-08-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-23 15:20:21" itemprop="dateModified" datetime="2020-09-23T15:20:21+08:00">2020-09-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">前端笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>932</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="面试常见问题"><a class="markdownIt-Anchor" href="#面试常见问题"></a> 面试常见问题：</h2>
+<ol>
+<li>
+<p>介绍下自己？</p>
+<p>面试官，您好，我叫王海荣，本科和研究生都是就读于武汉工程大学。本科专业是采矿工程，大一自从上了一门程序设计基础课程，就喜欢上了编程和算法，考了一些计算机二级 也参加学校举办的程序编程大赛等。然后到大三，参加了一次采矿设计大赛，使用一个 <a href="http://aframe.io" target="_blank" rel="noopener">aframe.io</a> 前端的框架 ，做了一个地下矿井的全景全景图 ， 最终获得了全国高校采矿设计大赛一等家。然后我就跨考了计算机。</p>
+<p>。研一的话，主要上课。去年上半年开始，跟导师做了一个公司管理系统的web项目，学到了很多，同时也确定了我的职业方向。在做项目之余，我也利用业余时间在leetcode上面刷题，来提高自己的编程能力和解决问题的能力。至今 600+道了，上次的个人赛排名700+，打败91.3% 的选手。</p>
+</li>
+<li>
+<p>说说你的项目？</p>
+<p>项目背景：去年我们导师接了一个公司的管理系统项目，这个系统主要是给某个审计单位对他的客户单位（某个买额公司）的交易合规性进行风险分析。飞检员从买药的会议现场收集相关的信息，然后输入得到后台，系统进行合规性判断，然后做风险分析。 我在这个项目中充当了一个小组长的身份，同时也负责了。</p>
+<p>技术栈：后端：SSm框架 ：spring+ springmvc + mybatis 等等</p>
+<p>​				前端用的是jsp。</p>
+<p>遇到的难点：一开始做出的页面加载特别的慢，然后，尝试一些方式进行优化：</p>
+<ol>
+<li>
+<p>增加服务器性能；</p>
+</li>
+<li>
+<p>配置tomcat启动器的栈的内存</p>
+</li>
+<li>
+<p>前端减少http的请求次数；</p>
+</li>
+<li>
+<p>上传比较大的数据时候，反应很慢，然后浏览器会出现会弹出：将比较大的数据分成多份进行上传。效果很明显</p>
+</li>
+</ol>
+</li>
+<li>
+<p>未来几年 有什么规划？</p>
+<p>规划就是，向同事们多学习，多实践，扩大自己的技术储备，提高自己的算法水平，编程水平，编程规范等等，还有项目经验等等。在某个领域能够有一些</p>
+</li>
+<li>
+<p>你对本公司了解吗？</p>
+<p>据我了解，贵公司做游戏业务的，做过很多知名 的游戏，仙剑奇侠传，小米枪战等等。我注意到贵公司是使用自家的游戏引擎进行游戏开发，就单一点，感觉贵公司实力雄厚，让我刮目相看。</p>
+</li>
+<li>
+<p>你有什么要问我的吗？</p>
+<p>我想问下，贵公司目前现阶段主要 使用的是哪些技术栈，我需要做哪些技术储备？</p>
+<p>您觉得，我还需要做哪些方面的加强，能不能指导下？</p>
+<p>如果我应聘成功，我还需要在哪些方面下功夫呢？</p>
+<p>我看到贵公司 开发一些的产品 主要用到哪些技术栈呢？</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/26/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E8%A5%BF%E5%B1%B1%E5%B1%85%E5%89%91%E5%BF%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/26/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/%E8%A5%BF%E5%B1%B1%E5%B1%85%E5%89%91%E5%BF%83/" class="post-title-link" itemprop="url">前端笔记/西山居剑心</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-26 16:13:48" itemprop="dateCreated datePublished" datetime="2020-08-26T16:13:48+08:00">2020-08-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 13:21:14" itemprop="dateModified" datetime="2020-08-27T13:21:14+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">前端笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>254</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="第一题"><a class="markdownIt-Anchor" href="#第一题"></a> 第一题：</h3>
+<p>1，传送门：有N个岛屿，有些岛屿之间存在传送门，如果某些传送门被损坏，导致不能让所有的岛屿进行连通点的情况，成为关键路径，请找出所有的这样的传送门</p>
+<p>（在面试官的点拨下，一步一步的把最暴力的思路缕出来了）</p>
+<p>2，碰撞问题</p>
+<p>（格叽格叽了半天还是毫无进展）</p>
+<p>3，你平时玩什么游戏</p>
+<p>（）</p>
+<p>4.出了几道c++的基础题，（全军覆灭）</p>
+<p>5，对游戏开发有什么了解吗？</p>
+<p>（不了解，）</p>
+<p>6，面试完，我问对我有什么建议和指导？</p>
+<p>（面试官说，做游戏开发必须要回c++和c#，这些最基本的；前端工程师，主要互联网公司需要的。 ）</p>
+<p>（好的，谢谢您）</p>
+<p>凉凉。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/weex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/07/18/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/weex/" class="post-title-link" itemprop="url">前端笔记/weex</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-07-18 02:01:11" itemprop="dateCreated datePublished" datetime="2020-07-18T02:01:11+08:00">2020-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-28 17:18:34" itemprop="dateModified" datetime="2020-02-28T17:18:34+08:00">2020-02-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E5%89%8D%E7%AB%AF%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">前端笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>weex环境搭建
+<ul>
+<li>安装依赖node.js</li>
+<li>npm install -g weex-toolkit
+<ul>
+<li>weex -v</li>
+</ul>
+</li>
+<li>weex init project_name</li>
+<li>cd project_name</li>
+<li>npm install</li>
+<li>npm run serve</li>
+<li>npm run dev</li>
+</ul>
+</li>
+<li>weex通用样式
+<ol>
+<li>适配和缩略
+<ol>
+<li>weex对于长度值目前只支持像素值，不支持相对单位(em/rem);适配以750px标准</li>
+<li>设定边框，border目前不支持类似这样border：1px solid #ff0000;的这样组合写法</li>
+<li>设定背景色，background目前不支持background:red的写法，需要改为具体的background-color：red。</li>
+</ol>
+</li>
+<li>其余需要注意的地方
+<ol>
+<li>weex支持线性渐变linear-gradient不支持radial-gradient径向渐变</li>
+<li>weex中box-shadow仅仅支持IOS</li>
+<li>目前<image>组件无法定义一个或者几个角的border-radius,只对IOS有效，对andoid无效</li>
+<li>weex中，flexbox是默认并且唯一的布局模型，每个元素都默认拥有了display:flex属性</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a>组件
+<ol>
+<li>a组件定义了指向weex页面打包后的一个js地址</li>
+<li>组件中无法添加文本，需要其中加上text组件才能添加文本</li>
+<li>此组件支持除了自己外的所有weex组件作为子组件</li>
+<li>支持所有通用样式</li>
+<li>不要为a组件添加click事件</li>
+</ol>
+</li>
+<li><web>组件
+<ol>
+<li><web>组件用于在页面中嵌入一张网页；src用以资源地址。</li>
+<li>不支持任何子组件</li>
+<li>pagestart，<web>组件开始加载是执行</li>
+<li>pagefinish，<web>组件完成加载时执行</li>
+<li>error,<web>组件加载错误时执行</li>
+</ol>
+</li>
+<li>webview组件
+<ol>
+<li>一系列<web>组件操作接口，可以通过调用this.$refs.el 来获取元素的引用</li>
+<li>API：
+<ol>
+<li>goback(webElement),加载历史记录里的前一个资源地址。</li>
+<li>goForward(webElement),加载历史记录里的下一个资源地址</li>
+<li>reload(webElement),刷新当前页面</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>list组件 实现下拉刷新和上拉加载
+<ol>
+<li><list>组件是垂直列表功能的核心组件</li>
+<li><cell>组件，列表中的子项；类似于html中ul和li的关系</li>
+<li>
+<header> 到达屏幕顶端时，吸附在屏幕顶端 
+</li>
+<li><refresh> 给列表添加下拉刷新的功能</li>
+<li>loadmore事件，loadmoreoffset{number}触发事件所需距离</li>
+<li>scorll事件列表滚动式触发的该事件</li>
+<li>offset-accuracy{number}控制scroll事件发生的频率(默认10px)</li>
+</ol>
+</li>
+<li>refresh组件
+<ol>
+<li>用于提供下拉加载功能。<scroller>和<list>的子组件，只有这两个包含时才能正常展示。</li>
+<li>refresh事件，当list组件和scroller组件被下拉时触发。</li>
+<li>pullingdown，当list组件和scroller组件被下拉时触发，可以从事件的参数对象中获取dy,pullingDistance,viewHeight,type;</li>
+</ol>
+</li>
+<li>weex快速上手手册：<a href="http://weex.apache.org/cn/refrences" target="_blank" rel="noopener">weex.apache.org/cn/refrences</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/HeronWan.github.io/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/HeronWan.github.io/">1</a><span class="space">&hellip;</span><a class="page-number" href="/HeronWan.github.io/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/HeronWan.github.io/page/6/">6</a><a class="extend next" rel="next" href="/HeronWan.github.io/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Heronwang"
+      src="/HeronWan.github.io/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Heronwang</p>
+  <div class="site-description" itemprop="description">这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/HeronWan.github.io/archives/">
+        
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/HeronWan.github.io/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/HeronWan.github.io/tags/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/HeronWan" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HeronWan" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1002860620@qq.com" title="E-Mail → mailto:1002860620@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Heronwang</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">54k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">49 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize();
+    }
+  </script>
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/HeronWan.github.io/lib/anime.min.js"></script>
+  <script src="/HeronWan.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/HeronWan.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/HeronWan.github.io/js/utils.js"></script>
+
+<script src="/HeronWan.github.io/js/motion.js"></script>
+
+
+<script src="/HeronWan.github.io/js/schemes/muse.js"></script>
+
+
+<script src="/HeronWan.github.io/js/next-boot.js"></script>
+
+
+  <script defer src="/HeronWan.github.io/lib/three/three.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/HeronWan.github.io/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
+
+
+  
+
+  
+
+</body>
+</html>

@@ -33,7 +33,16 @@
 <meta property="article:tag" content="css3">
 <meta property="article:tag" content="deep learning">
 <meta property="article:tag" content="ubuntu">
-<meta property="article:tag" content="opencv">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="性能">
+<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://heronwan.github.io/page/3/">
@@ -130,17 +139,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/HeronWan.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+    <a href="/HeronWan.github.io/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/HeronWan.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+    <a href="/HeronWan.github.io/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">34</span></a>
+    <a href="/HeronWan.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">52</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -196,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv07/">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
@@ -210,7 +219,840 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv07/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv07</a>
+            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">guns笔记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:12:37" itemprop="dateModified" datetime="2020-08-31T03:12:37+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="大道至简"><a class="markdownIt-Anchor" href="#大道至简"></a> 大道至简</h1>
+<h2 id="目标系统架构师系列课程"><a class="markdownIt-Anchor" href="#目标系统架构师系列课程"></a> 目标：系统架构师系列课程</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/guns%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/" class="post-title-link" itemprop="url">康托展开</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-05 14:13:58" itemprop="dateModified" datetime="2020-09-05T14:13:58+08:00">2020-09-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>419</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="康托展开和逆康托展开"><a class="markdownIt-Anchor" href="#康托展开和逆康托展开"></a> 康托展开和逆康托展开</h1>
+<p>题目详见：<a href="https://leetcode-cn.com/problems/permutation-sequence/" target="_blank" rel="noopener">leetcode060. 第k个排列</a></p>
+<p>该题就是求n个数全排列中的第k的排序，查看评论区才知道有一个叫做康拓展开的概念，我从来都没有接触过，所以现在做下笔记，学习康拓排序，来解决这个leetcode题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/%E5%BA%B7%E6%8B%93%E5%B1%95%E5%BC%80%E4%B8%8E%E5%BA%B7%E6%8B%93%E9%80%86%E5%B1%95%E5%BC%80/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">git常见问题汇总</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:13:24" itemprop="dateModified" datetime="2020-08-31T03:13:24+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" itemprop="url" rel="index"><span itemprop="name">软件与工具使用</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="git常见问题汇"><a class="markdownIt-Anchor" href="#git常见问题汇"></a> git常见问题汇</h1>
+<h2 id="1-git怎么快捷提交到远程"><a class="markdownIt-Anchor" href="#1-git怎么快捷提交到远程"></a> 1. git怎么快捷提交到远程</h2>
+<p>有时候只是修改了一个简单的地方，但是提交却要好几行才能完成</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -am <span class="string">"change some text"</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>能不能把这几句合并成一句，以后再也不用桥一些繁琐的命令，以提高工作效率<br />
+当然可以，如下：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E8%BD%AF%E4%BB%B6%E4%B8%8E%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv18/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv18</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="18k均值聚类"><a class="markdownIt-Anchor" href="#18k均值聚类"></a> 18，<strong>k均值聚类</strong></h2>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv17/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv17</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>61</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="17k近邻算法"><a class="markdownIt-Anchor" href="#17k近邻算法"></a> 17，<strong>k近邻算法</strong></h2>
+<h3 id="理论基础"><a class="markdownIt-Anchor" href="#理论基础"></a> <strong>理论基础</strong></h3>
+<h3 id="计算"><a class="markdownIt-Anchor" href="#计算"></a> <strong>计算</strong></h3>
+<h3 id="手写数字识别原理"><a class="markdownIt-Anchor" href="#手写数字识别原理"></a> <strong>手写数字识别原理</strong></h3>
+<h3 id="自定义函数手写数字识别"><a class="markdownIt-Anchor" href="#自定义函数手写数字识别"></a> <strong>自定义函数手写数字识别</strong></h3>
+<h3 id="k近邻模块的基本使用"><a class="markdownIt-Anchor" href="#k近邻模块的基本使用"></a> <strong>k近邻模块的基本使用</strong></h3>
+<h3 id="k-近邻手写板数字的识别"><a class="markdownIt-Anchor" href="#k-近邻手写板数字的识别"></a> <strong>K 近邻手写板数字的识别</strong></h3>
+<h3 id="svm案例介绍"><a class="markdownIt-Anchor" href="#svm案例介绍"></a> <strong>svm案例介绍</strong></h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/leetcode%E5%81%9A%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/leetcode%E5%81%9A%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">leetcode刷题总结</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-31 03:10:39" itemprop="dateModified" datetime="2020-08-31T03:10:39+08:00">2020-08-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">算法笔记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>99</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="总结经验"><a class="markdownIt-Anchor" href="#总结经验"></a> 总结经验</h2>
+<ul>
+<li>先测试用例，后编码</li>
+<li>先整体思路，后局部。</li>
+<li>用注释标记思路和需要注意的地方。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/leetcode%E5%81%9A%E9%A2%98%E6%80%BB%E7%BB%93/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv15/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv15</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>39</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="15视频处理"><a class="markdownIt-Anchor" href="#15视频处理"></a> 15，<strong>视频处理</strong></h2>
+<h3 id="videocapture类"><a class="markdownIt-Anchor" href="#videocapture类"></a> <strong>VideoCapture类</strong></h3>
+<h3 id="viedeowriter类"><a class="markdownIt-Anchor" href="#viedeowriter类"></a> <strong>ViedeoWriter类</strong></h3>
+<h3 id="视频操作基础"><a class="markdownIt-Anchor" href="#视频操作基础"></a> <strong>视频操作基础</strong></h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv16/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv16/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv16</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>19</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="16绘图机交互"><a class="markdownIt-Anchor" href="#16绘图机交互"></a> 16，<strong>绘图机交互</strong></h2>
+<h3 id="绘图基础"><a class="markdownIt-Anchor" href="#绘图基础"></a> <strong>绘图基础</strong></h3>
+<h3 id="鼠标交互"><a class="markdownIt-Anchor" href="#鼠标交互"></a> <strong>鼠标交互</strong></h3>
+<h3 id="滚动条"><a class="markdownIt-Anchor" href="#滚动条"></a> <strong>滚动条</strong></h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv14/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv14</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>29</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="14图像分割与提取"><a class="markdownIt-Anchor" href="#14图像分割与提取"></a> 14，<strong>图像分割与提取</strong></h2>
+<h3 id="用分水岭算法实现图像分割"><a class="markdownIt-Anchor" href="#用分水岭算法实现图像分割"></a> <strong>用分水岭算法实现图像分割</strong></h3>
+<h3 id="交互式前景提取"><a class="markdownIt-Anchor" href="#交互式前景提取"></a> <strong>交互式前景提取</strong></h3>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
+      <meta itemprop="name" content="Heronwang">
+      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Heron's NoteBook">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv10/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv10</a>
         </h2>
 
         <div class="post-meta">
@@ -261,1219 +1103,172 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="7图像梯度"><a class="markdownIt-Anchor" href="#7图像梯度"></a> 7，<strong>图像梯度</strong></h2>
-<p>图像梯度的计算就是图像变化的速度，对于图像的边缘部分，其灰度值变化较大，梯度值也较大，相反，对于图像中比较平滑的部分，其灰度值较小，相应的梯度值也较小</p>
-<h3 id="sobel-理论基础"><a class="markdownIt-Anchor" href="#sobel-理论基础"></a> <strong>sobel 理论基础</strong></h3>
-<p>利用局部差分寻找边缘，一般有水平方向的Gx和垂直方向的Gy两个分量</p>
-<p>水平方向的分量等于，像素点的左侧像素值减去右侧像素值</p>
-<p>垂直方向的分量等于，像素点的上方像素值减去下方像素值</p>
-<p>sobel核的算子一般如下：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable width="100%"><mtr><mtd width="50%"></mtd><mtd><mrow><mi>G</mi><mi>x</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow></mtd><mtd width="50%"></mtd><mtd><mtext>(A)</mtext></mtd></mtr></mtable><annotation encoding="application/x-tex">Gx=  
-\left[\begin{matrix}
-   -1 &amp; 0 &amp; 1 \\
-   -2 &amp; 0 &amp; 2 \\
-   -1 &amp; 0 &amp; 1 \\
-  \end{matrix} \right]\tag{A}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">2</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span><span class="tag"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">A</span></span><span class="mord">)</span></span></span></span></span></span></p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable width="100%"><mtr><mtd width="50%"></mtd><mtd><mrow><mi>G</mi><mi>y</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>2</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>1</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>2</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow></mtd><mtd width="50%"></mtd><mtd><mtext>(B)</mtext></mtd></mtr></mtable><annotation encoding="application/x-tex">Gy=
-\left[\begin{matrix}
-   -1 &amp; -2 &amp; -1 \\
-   0 &amp; 0 &amp; 0 \\
-   1 &amp; 2 &amp; 1 \\
-  \end{matrix} \right]\tag{B}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">2</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span><span class="tag"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">B</span></span><span class="mord">)</span></span></span></span></span></span></p>
-<h3 id="sobel算子及函数使用"><a class="markdownIt-Anchor" href="#sobel算子及函数使用"></a> <strong>sobel算子及函数使用</strong></h3>
-<p><code>cv2.Sobel(src,ddepth,dx,dy,ksize,scale,delta,borderType)</code></p>
+          <h2 id="10图像轮廓"><a class="markdownIt-Anchor" href="#10图像轮廓"></a> 10，<strong>图像轮廓</strong></h2>
+<p>边缘检测虽然能够检测出边缘，但是边缘是不连续的，检测到的边缘并不是一个整体，图像轮廓是指将边缘连接起来形成一个整体，用于后续的计算。</p>
+<p>通过对图像轮廓的操作，我们能够获得目标图像的大小，位置，方向等信息</p>
+<h3 id="查找并绘制轮廓"><a class="markdownIt-Anchor" href="#查找并绘制轮廓"></a> <strong>查找并绘制轮廓</strong></h3>
+<p>一个轮廓对应着一系列的点，这些点以某种方式表示图像中的一条曲线</p>
+<p><code>cv.findContours()</code>用于查找图像的轮廓，并能够根据参数返回特定方式的轮廓曲线，函数<code>cv2.drowContours()</code>能将查找到的轮廓绘制到图像上</p>
+<h3 id="矩特征"><a class="markdownIt-Anchor" href="#矩特征"></a> <strong>矩特征</strong></h3>
+<p>比较两个轮廓最简单的方法就是比较两者的轮廓矩。轮廓矩代表着一个轮廓、一幅图像，一组点集的全局特征。矩信息包含了对应对象不同类型的几何特征，例如大小、位置、角度、形状等。矩特征被广泛用于模式识别和图像识别等方便</p>
+<ol>
+<li>矩的计算：moments函数</li>
+</ol>
+<p><code>retval = cv2.moments(array, binaryImage)</code></p>
 <ul>
-<li>dx：表示x方向上的求导阶数</li>
-<li>dy：表示y方向上的求导阶数</li>
-<li>ksize；表示核大小</li>
-<li>scale：表示计算导数值采用的缩放因子</li>
-<li>delta：表示加在目标图像dst上的值</li>
-</ul>
-<h3 id="scharr-算子及函数使用"><a class="markdownIt-Anchor" href="#scharr-算子及函数使用"></a> <strong>scharr 算子及函数使用</strong></h3>
-<p>scharr和sobel计算流程是一样的，只是核不一样，scharr的核如下</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable width="100%"><mtr><mtd width="50%"></mtd><mtd><mrow><mi>G</mi><mi>x</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>10</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>10</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow></mtd><mtd width="50%"></mtd><mtd><mtext>(A)</mtext></mtd></mtr></mtable><annotation encoding="application/x-tex">Gx=  
-\left[\begin{matrix}
-   -3 &amp; 0 &amp; 3 \\
-   -10 &amp; 0 &amp; 10 \\
-   -3 &amp; 0 &amp; 3 \\
-  \end{matrix} \right]\tag{A}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span><span class="tag"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">A</span></span><span class="mord">)</span></span></span></span></span></span></p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable width="100%"><mtr><mtd width="50%"></mtd><mtd><mrow><mi>G</mi><mi>y</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>10</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>10</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow></mtd><mtd width="50%"></mtd><mtd><mtext>(B)</mtext></mtd></mtr></mtable><annotation encoding="application/x-tex">Gy=
-\left[\begin{matrix}
-   -3 &amp; -10 &amp; -3 \\
-   0 &amp; 0 &amp; 0 \\
-   3 &amp; 10 &amp; 3 \\
-  \end{matrix} \right]\tag{B}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span><span class="tag"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">B</span></span><span class="mord">)</span></span></span></span></span></span></p>
-<h3 id="laplacian-算子及函数使用"><a class="markdownIt-Anchor" href="#laplacian-算子及函数使用"></a> <strong>Laplacian 算子及函数使用</strong></h3>
-<p>Laplacian是一种二阶导数算子，其具有旋转不变性，可以满足不同方向上的图像边缘锐化（边缘检测）的要求，通常情况下，其算子的系数之和需要为0<br />
-算子核如下：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>4</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><annotation encoding="application/x-tex">\left[\begin{matrix}
-   0 &amp; 1 &amp; 0 \\
-   1 &amp; -4 &amp; 1 \\
-   0 &amp; 1 &amp; 0 \\
-  \end{matrix} \right]
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">4</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-<h3 id="算子总结"><a class="markdownIt-Anchor" href="#算子总结"></a> <strong>算子总结</strong></h3>
-<p>sobel算子：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>x</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>10</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>10</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mi mathvariant="normal">，</mi><mi>G</mi><mi>y</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>10</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>10</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">Gx=  
-\left[\begin{matrix}
-   -3 &amp; 0 &amp; 3 \\
-   -10 &amp; 0 &amp; 10 \\
-   -3 &amp; 0 &amp; 3 \\
-  \end{matrix} \right]
-  ，
-  Gy=
-\left[\begin{matrix}
-   -3 &amp; -10 &amp; -3 \\
-   0 &amp; 0 &amp; 0 \\
-   3 &amp; 10 &amp; 3 \\
-  \end{matrix} \right]
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord cjk_fallback">，</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p>scharr算子：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mi>x</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>10</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>10</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><mi mathvariant="normal">，</mi><mi>G</mi><mi>y</mi><mo>=</mo><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>10</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>3</mn></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>10</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>3</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">Gx=  
-\left[\begin{matrix}
-   -3 &amp; 0 &amp; 3 \\
-   -10 &amp; 0 &amp; 10 \\
-   -3 &amp; 0 &amp; 3 \\
-  \end{matrix} \right]
-，
-Gy=
-\left[\begin{matrix}
-   -3 &amp; -10 &amp; -3 \\
-   0 &amp; 0 &amp; 0 \\
-   3 &amp; 10 &amp; 3 \\
-  \end{matrix} \right]
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord cjk_fallback">，</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">1</span><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-<p>laplacian算子：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">[</mo><mtable rowspacing="0.15999999999999992em" columnspacing="1em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mo>−</mo><mn>4</mn></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>1</mn></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="false"><mn>0</mn></mstyle></mtd></mtr></mtable><mo fence="true">]</mo></mrow><annotation encoding="application/x-tex">\left[\begin{matrix}
-   0 &amp; 1 &amp; 0 \\
-   1 &amp; -4 &amp; 1 \\
-   0 &amp; 1 &amp; 0 \\
-  \end{matrix} \right]
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.60004em;vertical-align:-1.55002em;"></span><span class="minner"><span class="mopen"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎣</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎡</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">−</span><span class="mord">4</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05em;"><span style="top:-4.21em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span><span style="top:-3.0099999999999993em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span><span style="top:-1.8099999999999994em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.5500000000000007em;"><span></span></span></span></span></span></span></span><span class="mclose"><span class="delimsizing mult"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:2.05002em;"><span style="top:-2.2500000000000004em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎦</span></span></span><span style="top:-4.05002em;"><span class="pstrut" style="height:3.1550000000000002em;"></span><span class="delimsizinginner delim-size4"><span>⎤</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.55002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv09/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv09/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv09</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>562</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="9图像金字塔"><a class="markdownIt-Anchor" href="#9图像金字塔"></a> 9，<strong>图像金字塔</strong></h2>
-<p>图像金字塔是由一副图像的多个不同分辨率的子图所构成的图像集合，该组图像由单个图像通过不断地降采样所产生的，最小的图像可能仅仅有一个像素点</p>
-<h3 id="理论基础"><a class="markdownIt-Anchor" href="#理论基础"></a> <strong>理论基础</strong></h3>
-<p>图像金字塔是同一图像不同分辨率的子图的集合，是通过对原图像不断的向下采样产生的，即由高分辨率的图像（大尺寸）产生低分辨率的图像（小尺寸）</p>
-<ol>
-<li>
-<p>下采样：图像宽高变成原来的一半</p>
-<ol>
-<li>简单采样：删除偶数行和欧数列</li>
-<li>滤波器采样：
-<ol>
-<li>邻域滤波器：邻域内求平均值</li>
-<li>高斯滤波器：像素点越远权值越小</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>
-<p>上采样：图像宽高是原来2倍</p>
-<ol>
-<li>补0插值：对像素点以补0完成插值</li>
-<li>临近插值：用最邻近的点给没有值的像素点赋值</li>
-</ol>
-</li>
-</ol>
-<h3 id="pyrdown函数及使用"><a class="markdownIt-Anchor" href="#pyrdown函数及使用"></a> <strong>pyrDown函数及使用</strong></h3>
-<p>下采样函数<code>dst = pyrDown(src, dstsize,borderType)</code></p>
+<li>array 可以是点集，也可以是灰度图像或二值图像，整个点击作为一条轮廓</li>
+<li>binaryImage：若为true，array中所有非0值都被处理成1</li>
+<li>retval 返回值是一个特征矩，主要包括：
 <ul>
-<li>dssize目标图像的大小</li>
-</ul>
-<h3 id="pyrup函数及使用"><a class="markdownIt-Anchor" href="#pyrup函数及使用"></a> <strong>pyrUp函数及使用</strong></h3>
-<p>上采样函数<code>dst = pyrUp(src, dstsize,borderType)</code></p>
-<h3 id="采样可逆行研究"><a class="markdownIt-Anchor" href="#采样可逆行研究"></a> <strong>采样可逆行研究</strong></h3>
-<p>下采样会丢失信息，所以下采样和上采样不是可逆的</p>
-<h3 id="拉普拉斯金字塔"><a class="markdownIt-Anchor" href="#拉普拉斯金字塔"></a> <strong>拉普拉斯金字塔</strong></h3>
-<p>我们希望通过对金字塔中的小图像进行上采样以获得完整的大尺寸高分辨率图像，这时就需要用到拉普拉斯金字塔</p>
-<p>为了在向上采样时能够恢复具有较高分辨率的原始图像，就要获取在采样过程中所丢失的信息，这些丢失的信息就构成了拉普拉斯金字塔</p>
-<p>拉普拉斯金字塔的第i层，等于 高斯金字塔中的第i层 与 高斯金字塔第i+1层上采样结果 之差</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv08/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv08/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv08</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>679</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="8canny边缘检测"><a class="markdownIt-Anchor" href="#8canny边缘检测"></a> 8，<strong>canny边缘检测</strong></h2>
-<p>canny检测步骤：</p>
-<ol>
-<li>去噪，噪声会影响边缘检测的准确性
+<li>空间矩,计算面积、周长
 <ul>
-<li>应用高斯滤波器去噪，一般采用5*5的核</li>
-<li>高斯滤波的特点，离中心越远权值越小</li>
+<li>零阶矩:m00</li>
+<li>一阶矩:m10,m01</li>
+<li>二阶矩:m20,m11</li>
+<li>三阶矩:m30</li>
 </ul>
 </li>
-<li>计算梯度的幅度和方向
+<li>中心距：计算平移不变性，比较不同位置对象是否一致
 <ul>
-<li>梯度的方向和边缘方向是垂直的</li>
-<li>根据边缘检测算子得出的水平和垂直方向的分量，计算出梯度的幅度和方向</li>
+<li>二阶中心距:mu20,mu11</li>
+<li>三阶中心距:mu30</li>
 </ul>
 </li>
+<li>归一化中心矩：通过除以物体的总尺寸而获得的缩放不变性，具有平移不变性，还具有缩放不变性
+<ul>
+<li>二阶hu矩:nu20,nu11,nu02</li>
+<li>三阶hu矩:nu30,nu21,nu12,nu03</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>2.计算轮廓的长度：arcLength函数<br />
+<code>retval = cv2.arcLength(curve, closed)</code></p>
+<ul>
+<li>retval返回值是轮廓的周长</li>
+<li>curve 是轮廓</li>
+<li>closed是布尔值，用来表示轮廓是否封闭</li>
+</ul>
+<h3 id="hu钜"><a class="markdownIt-Anchor" href="#hu钜"></a> <strong>hu钜</strong></h3>
+<p>hu矩是归一化中心矩的线型组合。hu矩在图像旋转，缩放，平移等操作后，仍能保持矩的不变性，所以经常会使用hu矩来识别图像额特征</p>
+<p><code>hu = cv2.HuMoments(m)</code></p>
+<h3 id="轮廓拟合"><a class="markdownIt-Anchor" href="#轮廓拟合"></a> <strong>轮廓拟合</strong></h3>
+<p>在计算轮廓时，可能并不需要实际的轮廓，而仅需要一个接近于轮廓的近似多边形的方法。</p>
+<ol>
+<li>轮廓拟合</li>
 </ol>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">梯</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">幅</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">：</mi><mi>G</mi><mo>=</mo><msqrt><msubsup><mi>G</mi><mi>x</mi><mn>2</mn></msubsup></msqrt><mo>+</mo><msqrt><msubsup><mi>G</mi><mi>y</mi><mn>2</mn></msubsup></msqrt></mrow><annotation encoding="application/x-tex">梯度的幅度：G = \sqrt{G_x^2} +\sqrt{G_y^2}  
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord cjk_fallback">梯</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">幅</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault">G</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.259571em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.980429em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.940429em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
-158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
-c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
-175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
-c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
--252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
-s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.259571em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6276250000000001em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.212375em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7401079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.1723749999999997em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
-572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
--7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
-c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
-s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
--658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
-M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6276250000000001em;"><span></span></span></span></span></span></span></span></span></span></p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">梯</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">方</mi><mi mathvariant="normal">向</mi><mi mathvariant="normal">：</mi><mi>θ</mi><mo>=</mo><mi>a</mi><mi>r</mi><mi>c</mi><mi>t</mi><mi>a</mi><mi>n</mi><mo stretchy="false">(</mo><msqrt><msubsup><mi>G</mi><mi>x</mi><mn>2</mn></msubsup></msqrt><mo separator="true">,</mo><msqrt><msubsup><mi>G</mi><mi>y</mi><mn>2</mn></msubsup></msqrt><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">梯度的方向：\theta = arctan( \sqrt{G_x^2} ,\sqrt{G_y^2})
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord cjk_fallback">梯</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">方</span><span class="mord cjk_fallback">向</span><span class="mord cjk_fallback">：</span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.6276250000000001em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.980429em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.940429em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg width='400em' height='1.28em' viewBox='0 0 400000 1296' preserveAspectRatio='xMinYMin slice'><path d='M263,681c0.7,0,18,39.7,52,119c34,79.3,68.167,
-158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120c340,-704.7,510.7,-1060.3,512,-1067
-c4.7,-7.3,11,-11,19,-11H40000v40H1012.3s-271.3,567,-271.3,567c-38.7,80.7,-84,
-175,-136,283c-52,108,-89.167,185.3,-111.5,232c-22.3,46.7,-33.8,70.3,-34.5,71
-c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1s-109,-253,-109,-253c-72.7,-168,-109.3,
--252,-110,-252c-10.7,8,-22,16.7,-34,26c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26
-s76,-59,76,-59s76,-60,76,-60z M1001 80H40000v40H1012z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.259571em;"><span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.212375em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mord mathdefault">G</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7401079999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03588em;">y</span></span></span><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.383108em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.1723749999999997em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M1001,80H400000v40H1013.1s-83.4,268,-264.1,840c-180.7,
-572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,
--7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744c-10,12,-21,25,-33,39s-32,39,-32,39
-c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30c26.7,-32.7,52,-63,76,-91s52,-60,52,-60
-s208,722,208,722c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,
--658.5c53.7,-170.3,84.5,-266.8,92.5,-289.5c4,-6.7,10,-10,18,-10z
-M1001 80H400000v40H1013z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.6276250000000001em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
+<p><code>x, y, w, h = cv2.boundingRect( array)</code></p>
+<ul>
+<li>array 是灰度图像或轮廓</li>
+<li>该函数具有四个返回值,分别表示：</li>
+<li>矩阵边界左上角顶点的x坐标</li>
+<li>矩阵边界左上角顶点的y坐标</li>
+<li>矩阵边界x方向的长度</li>
+<li>矩阵边界y方向的长度</li>
+</ul>
+<ol start="2">
+<li>最小包围矩阵框<br />
+<code>retval = cv2.minAreaRect(array)</code></li>
+</ol>
+<ul>
+<li>返回值retval表示返回的矩阵特征信息， 该值结构是：
+<ul>
+<li>最小外接矩形的中心，</li>
+<li>（宽度，高度），</li>
+<li>旋转角</li>
+</ul>
+</li>
+</ul>
 <ol start="3">
 <li>
-<p>极非大值抑制，即适当的让边缘变瘦</p>
-<ul>
-<li>如果该点是正负梯度上的局部最大值，保留该点</li>
-<li>如果不是，则抑制该点（归零）</li>
-</ul>
+<p>最小包围圆形<br />
+<code>center,radius = cv2.minEnclosingCircle(array)</code></p>
 </li>
 <li>
-<p>确定边缘，使用双阈值算法确定最终的边缘信息</p>
-<ul>
-<li>设置两个阈值，一个为高阈值maxval,一个为低阈值minval</li>
-<li>如果当前边缘像素的梯度值大于maxval，则将当前边缘标记为强边缘</li>
-<li>如果当前边缘像素梯度值介于maxval和minval之间，则将当前边缘像素标记为虚边缘</li>
-<li>如果小于minval，则抑制但钱边缘像素</li>
-<li>与强边缘相连，则将该边缘标记为边缘</li>
-<li>与强边缘无连接，则将该边缘抑制</li>
-</ul>
+<p>最优拟合直线</p>
+</li>
+<li>
+<p>最小包围三角形</p>
+</li>
+<li>
+<p>逼近多边形</p>
 </li>
 </ol>
-<h3 id="canny函数及使用"><a class="markdownIt-Anchor" href="#canny函数及使用"></a> <strong>canny函数及使用</strong></h3>
-<p><code>edges = cv.Canny(image ,threshold1, threshold2, apertureSize, L2gradient)</code><br />
-- threshold1第一个阈值<br />
-- threshold2第二个阈值<br />
-- apertureSize表示sobel孔径的大小<br />
-- L2gradient计算梯度幅度的标识</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv06/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv06/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv06</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>781</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="6形态学操作"><a class="markdownIt-Anchor" href="#6形态学操作"></a> 6，<strong>形态学操作</strong></h2>
-<p>形态学，即数学形态学,图像处理中一个非常重要分操作，形态学主要从图像内提取分量信息，该分量信息通常对于表达和描绘图像时所使用的最本质的形状特征。</p>
-<h3 id="腐蚀"><a class="markdownIt-Anchor" href="#腐蚀"></a> <strong>腐蚀</strong></h3>
-<p>简介：腐蚀是形态学的最基本的形态学操作之一，它能够将图像的边界点消除，使图像沿着边界向内收缩，也可以将小于指定结构体元素的部分去除</p>
-<p>作用：腐蚀用来<strong>收缩</strong>或者<strong>细化</strong>二值图像中的前景，借此实现去除噪声、元素分割等操作</p>
-<p>原理：取局部最小值来实现</p>
-<p><code>dst= cv2.erode( src, kernal, anchor, iterations, borderType )</code></p>
-<h3 id="膨胀"><a class="markdownIt-Anchor" href="#膨胀"></a> <strong>膨胀</strong></h3>
-<p>原理类似<strong>腐蚀</strong>,取局部最大值</p>
-<p>膨胀就是求局部最大值的操作，核B与图形卷积，即计算核B覆盖的区域（体现局部）的像素点的最大值，并把这个最大值赋值给参考点指定的像素。这样就会使图像中的高亮区域逐渐增长</p>
-<p><code>dst = cv2.dilate(src,kernal, anchor, iterations, borderType, borderValue )</code></p>
-<h3 id="通用形态学函数"><a class="markdownIt-Anchor" href="#通用形态学函数"></a> <strong>通用形态学函数</strong></h3>
-<p>形态学函数<br />
-<code>dst = cv2.morphologyEx( src, kernal , anchor, iterations, borderType)</code></p>
-<h3 id="开运算"><a class="markdownIt-Anchor" href="#开运算"></a> <strong>开运算</strong></h3>
-<p>先腐蚀，后膨胀，这一过程称为开运算</p>
-<h3 id="闭运算"><a class="markdownIt-Anchor" href="#闭运算"></a> <strong>闭运算</strong></h3>
-<p>先膨胀，后腐蚀，这一过程称为闭运算</p>
-<h3 id="形态学梯度运算"><a class="markdownIt-Anchor" href="#形态学梯度运算"></a> <strong>形态学梯度运算</strong></h3>
-<p>形态学梯度运算 是用图像膨胀 减去 图像腐蚀的操作，该操作可以获得原始图像的前景图像的边缘</p>
-<h3 id="礼帽运算"><a class="markdownIt-Anchor" href="#礼帽运算"></a> <strong>礼帽运算</strong></h3>
-<p>礼帽运算是用原始图像减去开运算图像的操作，</p>
-<p>礼貌运算能够获得图像的噪声信息</p>
-<h3 id="黑帽运算"><a class="markdownIt-Anchor" href="#黑帽运算"></a> <strong>黑帽运算</strong></h3>
-<p>黑帽运算是用闭运算图像减去原始图像的操作</p>
-<p>闭运算能够获得图像内部的小孔，或者前景中的小黑点，或者得到比原始图像的边缘更暗的边缘部分</p>
-<h3 id="核函数"><a class="markdownIt-Anchor" href="#核函数"></a> <strong>核函数</strong></h3>
-<p>在进行形态学操作时，必须使用一个特定的核（结构单元）。该核能够自定义生成，也可以通过函数cv2.getStructuringElement()构造，它能够返回一个用于形态学处理的结构单元</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv04/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv04</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>936</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="4几何变换"><a class="markdownIt-Anchor" href="#4几何变换"></a> 4，<strong>几何变换</strong></h2>
-<h3 id="缩放"><a class="markdownIt-Anchor" href="#缩放"></a> <strong>缩放</strong></h3>
-  <figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dst = cv.resize(src,dsize , fx,fy,interpolation)</span><br><span class="line">  src:缩放的原始图像</span><br><span class="line">  dsize：输出图像大小</span><br><span class="line">  fx：水平方向的缩放比例</span><br><span class="line">  fy:垂直方向的缩放比例</span><br><span class="line">  interpolation：代表插值方式</span><br><span class="line"><span class="code">    缩放图像时，INTER_AREA能达到最好效果</span></span><br><span class="line"><span class="code">    放大图像时，INTER_CUBIC 和INTER_LINEAR 都能取得较好的效果</span></span><br></pre></td></tr></table></figure>
-<h3 id="旋转"><a class="markdownIt-Anchor" href="#旋转"></a> <strong>旋转</strong></h3>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dst &#x3D; cv2.flip(src,flipCode)</span><br><span class="line">  flipCode 旋转类型：</span><br><span class="line">  0，绕x轴旋转</span><br><span class="line">  正数，绕y轴旋转</span><br><span class="line">  负数，绕x，y同时旋转</span><br></pre></td></tr></table></figure>
-<h3 id="仿射"><a class="markdownIt-Anchor" href="#仿射"></a> <strong>仿射</strong></h3>
-<p>仿射变换是指图像可以通过一系列的几何变换来实现平移、旋转等多种操作</p>
-<p>该变换能够保持图像的平直性和平行性</p>
-<p>仿射 = 平移 + 旋转</p>
-<figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">dst = cv2.warpAffine(src, M, dsize, flags, borderMode, borderValue)</span><br><span class="line">M:代表一个2x3的变换矩阵</span><br><span class="line">dsize:代表输出图像的尺寸大小</span><br><span class="line">flags:代表插值方式，默认INTER_LINEAR</span><br><span class="line">borderMode:代表边类型</span><br><span class="line"></span><br><span class="line">borderValue:代表边界值，默认0</span><br></pre></td></tr></table></figure>
-<h3 id="透视"><a class="markdownIt-Anchor" href="#透视"></a> <strong>透视</strong></h3>
-<p>仿射可以将矩阵映射成任意平行四边形<br />
-透视变换可以将矩形映射成任意四边形</p>
-<p>透视函数：<code>dst = cv2.warpPerspective(src,M,dsize,flags,borderMode,borderValue)</code></p>
-<ul>
-<li>M 代表一个3*3的变换矩阵</li>
-<li>dsize代表输出图像的尺寸</li>
-<li>flags代表插值方式</li>
-<li>borderMode代表变类型</li>
-<li>borderValue代表边界值</li>
-</ul>
-<p>生成转换举矩阵：<code>retval = cv2.getPerspectiveTransform(src,dst)</code></p>
-<h3 id="重映射"><a class="markdownIt-Anchor" href="#重映射"></a> <strong>重映射</strong></h3>
-<p>把一副图像内像素点放置到另一幅图像内的指定位置，这个过程被称为重映射</p>
-<p>映射函数：<code>dst = cv2.remap(src,map1,map2,interpolation,borderMode,borderValue)</code></p>
-<p>映射就是通过修改图像像素点的位置一副新的图像，在构建新图像时，需要确定新图像中的每个像素点在原图中的位置，因此，映射函数的作用就是查找新图像像素点在原始图像内的位置。该过程就是将新图像像素映射到原始图像的过程，因此被称为反向映射。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv05/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv05</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="5阈值处理"><a class="markdownIt-Anchor" href="#5阈值处理"></a> 5，<strong>阈值处理</strong></h2>
-<p>阈值处理就是剔除图像中像素值高于一定值或者低于一定值的像素点，比如设定阈值为127，然后：</p>
-<ul>
-<li>将图像内所有像素值大于127的像素点设置为255</li>
-<li>将图像内像素值小于或等于127的像素点设置为0</li>
-</ul>
-<p>opencv提供<code>cv2.threshold()</code>和<code>cv.adaptiveThreshold</code></p>
-<h3 id="threldhold函数"><a class="markdownIt-Anchor" href="#threldhold函数"></a> <strong>threldhold函数</strong></h3>
-<p><code>retval, dst = cv2.threshold(src,thresh,maxval,type)</code></p>
-<ul>
-<li>retval返回的阈值</li>
-<li>dst代表阈值分割结果图像，与原始图像具有相同的大小和类型</li>
-<li>src代表进行阈值阈值分割的图像</li>
-<li>thresh 代表设定的阈值</li>
-<li>maxval代表当type参数为thresh——binarry或者THRESH_BINARY_INV 类型时，需要设定的最大值</li>
-<li>type代表阈值分割的类型：
-<ul>
-<li>cv2.THRESH_BINARY       二值化阈值处理</li>
-<li>cv2.THRESH_BINARY_INV反 二值化阈值处理</li>
-<li>cv2.THRESH_TRUNC        截断阈值化处理</li>
-<li>cv2.THRESH_TOZERO_INV   超阈值零处理</li>
-<li>CV2.THRESH_TOZERO       低阈值零处理</li>
-</ul>
+<h3 id="凸包"><a class="markdownIt-Anchor" href="#凸包"></a> <strong>凸包</strong></h3>
+<p>逼近多边形是轮廓的高度近似，但是有时候，我们希望使用一个多边形的凸包，来简化它。凸包跟逼近多边形很像，只不过他是物体最外层的凸多边形。凸包指的是完全包括原有轮廓，并且仅由轮廓上的点所构成的多边形</p>
+<p>在凸包中，任意连续三个点的内角小于180度</p>
+<ol>
+<li>获取凸包</li>
+<li>凸缺陷
+<ol>
+<li>凸包和轮廓之间的部分，称为凸缺陷，</li>
+</ol>
 </li>
-</ul>
-<h3 id="自适应阈值处理"><a class="markdownIt-Anchor" href="#自适应阈值处理"></a> <strong>自适应阈值处理</strong></h3>
-<p>也就是变化的阈值完成对图像的阈值处理</p>
-<p><code>dst = cv.adaptiveThreshold(src, maxval,adaptiveMethod, thresholdType ,blockSize, C)</code></p>
-<ul>
+<li>几何学测试
+<ol>
+<li>测试轮廓是否是凸型的</li>
+<li>点到轮廓的距离：<br />
+<code>retval = cv2.pointPolygonTest( contour, pt, measureDist)</code></li>
+</ol>
+</li>
+</ol>
+<h3 id="利用形状场景算法比较轮廓"><a class="markdownIt-Anchor" href="#利用形状场景算法比较轮廓"></a> <strong>利用形状场景算法比较轮廓</strong></h3>
+<p>用矩比较形状是一种非常有效的方法，不过现在有更高效的方法。</p>
+<p>从opencv3开始，就开始有了专有模块shape，该模块中的形状场景算法能够更高效的比较形状</p>
+<ol>
+<li>计算形状场景距离<br />
+1.</li>
+</ol>
+<h3 id="轮廓的特征值"><a class="markdownIt-Anchor" href="#轮廓的特征值"></a> <strong>轮廓的特征值</strong></h3>
+<ol>
 <li>
-<p>adaptiveMethod  表示自适应方法有以下两个自适应阈值方法，都是逐个像素的计算自适应阈值，自适应阈值等于每个像素由参数blocksize所指定领域的加权平均值减去常量C</p>
-<ul>
-<li>cv2.ADAPTIVE_THRESH_MEAN_C      领域内所有像素点权重值都是一样的</li>
-<li>CV2.ADAPTIVE_THRESH_GAUSSIAN_C  与领域各个像素点到中心点的距离相关，通过高斯方程得到各个点的权重值</li>
-</ul>
+<p>宽高比</p>
 </li>
 <li>
-<p>thresholdType   代表阈值处理方式</p>
+<p>extent</p>
+</li>
+</ol>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mi>x</mi><mi>t</mi><mi>e</mi><mi>n</mi><mi>t</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">轮</mi><mi mathvariant="normal">廓</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi><mo stretchy="false">(</mo><mi mathvariant="normal">对</mi><mi mathvariant="normal">象</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi><mo stretchy="false">)</mo></mrow><mrow><mi mathvariant="normal">矩</mi><mi mathvariant="normal">形</mi><mi mathvariant="normal">边</mi><mi mathvariant="normal">界</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">extent = \frac{轮廓面积(对象面积)}{矩形边界面积}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathdefault">e</span><span class="mord mathdefault">x</span><span class="mord mathdefault">t</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">矩</span><span class="mord cjk_fallback">形</span><span class="mord cjk_fallback">边</span><span class="mord cjk_fallback">界</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">轮</span><span class="mord cjk_fallback">廓</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span><span class="mopen">(</span><span class="mord cjk_fallback">对</span><span class="mord cjk_fallback">象</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ol start="3">
+<li>Soliity</li>
+</ol>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>o</mi><mi>l</mi><mi>i</mi><mi>d</mi><mi>i</mi><mi>t</mi><mi>y</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">轮</mi><mi mathvariant="normal">廓</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi><mi mathvariant="normal">（</mi><mi mathvariant="normal">对</mi><mi mathvariant="normal">象</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi><mi mathvariant="normal">）</mi></mrow><mrow><mi mathvariant="normal">凸</mi><mi mathvariant="normal">包</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">solidity = \frac{轮廓面积（对象面积）}{凸包面积}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.363em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.677em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">凸</span><span class="mord cjk_fallback">包</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord cjk_fallback">轮</span><span class="mord cjk_fallback">廓</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span><span class="mord cjk_fallback">（</span><span class="mord cjk_fallback">对</span><span class="mord cjk_fallback">象</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span><span class="mord cjk_fallback">）</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ol start="4">
+<li>等效直径<br />
+可以用等效直径来衡量轮廓的特征值，该值是与轮廓面积相等的圆形的直径</li>
+</ol>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">等</mi><mi mathvariant="normal">效</mi><mi mathvariant="normal">直</mi><mi mathvariant="normal">径</mi><mo>=</mo><msqrt><mfrac><mrow><mn>4</mn><mo>×</mo><mi mathvariant="normal">轮</mi><mi mathvariant="normal">廓</mi><mi mathvariant="normal">面</mi><mi mathvariant="normal">积</mi></mrow><mi>π</mi></mfrac></msqrt></mrow><annotation encoding="application/x-tex">等效直径 = \sqrt{\frac{4\times轮廓面积}{\pi}}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mord cjk_fallback">等</span><span class="mord cjk_fallback">效</span><span class="mord cjk_fallback">直</span><span class="mord cjk_fallback">径</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.44em;vertical-align:-0.788405em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.651595em;"><span class="svg-align" style="top:-4.4em;"><span class="pstrut" style="height:4.4em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">π</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord cjk_fallback">轮</span><span class="mord cjk_fallback">廓</span><span class="mord cjk_fallback">面</span><span class="mord cjk_fallback">积</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span><span style="top:-3.6115950000000003em;"><span class="pstrut" style="height:4.4em;"></span><span class="hide-tail" style="min-width:1.02em;height:2.48em;"><svg width='400em' height='2.48em' viewBox='0 0 400000 2592' preserveAspectRatio='xMinYMin slice'><path d='M424,2478c-1.3,-0.7,-38.5,-172,-111.5,-514c-73,
+-342,-109.8,-513.3,-110.5,-514c0,-2,-10.7,14.3,-32,49c-4.7,7.3,-9.8,15.7,-15.5,
+25c-5.7,9.3,-9.8,16,-12.5,20s-5,7,-5,7c-4,-3.3,-8.3,-7.7,-13,-13s-13,-13,-13,
+-13s76,-122,76,-122s77,-121,77,-121s209,968,209,968c0,-2,84.7,-361.7,254,-1079
+c169.3,-717.3,254.7,-1077.7,256,-1081c4,-6.7,10,-10,18,-10H400000v40H1014.6
+s-87.3,378.7,-272.6,1166c-185.3,787.3,-279.3,1182.3,-282,1185c-2,6,-10,9,-24,9
+c-8,0,-12,-0.7,-12,-2z M1001 80H400000v40H1014z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.788405em;"><span></span></span></span></span></span></span></span></span></span></p>
+<ol start="5">
+<li>
+<p>方向<br />
+函数cv2.fitEllipse()可以用来构造最优拟合椭圆，还可以在返回椭圆的中心点、轴长、旋转角度等信息。使用这种形式能够更直观地获取椭圆的方向等信息</p>
 </li>
 <li>
-<p>blockSize       代表块大小</p>
+<p>掩膜和像素点<br />
+有时我们希望获取对象的掩膜图像以及对应的点</p>
 </li>
-</ul>
-<h3 id="otsu处理"><a class="markdownIt-Anchor" href="#otsu处理"></a> <strong>otsu处理</strong></h3>
-<p>在使用cv2.threshold()进行阈值处理时，需要定义一个阈值，并以此阈值作为阈值处理的依据，通常情况下，图像都是色彩均匀的，这时直接将阈值处理成127比较合适</p>
-<p>但是有时图像灰度级分布是不均匀的，如果此时还将阈值设置为127，就不合适。</p>
-<p>otsu方法能够根据当前图像给出的最佳的类间分隔阈值，简而言之，otsu方法会遍历所有可能的阈值，从而找到最佳的阈值</p>
-<p><code>t, otsu = cv2.threshold(img,,0,255,cv2.THRESH_BINARY+cv.THRESH_OTSU)</code></p>
-<p>##,6，<strong>图像平滑处理</strong></p>
-<p>在尽量保留图像原有信息的情况下，过滤掉图像内部的噪声，这一过程称为 图像平滑处理，也叫 图像模糊处理，也叫做去噪</p>
-<p>图像平滑处理的基本原理就是，将噪声所在像素点的值处理为其周围临近像素点的值的近似值，取近似值的方式有如下：</p>
-<ul>
-<li>均值滤波</li>
-<li>方框滤波</li>
-<li>高斯滤波</li>
-<li>中值滤波</li>
-<li>双边滤波</li>
-<li>2D卷积（自定义滤波）</li>
-</ul>
-<h3 id="均值滤波"><a class="markdownIt-Anchor" href="#均值滤波"></a> <strong>均值滤波</strong></h3>
-<p>均值滤波是指用当前像素点周围N×N个像素点的滤波来代替当前像素值。</p>
-<p>均值滤波函数<code>dst = cv2.blur(src,ksize,anchor,borderType)</code></p>
-<ul>
-<li>ksize是滤波核的大小，滤波核大小是指在均值处理中，其邻域图像的高度和宽度。核越大，去噪效果越好，但是越失真</li>
-<li>anchor是锚点，默认（-1，-1），表示当前计算均值的点位于核的中心点的位置</li>
-<li>bordertype 是边界样式，该值决定以何种方式处理边界</li>
-<li></li>
-</ul>
-<h3 id="方框滤波"><a class="markdownIt-Anchor" href="#方框滤波"></a> <strong>方框滤波</strong></h3>
-<p>方框滤波中，不会计算像素均值，可以自由选择是否对均值滤波的结果进行归一化，即可以自由选择滤波结果是邻域像素之和的平均值，还是邻域像素值之和。</p>
-<p><code>dst = cv2.boxFilter( src,ddepth,ksize,anvhor,normalize,borderType)</code></p>
-<ul>
-<li>ddepth 处理结果图像深度，一般使用-1表示与原始图像使用相同的图像深度</li>
-<li>ksize 是滤波核的大小，滤波核大小是指滤波处理过程中所选择的邻域图像的高度和深度</li>
-<li>anchor 锚点，其默认值是（-1，-1）表示当前计算均值的点位于核中心点位置，该值使用默认值即可</li>
-<li>normalize 表示在滤波时是否进行归一化
-<ul>
-<li>=1 要进行归一化</li>
-<li>=0 不进行归一化</li>
-</ul>
+<li>
+<p>平均颜色与平均灰度</p>
 </li>
-</ul>
-<h3 id="高斯滤波"><a class="markdownIt-Anchor" href="#高斯滤波"></a> <strong>高斯滤波</strong></h3>
-<p>进行均值滤波和方框滤波时，其邻域内每个像素的权重都是相等的，在高斯滤波中，会将中心点的权重加大，远离中心点的权重减小</p>
-<p>核的宽高可以不同，但必须是奇数</p>
-<p><code>dst = cv2.GaussianBlur(src,ksize,sigmaX,sigmaY,borderType)</code></p>
-<ul>
-<li>sigmaX 卷积核在水平方向上的标准差</li>
-<li>sigmaX 卷积核在垂直方向上的标准差</li>
-<li></li>
-</ul>
-<h3 id="中值滤波"><a class="markdownIt-Anchor" href="#中值滤波"></a> <strong>中值滤波</strong></h3>
-<p>中值滤波用邻域内所有像素点的中间值来代替当前像素点的像素值</p>
-<p>原理，将邻域内所有像素点像素值排序，取得中间位置的像素值作为当前像素点的像素值</p>
-<p><code>dst= cv2.medianBlur(src, ksize)</code></p>
-<h3 id="双边滤波"><a class="markdownIt-Anchor" href="#双边滤波"></a> <strong>双边滤波</strong></h3>
-<p>双边滤波是综合考虑空间信息和色彩信息的滤波方式，在滤波过程中能够有效的保护图像类的边缘信息</p>
-<p>原理：双边滤波在计算某一个像素点的新值时，不仅考虑距离信息（距离越远，权重越小），还考虑色彩距离（色彩差别越大，权重越小）</p>
-<p>作用：保护边缘信息</p>
-<p>函数：<code>dst = cv2.bilateralFilter(src,d,sigmaColor,sigmaSpace,borderType)</code></p>
-<ul>
-<li>d是选取空间距离的参数</li>
-<li>sigmaColor是滤波处理时选取的颜色差值范围</li>
-<li>sigmaSpace是坐标空间中的sigma值</li>
-<li>borderType边界样式，决定以何种方式处理边界</li>
-</ul>
-<h3 id="2d-卷积"><a class="markdownIt-Anchor" href="#2d-卷积"></a> <strong>2D 卷积</strong></h3>
-<p>使用自定义卷积核实现卷积操作：<br />
-<code>dst= cv2.filter(src,ddepth,kernal,anchor,delta,borderType)</code></p>
+<li>
+<p>极点</p>
+<ol>
+<li>有时候我们希望获取某个对象的极值点，例如最左端、最右端、最上端、最下端的四个点。</li>
+<li>opencv提供了相应的函数找出这些点</li>
+</ol>
+</li>
+</ol>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv02/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv02</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>816</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="2图像运算"><a class="markdownIt-Anchor" href="#2图像运算"></a> 2，图像运算</h2>
-<h3 id="加法"><a class="markdownIt-Anchor" href="#加法"></a> 加法</h3>
-<p>img1 + img2 ,遵循规则：<br />
-a+b = (a+b) % 256,即结果对256取膜</p>
-<p>cv2.add(img1,img2) ,遵循规则：<br />
-a+b = min(a+b,255), 即和大于255时结果取255</p>
-<h3 id="图像加权和"><a class="markdownIt-Anchor" href="#图像加权和"></a> 图像加权和</h3>
-<p>dst = cv2.addWeighted(src1,alpha,src2,beta,gamma) 参数不能省略<br />
-结果就是 dst = src * alpha +src2 *beta +gamma</p>
-<p>加权和超过255，结果同样取255</p>
-<h3 id="按位逻辑运算"><a class="markdownIt-Anchor" href="#按位逻辑运算"></a> 按位逻辑运算</h3>
-<p>cv2.bitwise_and() 与<br />
-cv2.bitwise_or()  或<br />
-cv2.bitwise_xor() 异或<br />
-cv2.bitwise_not() 非</p>
-<p>跟 0 位与结果为 0 ，变成黑色<br />
-跟255位与结果是本身 ，颜色不变</p>
-<h3 id="掩膜"><a class="markdownIt-Anchor" href="#掩膜"></a> 掩膜</h3>
-<p>使用掩膜参数时，操作只会在掩膜值为非空的像素点上执行，并将其他像素点的值设置为0</p>
-<h3 id="图像与数值运算"><a class="markdownIt-Anchor" href="#图像与数值运算"></a> 图像与数值运算</h3>
-<p>cv2.add(img,6) 参与运算的既可以是图片也可以是数值</p>
-<h3 id="位平面分解"><a class="markdownIt-Anchor" href="#位平面分解"></a> 位平面分解</h3>
-<p>将同一比特位上的二进制像素值进行组合，得到一副二进制值图像，该图像被称为灰度图像的一个位平面，这个过程被称为位平面分解。<br />
-在8位灰度图中，可以组成8个二进制图像<br />
-<a href="opencv/%E4%BD%8D%E5%B9%B3%E9%9D%A2.py">代码</a></p>
-<h3 id="图像加密和解密"><a class="markdownIt-Anchor" href="#图像加密和解密"></a> 图像加密和解密</h3>
-<p>通过按位异或运算可以实现图像的加密和解密</p>
-<p>通过对原始图像与秘钥图像进行按位异或就可以进行加密，将加密后的图像与秘钥图像再次进行按位异或就可以进行解密</p>
-<p><a href="opencv/%E5%9B%BE%E5%83%8F%E5%8A%A0%E5%AF%86%E5%92%8C%E8%A7%A3%E5%AF%86.py">代码实现</a></p>
-<h3 id="数字水印"><a class="markdownIt-Anchor" href="#数字水印"></a> 数字水印</h3>
-<p>最低有效位指一个二进制中的第0位，由于二进制图像处于载体图像的最低有效位上面，所以对于载体图像的影响非常不明显，具有较高的隐蔽性。</p>
-<p>在必要时，我们可以直接将载体图像中的最低有效位提取出来，即可得到嵌入该位上的二值图像，达到提取秘密信息的目的。<br />
-这种信息隐藏也被称为数字水印，通过该方式可以实现信息影藏，版权认证，身份认证等功能</p>
-<p>分两步：</p>
-<pre><code>嵌入过程
-  用数字水印信息将图像的最低有效位替换掉
-
-提取过程
-  提取出最低有效位的水印信息即可
-</code></pre>
-<p><a href="opencv/%E6%95%B0%E5%AD%97%E6%B0%B4%E5%8D%B0.py">demo</a></p>
-<h3 id="脸部打码以及解码"><a class="markdownIt-Anchor" href="#脸部打码以及解码"></a> 脸部打码以及解码</h3>
-<p>使用掩码和按位运算方式实现对脸部打码和解码实例<br />
-<a href="opencv/%E8%84%B8%E9%83%A8%E6%89%93%E7%A0%81%E4%BB%A5%E5%8F%8A%E8%A7%A3%E7%A0%81.py">demo</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/opencv03/" class="post-title-link" itemprop="url">深度学习/opencv笔记/opencv03</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>617</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="3色彩空间类型转换"><a class="markdownIt-Anchor" href="#3色彩空间类型转换"></a> 3，色彩空间类型转换</h2>
-<p>色彩空间类型转换就是将图像的一个色彩空间转换到另一个色彩空间，比如opencv处理图像是，可能会在RGB色彩空间和HSV色彩空间之间进行转换。在进行特征提取计算距离时，，往往会将图像RGB色彩空间转换成灰度色彩空间，也可能要将色彩空间的图像转换成二值图像</p>
-<h3 id="色彩空间基础"><a class="markdownIt-Anchor" href="#色彩空间基础"></a> 色彩空间基础</h3>
-<p>比较常见的色彩空间：</p>
-<ul>
-<li>GRAY色彩空间，也叫灰度空间 ，与RGB色彩空间的转换关系式 ： <code>GRAY =0.299×R +0.587*G +0.114*B</code></li>
-<li>XYZ色彩空间，一中便于计算的色彩空间</li>
-<li>YCrCb色彩空间</li>
-<li>HSV色彩空间：一种面向视觉感知的颜色模型；从心理学和视觉感知的角度出发，指出人眼的色彩和知觉主要包括三要素：色调Hue，饱和度Saturation,亮度Value</li>
-<li>HLS色彩空间： 包括三要素，色调Hue,光亮度lightness,饱和度Saturation</li>
-</ul>
-<h3 id="类型转换函数-hsv色彩空间讨论-alpha通道"><a class="markdownIt-Anchor" href="#类型转换函数-hsv色彩空间讨论-alpha通道"></a> 类型转换函数、HSV色彩空间讨论、alpha通道</h3>
-<p><a href="oepncv/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.py">demo</a></p>
-<p>dst = cv2.cvtColor(src,code,[,dstcn])</p>
-<pre><code>code表示色彩空间转换码
-dstCn目标图像的通道数，如果为默认的零，则通道数自动通过原始输入图像和code得到
-</code></pre>
-<p>alpha通道：在BGR色彩空间三个通道的基础上，还可以添加一个A通道，也叫做alpha通道，表示透明度。这四个通道的色彩空间也被称为BGRA色彩空间，png图像是一种典型的4通道图像。A的值范围[0,255]，从透明到不透明，默认值为255，即100%不透明</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/oepncv01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv%E7%AC%94%E8%AE%B0/oepncv01/" class="post-title-link" itemprop="url">深度学习/opencv笔记/oepncv01</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">opencv笔记</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/opencv%E7%AC%94%E8%AE%B0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>440</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="1图像处理基础"><a class="markdownIt-Anchor" href="#1图像处理基础"></a> 1，图像处理基础</h2>
-<h3 id="图像的表示"><a class="markdownIt-Anchor" href="#图像的表示"></a> 图像的表示</h3>
-<p>二值图像：仅仅包含黑色和白色两种颜色的图像，黑色表示为0，白色表示为1。</p>
-<p>灰度图像：包含256个灰度级，数值区间[0,255]，其中 0 表示纯黑色， 255表示纯白色，中间数值表示纯白和纯黑之间的不同极度的灰度。</p>
-<p>彩色图像： 有红绿蓝三个颜色的通道，能表现更丰富的细节信息，图像的通道顺序是RGB；特别注意，opencv中通道的顺序是 BGR，和图片通道顺序相反</p>
-<h3 id="像素处理"><a class="markdownIt-Anchor" href="#像素处理"></a> 像素处理</h3>
-<p><a href="opencv/%E5%83%8F%E7%B4%A0%E5%A4%84%E7%90%86.py">像素处理代码实现</a></p>
-<h3 id="使用numpyarray访问元素"><a class="markdownIt-Anchor" href="#使用numpyarray访问元素"></a> 使用numpy.array访问元素</h3>
-<p><a href="opencv/numpy.array%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0.py">代码实现</a></p>
-<p>函数 item(行，列) 能高效访问图像的像素点<br />
-itemset(索引值，新值) 用来修改像素值</p>
-<h3 id="感兴趣区域roi-和-通道操作"><a class="markdownIt-Anchor" href="#感兴趣区域roi-和-通道操作"></a> 感兴趣区域ROI 和 通道操作</h3>
-<p><a href="opencv/ROI.py">代码实现</a></p>
-<p>设定ROI后，就可以对该区域进行整体操作，比如将一个ROI区域A复制给变量b，然后将该变量复制给另一个区域C</p>
-<p>通道拆分 cv.split(img)</p>
-<p>通道合并 cv.merge([b,g,r])</p>
-<h3 id="获取图像属性"><a class="markdownIt-Anchor" href="#获取图像属性"></a> 获取图像属性</h3>
-<p>img.shape 返回包含行数，列数，通道数的数组</p>
-<p>img.size  返回图像的像素数目</p>
-<p>img.dtype 返回图像的数据类型</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://heronwan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/HeronWan.github.io/images/avatar.jpg">
-      <meta itemprop="name" content="Heronwang">
-      <meta itemprop="description" content="这是我的笔记簿<br>记录我的工作与学习<br>还有生活上的点滴滴滴">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Heron's NoteBook">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv/" class="post-title-link" itemprop="url">深度学习/opencv</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-30 23:22:33" itemprop="dateCreated datePublished" datetime="2020-08-30T23:22:33+08:00">2020-08-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/HeronWan.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="opencv基础"><a class="markdownIt-Anchor" href="#opencv基础"></a> opencv基础</h1>
-<p><a href="../readme.md">返回readme</a></p>
-<h2 id="图像处理基础"><a class="markdownIt-Anchor" href="#图像处理基础"></a> 图像处理基础</h2>
-<h3 id="图像的表示"><a class="markdownIt-Anchor" href="#图像的表示"></a> 图像的表示</h3>
-<p>二值图像：仅仅包含黑色和白色两种颜色的图像，黑色表示为0，白色表示为1。</p>
-<p>灰度图像：包含256个灰度级，数值区间[0,255]，其中 0 表示纯黑色， 255表示纯白色，中间数值表示纯白和纯黑之间的不同极度的灰度。</p>
-<p>彩色图像： 有红绿蓝三个颜色的通道，能表现更丰富的细节信息，图像的通道顺序是RGB；特别注意，opencv中通道的顺序是 BGR，和图片通道顺序相反</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/HeronWan.github.io/2020/08/30/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/opencv/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
@@ -1491,7 +1286,7 @@ itemset(索引值，新值) 用来修改像素值</p>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/HeronWan.github.io/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/HeronWan.github.io/">1</a><a class="page-number" href="/HeronWan.github.io/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/HeronWan.github.io/page/4/">4</a><a class="extend next" rel="next" href="/HeronWan.github.io/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/HeronWan.github.io/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/HeronWan.github.io/">1</a><a class="page-number" href="/HeronWan.github.io/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/HeronWan.github.io/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/HeronWan.github.io/page/6/">6</a><a class="extend next" rel="next" href="/HeronWan.github.io/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1559,20 +1354,20 @@ itemset(索引值，新值) 用来修改像素值</p>
       <div class="site-state-item site-state-posts">
           <a href="/HeronWan.github.io/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">52</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/HeronWan.github.io/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/HeronWan.github.io/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1621,13 +1416,13 @@ itemset(索引值，新值) 用来修改像素值</p>
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">25 分钟</span>
+    <span title="站点阅读时长">49 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
